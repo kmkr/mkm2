@@ -1,0 +1,24 @@
+<fieldset>
+  <legend>Ny artikkel</legend>
+  <% form_for @article do |f| %>
+    <p><%= f.label :title, 'Tittel' %></p>
+    <p><%= f.text_field :title %></p>
+
+    <p><%= f.label :body, 'Innhold' %></p>
+    <p><%= f.text_area :body %></p>
+
+    <p>
+      <%= f.label :published, 'Publiser med en gang' %>
+      <%= f.check_box :published %>
+    </p>
+
+    <p>
+      <%= f.label :categories, 'Omtaler' %>
+      <%= select_tag "categories", options_from_collection_for_select(@categories, :id, :title) %>
+    </p>
+
+    <p>
+      <%= f.submit 'Opprett artikkel' %>
+    </p>
+  <% end %>
+</fieldset>

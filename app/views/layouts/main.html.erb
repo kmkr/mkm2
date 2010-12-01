@@ -8,6 +8,7 @@
   <body>
     <div id="mainwrap">
       <div id="banner">
+        <%= link_to 'Ny artikkel', new_article_path %>
         <div id="navigation">
           <%= render :partial => 'category/category_navigation', :locals => { :continents => @continents } %>
         </div>
