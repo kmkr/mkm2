@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag 'common', 'navigation', :cache => true %>
+    <title>MKM</title>
+  </head>
+  <body>
+    <div id="mainwrap">
+      <div id="banner">
+        <div id="navigation">
+          <%= render :partial => 'category/category_navigation', :locals => { :continents => @continents } %>
+        </div>
+      </div>
+      <div id="content">
+        <%= yield :layout %>
+      </div>
+    </div>
+  </body>
+</html>

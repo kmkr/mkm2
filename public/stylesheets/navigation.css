@@ -1,0 +1,31 @@
+div#navigation {
+  position: absolute;
+  bottom: 0;
+}
+
+div#navigation li {
+  border: 0.01em solid black;
+  text-align: center;
+  display: inline-block;
+  list-style-type: none;
+}
+
+div#navigation li ul {
+  display: none;
+}
+
+div#navigation li ul li ul {
+  display: none;
+}
+
+div#navigation li:hover ul.countries {
+  display: block;
+  position: absolute;
+  padding-top: 5px;
+}
+
+div#navigation li ul li:hover ul.articles {
+  display: block;
+  position: absolute;
+  padding: 5px 5px;
+}

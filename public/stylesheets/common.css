@@ -1,0 +1,31 @@
+/* reset default */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  background-repeat: repeat;
+  background-color: transparent;
+  border:0pt none;
+  font-size:100%;
+  margin:0pt;
+  outline-color:invert;
+  outline-style:none;
+  outline-width:0pt;
+  padding:0pt;
+  vertical-align:baseline;
+}
+
+div#mainwrap {
+	width: 990px;
+	margin: 10px auto;
+	border: 0.01em solid black;
+}
+
+div#banner{
+	height: 250px;
+  position: relative;
+	border: 0.01em solid red;
+}
+
+div#content{
+	border: 0.01em solid green;
+	min-height: 400px;
+  padding: 7px;
+}
