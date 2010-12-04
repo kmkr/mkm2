@@ -29,3 +29,44 @@ div#content{
 	min-height: 400px;
   padding: 7px;
 }
+
+legend {
+  display: block;
+  font-size: 1.2em;
+  border-bottom: 0.07em solid #ccc;
+  margin-bottom: 8px;
+}
+
+/* 
+ * div#new_article 
+ */
+
+
+div#new_article {
+  width: 550px;
+}
+div#new_article p {
+  clear: both;
+}
+
+div#new_article label {
+  float: left;
+}
+
+div#new_article input {
+  float: right;
+}
+
+div#new_article span#datetime_select {
+  float: right;
+}
+
+div#new_article select#countries {
+  float: right;
+}
+
+div#new_article textarea {
+  clear: both;
+  width: 98%;
+  height: 200px;
+}

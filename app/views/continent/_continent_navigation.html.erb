@@ -5,8 +5,6 @@
         <% continent.countries.each do |country| %>
           <li><%= country.title %>
             <ul class="articles">
-              <li>Testartikkel</li>
-              <li>Testartikkel</li>
               <% country.articles.each do |article| %>
                 <li><% article.title %></li>
               <% end %>

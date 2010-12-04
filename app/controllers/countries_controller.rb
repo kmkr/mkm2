@@ -3,8 +3,7 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
 
     respond_to do |format|
-      format.html 
-      format.xml { render :xml => @country }
+      format.json {render :json => @country }
     end
   end
 end
