@@ -6,7 +6,7 @@
           <li class="country"><%= country.title %>
             <ul class="articles">
               <% country.articles.each do |article| %>
-                <li class="article"><%= article.title %></li>
+                <li class="article"><%= link_to article.title, article_path(article) %></li>
               <% end %>
             </ul>
           </li>

@@ -15,11 +15,6 @@ document.observe("dom:loaded", function() {
   map = new OpenLayers.Map( 'countryMap', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   
-  map.events.register("mousemove", map, function(e) { 
-      var mapPos = this.events.getMousePosition(e);
-      position = map.getLonLatFromPixel(mapPos).transform(map.getProjectionObject(), epsgProj);
-  });
-  
   map.addLayer(layer);
   map.addLayer(markers);
 

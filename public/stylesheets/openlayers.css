@@ -5,3 +5,8 @@ div#countryMap {
 	height: 300px;
 }
 
+div#worldMap {
+  margin: 0 auto;
+  width: 550px;
+  height: 230px;
+}
