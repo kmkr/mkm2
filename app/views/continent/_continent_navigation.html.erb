@@ -1,12 +1,12 @@
-<ul>
+<ul class="continents">
   <% continents.each do |continent| %>
-    <li><%= continent.title %>
+    <li class="continent"><%= continent.title %>
       <ul class="countries">
         <% continent.countries.each do |country| %>
-          <li><%= country.title %>
+          <li class="country"><%= country.title %>
             <ul class="articles">
               <% country.articles.each do |article| %>
-                <li><% article.title %></li>
+                <li class="article"><%= article.title %></li>
               <% end %>
             </ul>
           </li>

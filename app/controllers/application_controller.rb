@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
 
   def initialize
     @continents = Continent.all
+    @positions = Article.fetch_positions
   end
 end

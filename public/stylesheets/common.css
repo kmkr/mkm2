@@ -21,11 +21,9 @@ div#mainwrap {
 div#banner{
 	height: 250px;
   position: relative;
-	border: 0.01em solid red;
 }
 
 div#content{
-	border: 0.01em solid green;
 	min-height: 400px;
   padding: 7px;
 }

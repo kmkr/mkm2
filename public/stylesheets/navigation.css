@@ -1,31 +1,55 @@
 div#navigation {
   position: absolute;
   bottom: 0;
+  width: 100%;
+}
+
+div#navigation ul.continents {
+  text-align: center;
 }
 
 div#navigation li {
-  border: 0.01em solid black;
-  text-align: center;
-  display: inline-block;
+  padding: 3px;
   list-style-type: none;
+}
+div#navigation li.continent {
+  border: 0.01em solid black;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
 }
 
 div#navigation li ul {
   display: none;
+  text-align: left;
+}
+
+div#navigation li ul li.country {
+  border: 0.01em solid red;
+  margin-left: 20px;
+  width: 126px;
+  height: 30px;
 }
 
 div#navigation li ul li ul {
   display: none;
 }
 
+div#navigation li ul li ul li.article {
+  height: 30px;
+  width: 200px;
+  border: 0.01em solid green;
+}
+
 div#navigation li:hover ul.countries {
   display: block;
   position: absolute;
-  padding-top: 5px;
+  padding-top: 25px;
 }
 
 div#navigation li ul li:hover ul.articles {
   display: block;
-  position: absolute;
-  padding: 5px 5px;
+  position: relative;
+  left: 132px;
+  top: -24px;
 }
