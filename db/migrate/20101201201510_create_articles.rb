@@ -3,7 +3,11 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :body
-      t.integer :category_id
+      t.datetime :actual_date
+      t.boolean :published
+      t.integer :country_id
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

@@ -1,3 +1,8 @@
+<script>
+  var latitude = 0;
+  var longitude = 0;
+  var zoom_level = 0;
+</script>
 <fieldset>
   <legend>Ny artikkel</legend>
   <% form_for @article do |f| %>
@@ -7,14 +12,17 @@
     <p><%= f.label :body, 'Innhold' %></p>
     <p><%= f.text_area :body %></p>
 
+    <p><%= f.label(:actual_date, 'Bruk denne hvis det du skriver om skjedde en annen dato enn nå') %></p>
+    <p><%= f.datetime_select(:actual_date, :default => @article.actual_date) %></p>
+
     <p>
       <%= f.label :published, 'Publiser med en gang' %>
       <%= f.check_box :published %>
     </p>
 
     <p>
-      <%= f.label :categories, 'Omtaler' %>
-      <%= select_tag "categories", options_from_collection_for_select(@categories, :id, :title) %>
+      <%= f.label :countries, 'Omtaler' %>
+      <%= select_tag "countries", options_from_collection_for_select(@countries, :id, :title) %>
     </p>
 
     <p>
@@ -22,3 +30,21 @@
     </p>
   <% end %>
 </fieldset>
+
+<script>
+  Event.observe("countries", "change", function(event) {
+    var countryId = $(this).options[this.selectedIndex].value;
+
+    var url = '/countries/' + countryId + '.json'
+    new Ajax.Request(url, {
+      method: 'get',
+      requestHeaders: ['Accept', 'application/json'],
+
+      onSuccess: function(transport) {
+        alert(transport);
+      }
+    });
+  });
+</script>
+
+<%#= render :partial => 'countries/country_map', :locals => {:latitude => @article.latitude, :longitude => @article.longitude, :zoom_level => @article.zoom_level} %>

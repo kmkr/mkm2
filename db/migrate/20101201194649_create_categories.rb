@@ -1,8 +1,7 @@
 class CreateCategories < ActiveRecord::Migration
   def self.up
-    create_table :categories do |t|
+    create_table :continents do |t|
       t.string :title
-      t.integer :parent_id
       t.integer :priority
 
       t.timestamps
@@ -10,6 +9,6 @@ class CreateCategories < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :categories
+    drop_table :continents
   end
 end

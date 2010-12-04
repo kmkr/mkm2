@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
 
   def initialize
-    @continents = Category.find(:all, :conditions => 'parent_id IS NULL')
+    @continents = Continent.all
   end
 end

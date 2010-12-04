@@ -9,21 +9,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101201221759) do
+ActiveRecord::Schema.define(:version => 20101204134154) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "category_id"
+    t.datetime "actual_date"
+    t.boolean  "published"
+    t.integer  "country_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published"
   end
 
-  create_table "categories", :force => true do |t|
+  create_table "continents", :force => true do |t|
     t.string   "title"
-    t.integer  "parent_id"
     t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "title"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.integer  "zoom_level"
+    t.integer  "continent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

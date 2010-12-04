@@ -2,7 +2,7 @@
   <% continents.each do |continent| %>
     <li><%= continent.title %>
       <ul class="countries">
-        <% continent.children.each do |country| %>
+        <% continent.countries.each do |country| %>
           <li><%= country.title %>
             <ul class="articles">
               <li>Testartikkel</li>

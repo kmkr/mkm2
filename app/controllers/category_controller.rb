@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class ContinentController < ApplicationController
   def new
   end
 

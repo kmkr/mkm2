@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def new
     @article = Article.new
-    @categories = Category.find(:all, :conditions => "parent_id IS NOT NULL")
+    @countries = Country.all
   end
 
   def create
