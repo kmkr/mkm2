@@ -1,10 +1,10 @@
 <ul class="continents">
   <% continents.each do |continent| %>
     <li class="continent"><%= continent.title %>
-      <ul class="countries">
+      <ul class="countries" style="display: none;">
         <% continent.countries.each do |country| %>
           <li class="country"><%= country.title %>
-            <ul class="articles">
+            <ul class="articles" style="display: none;">
               <% country.articles.each do |article| %>
                 <li class="article"><%= link_to article.title, article_path(article) %></li>
               <% end %>

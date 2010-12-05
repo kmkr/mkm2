@@ -10,8 +10,9 @@ div#navigation ul.continents {
 
 div#navigation li {
   padding: 3px;
-  background-color: #fff;
   list-style-type: none;
+  display: block;
+  background-color: #fff;
 }
 div#navigation li.continent {
   border: 0.01em solid black;
@@ -21,7 +22,7 @@ div#navigation li.continent {
 }
 
 div#navigation li ul {
-  display: none;
+/*  visibility: hidden;*/
   text-align: left;
 }
 
@@ -33,7 +34,7 @@ div#navigation li ul li.country {
 }
 
 div#navigation li ul li ul {
-  display: none;
+  /*visibility: hidden;*/
 }
 
 div#navigation li ul li ul li.article {
@@ -42,14 +43,14 @@ div#navigation li ul li ul li.article {
   border: 0.01em solid green;
 }
 
-div#navigation li:hover ul.countries {
-  display: block;
+div#navigation li ul.countries {
+  /*display: block;*/
   position: absolute;
   padding-top: 25px;
 }
 
-div#navigation li ul li:hover ul.articles {
-  display: block;
+div#navigation li ul li ul.articles {
+  /*display: block;*/
   position: relative;
   left: 132px;
   top: -24px;
