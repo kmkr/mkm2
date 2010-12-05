@@ -7,8 +7,9 @@ document.observe("dom:loaded", function() {
   var size = new OpenLayers.Size(12,12);
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
   var markers = new OpenLayers.Layer.Markers("Markers");
+  OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
-  var options = { projection: 'EPSG:4326'}
+  var options = { projection: 'EPSG:4326', theme: null}
 
 
 

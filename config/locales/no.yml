@@ -64,7 +64,7 @@
         # zero: "less than 1 minute"
         zero: "mindre enn ett minutt"
         # one: "1 minute"
-        one: "ett minutt"
+        one: "mindre enn ett minutt"
         # other: "{{count}} minutes"
         other: "{{count}} minutter"
       x_minutes:

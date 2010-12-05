@@ -7,7 +7,9 @@ document.observe("dom:loaded", function() {
     new OpenLayers.Control.Navigation(),
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Attribution()
-  ]}
+  ],
+  theme: null
+  }
   map = new OpenLayers.Map( 'worldMap', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   
