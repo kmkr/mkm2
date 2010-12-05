@@ -1,0 +1,52 @@
+/* 
+ * div#new_article 
+ */
+
+
+div#new_article {
+  width: 550px;
+}
+div#new_article p {
+  clear: both;
+}
+
+div#new_article label {
+  float: left;
+}
+
+div#new_article input {
+  float: right;
+}
+
+div#new_article span.datetime_select {
+  float: right;
+}
+
+div#new_article select#article_country_id {
+  float: right;
+}
+
+div#new_article textarea {
+  clear: both;
+  width: 98%;
+  height: 200px;
+}
+
+div#new_article p#drop_area {
+  border: 0.07em solid #ccc;
+  width: 50%;
+  height: 30px;
+}
+
+div#new_article ul#file_list {
+  list-style: none;
+}
+
+div#new_article ul#file_list img {
+  float: left;
+  max-width: 90px;
+  max-height: 90px;
+  padding: 5px;
+  border: 0.01em solid #ccc;
+  margin: 10px;
+}
