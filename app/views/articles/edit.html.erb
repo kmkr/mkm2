@@ -1,7 +1,7 @@
 <%= render :partial => 'countries/country_map' %>
 <div id="new_article">
   <fieldset>
-    <legend>Ny artikkel</legend>
+    <legend>Endre artikkel</legend>
     <% form_for @article, :html => {:multipart => true } do |f| %>
       <%= render :partial => 'form', :locals => {:f => f} %>
     <% end %>
