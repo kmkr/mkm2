@@ -6,8 +6,9 @@ div#countryMap {
 }
 
 div#worldMap {
+  border: 0.07em solid #ccc;
   margin: 0 auto;
-  width: 550px;
+  width: 510px;
   height: 230px;
 }
 
