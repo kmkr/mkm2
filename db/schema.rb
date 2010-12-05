@@ -14,7 +14,9 @@ ActiveRecord::Schema.define(:version => 20101204134154) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "actual_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "published_date"
     t.boolean  "published"
     t.integer  "country_id"
     t.float    "latitude"

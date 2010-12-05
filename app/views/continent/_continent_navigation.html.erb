@@ -3,7 +3,7 @@
     <li class="continent"><%= continent.title %>
       <ul class="countries" style="display: none;">
         <% continent.countries.each do |country| %>
-          <li class="country"><%= country.title %>
+          <li class="country"><%= country.title %> (<%= country.articles.size %>)
             <ul class="articles" style="display: none;">
               <% country.articles.each do |article| %>
                 <li class="article"><%= link_to article.title, article_path(article) %></li>

@@ -16,6 +16,7 @@ div#mainwrap {
 	width: 990px;
 	margin: 10px auto;
 	border: 0.01em solid black;
+  font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
 }
 
 div#banner{
@@ -55,7 +56,7 @@ div#new_article input {
   float: right;
 }
 
-div#new_article span#datetime_select {
+div#new_article span.datetime_select {
   float: right;
 }
 

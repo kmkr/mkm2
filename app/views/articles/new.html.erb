@@ -14,9 +14,16 @@
       </p>
   
       <p>
-        <%= f.label(:actual_date, 'Dato') %>
-        <span id="datetime_select">
-          <%= f.datetime_select(:actual_date, :default => @article.actual_date) %>
+        <%= f.label(:start_date, 'Startdato') %>
+        <span class="datetime_select">
+          <%= f.datetime_select(:start_date, :default => @article.start_date) %>
+        </span>
+      </p>
+
+      <p>
+        <%= f.label(:end_date, 'Sluttdato') %>
+        <span class="datetime_select">
+          <%= f.datetime_select(:end_date, :default => @article.end_date) %>
         </span>
       </p>
   

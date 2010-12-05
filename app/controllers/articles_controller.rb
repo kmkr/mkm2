@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    publish_article @article if @article.published?
     if @article.save
       flash[:notice] = "Artikkel opprettet!"
       redirect_to @article
@@ -26,6 +27,19 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def publish
+    article = Article.find(params[:id])
+    publish_article(article)
+    article.save
+    flash[:notice] = "Artikkel publisert!"
+    redirect_to article
+  end
+
+  private
+  def publish_article(article)
+    article.published_date = Time.now
   end
 
 end

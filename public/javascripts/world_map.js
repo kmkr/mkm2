@@ -3,7 +3,11 @@ document.observe("dom:loaded", function() {
   var size = new OpenLayers.Size(12,12);
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
   var markers = new OpenLayers.Layer.Markers("Markers");
-  var options = { projection: 'EPSG:4326'}
+  var options = { projection: 'EPSG:4326', controls: [
+    new OpenLayers.Control.Navigation(),
+    new OpenLayers.Control.ArgParser(),
+    new OpenLayers.Control.Attribution()
+  ]}
   map = new OpenLayers.Map( 'worldMap', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   

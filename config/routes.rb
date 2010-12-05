@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :countries
 
-  map.resources :articles
+  map.resources :articles, :member => { :publish => :get }
 
   # The priority is based upon order of creation: first created -> highest priority.
 
