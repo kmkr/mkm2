@@ -1,4 +1,5 @@
 <%= render :partial => 'countries/country_map' %>
+<%= javascript_include_tag 'drag_and_drop_fileupload' %>
 <div id="new_article">
   <fieldset>
     <legend>Ny artikkel</legend>
@@ -41,6 +42,14 @@
         <%= f.label 'article[country_id]', 'Omtaler' %>
         <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title) %>
       </p>
+
+      <div class="dropBox">
+        <p class="left">Dra filer hit &raquo;</p>
+        <p id="drop_area"></p>
+      </div>
+      <ul id="file_list">
+        <li class="no-items">last opp noen bilder!</li>
+      </ul> 
   
       <p>
         <%= f.submit 'Opprett artikkel' %>
