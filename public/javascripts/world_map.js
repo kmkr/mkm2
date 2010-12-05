@@ -10,8 +10,10 @@ document.observe("dom:loaded", function() {
   ],
   theme: null
   }
-  var worldMap = new OpenLayers.Map( 'worldMap', options);
-  worldMap.addLayer(new OpenLayers.Layer.OSM( "Simple OSM Map"));
+  var worldMap = new OpenLayers.Map( 'world_map', options);
+  var worldMapLayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+  worldMapLayer.setOpacity(.4);
+  worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
   worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
@@ -25,8 +27,16 @@ document.observe("dom:loaded", function() {
         var positions = transport.responseJSON;
         positions.each(function(position) {
           var lonLat = new OpenLayers.LonLat(position.longitude, position.latitude);
-          worldMapMarkers.addMarker(new OpenLayers.Marker(lonLat.transform(epsgProj, worldMap.getProjectionObject()), icon.clone()));
+          var countryMarker = new OpenLayers.Marker(lonLat.transform(epsgProj, worldMap.getProjectionObject()), icon.clone());
+          worldMapMarkers.addMarker(countryMarker);
+          // mouse listener
+          countryMarker.events.register("mouseover", countryMarker, function(e) {
+            Effect.Appear('articles_countries', {duration: 0.5});
+          });
         });
       }
     });
+
+
+
 });

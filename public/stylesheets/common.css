@@ -36,3 +36,10 @@ legend {
   margin-bottom: 8px;
 }
 
+div#articles_countries {
+ float: right;
+ width: 170px;
+ border: 0.07em solid #ccc;
+ height: 120px;
+ padding: 10px;
+}

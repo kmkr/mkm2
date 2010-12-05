@@ -5,7 +5,7 @@ div#countryMap {
 	height: 300px;
 }
 
-div#worldMap {
+div#world_map {
   border: 0.07em solid #ccc;
   margin: 0 auto;
   width: 510px;
