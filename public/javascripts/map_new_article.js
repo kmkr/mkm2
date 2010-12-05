@@ -1,8 +1,9 @@
 document.observe("dom:loaded", function() {
+  var mapOpen = false;
   var latitude = 0;
   var longitude = 0;
   var zoom_level = 0;
-  var map, layer, position;
+  var articleMap, layer, position;
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(12,12);
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
@@ -13,23 +14,21 @@ document.observe("dom:loaded", function() {
 
 
 
-  map = new OpenLayers.Map( 'countryMap', options);
+  articleMap = new OpenLayers.Map( 'countryMap', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   
-  map.addLayer(layer);
-  map.addLayer(markers);
+  articleMap.addLayer(layer);
+  articleMap.addLayer(markers);
 
-  map.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
-  
-  map.events.register("click", map, function(e) {
+  articleMap.events.register("click", articleMap, function(e) {
     var longitudeField = $("article_longitude");
     var latitudeField = $("article_latitude");
     var mapPos = this.events.getMousePosition(e);
-    position = map.getLonLatFromPixel(mapPos).transform(map.getProjectionObject(), epsgProj);
+    position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
     Form.Element.setValue(longitudeField, position.lon);
     Form.Element.setValue(latitudeField, position.lat);
     markers.clearMarkers();
-    markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, map.getProjectionObject()), icon.clone()));
+    markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
   });
   
 
@@ -46,8 +45,12 @@ document.observe("dom:loaded", function() {
         latitude = result.latitude;
         longitude = result.longitude;
         zoom_level = result.zoom_level;
-        map.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, map.getProjectionObject()), zoom_level, false, true);
+        articleMap.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
       }
     });
+    if (mapOpen == false) {
+      Effect.Appear('countryMap');
+      mapOpen = true;
+    }
   });
 });
