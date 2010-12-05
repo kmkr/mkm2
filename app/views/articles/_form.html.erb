@@ -34,15 +34,9 @@
 
 <p>
   <%= f.label 'article[country_id]', 'Omtaler' %>
-  <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title) %>
+  <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title, @article.country_id) %>
 </p>
 
-
-<% f.fields_for :assets do |asset| %>
-
-<%= asset.file_field :galleryitem %>
-
-<% end %>
 
 <p>
   <%= f.submit 'Opprett artikkel' %>

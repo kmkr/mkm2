@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+    @countries = Country.all
   end
 
   def update
