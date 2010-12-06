@@ -26,11 +26,6 @@ div#mainwrap {
   box-shadow: 0 0 5px #888;
 }
 
-div#banner{
-	height: 300px;
-  position: relative;
-}
-
 div#content{
   margin-top: 20px;
 	min-height: 600px;
@@ -56,26 +51,18 @@ div#flash_error, div#flash_notice, div#flash_warning {
 }
 
 div#flash_notice {
-  background: #73FF9A;
-  border-color: black;
+  background: #99ffb6;
+  border-color: #7ed095;
 }
 
 div#flash_warning {
-  background: #F8FFB0;
-  border-color: black;
+  background: #ffea96;
+  border-color: #e8d58b;
 }
 
 div#flash_error {
-  background: #EA7A6C;
-  border-color: black;
-}
-
-div#articles_countries {
- float: right;
- width: 170px;
- border: 0.07em solid #ccc;
- height: 120px;
- padding: 10px;
+  background: #ffab9d;
+  border-color: #eca195;
 }
 
 .clearboth {

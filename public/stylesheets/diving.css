@@ -5,3 +5,6 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#C9E7FF), to(#EDF7FF));
 }
 
+div#articles_countries {
+ background-color: #f6fbff;
+}

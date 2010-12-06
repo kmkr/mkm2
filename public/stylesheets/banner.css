@@ -1,0 +1,17 @@
+div#banner{
+	height: 300px;
+  position: relative;
+}
+
+div#articles_countries {
+ float: right;
+ width: 170px;
+ border: 0.07em solid #ccc;
+ height: 150px;
+ padding: 10px;
+ margin-right: 30px;
+}
+
+div#articles_countries h1 {
+  text-align: center;
+}

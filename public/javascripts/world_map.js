@@ -18,6 +18,14 @@ document.observe("dom:loaded", function() {
   worldMap.addLayer(worldMapMarkers);
   worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
 
+    var timeout;
+    $('articles_countries').observe('mouseover', function() {
+        clearTimeout(timeout);
+    });
+    $('articles_countries').observe('mouseout', function() {
+            timeout=setTimeout("Effect.SwitchOff('articles_countries')", 4000);
+    });
+
     var url = '/countries/info'
     new Ajax.Request(url, {
       method: 'get',
@@ -31,12 +39,17 @@ document.observe("dom:loaded", function() {
           worldMapMarkers.addMarker(countryMarker);
           // mouse listener
           countryMarker.events.register("mouseover", countryMarker, function(e) {
+          clearTimeout(timeout);
           var articleLinks = "";
           position.articles.each(function(article) {
-            articleLinks += article.title + "<br />";
+            articleLinks += "<a href='/articles/" + article.id + "'>" + article.title + "</a><br />";
           });
             $('articles_countries').update(position.countryName + "<br />" + articleLinks);
             Effect.Appear('articles_countries', {duration: 0.5});
+          });
+
+          countryMarker.events.register("mouseout", countryMarker, function(e) {
+            timeout=setTimeout("Effect.SwitchOff('articles_countries')", 4000);
           });
         });
       }
