@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :countries
+  map.resources :countries, :collection => { :info => :get }
 
   map.resources :articles, :member => { :publish => :get }
 

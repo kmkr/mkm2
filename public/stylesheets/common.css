@@ -17,6 +17,13 @@ div#mainwrap {
 	margin: 10px auto;
 	border: 0.01em solid black;
   font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
+  background: #fff;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
 }
 
 div#banner{
@@ -25,7 +32,8 @@ div#banner{
 }
 
 div#content{
-	min-height: 400px;
+  margin-top: 20px;
+	min-height: 600px;
   padding: 7px;
 }
 
@@ -42,10 +50,23 @@ div#flash_error, div#flash_notice, div#flash_warning {
   min-height: 40px;
   width: 400px;
   padding: 15px;
+  -moz-box-shadow: 0 0 10px #888;
+  -webkit-box-shadow: 0 0 10px#888;
+  box-shadow: 0 0 10px #888;
 }
 
 div#flash_notice {
-  background: green;
+  background: #73FF9A;
+  border-color: black;
+}
+
+div#flash_warning {
+  background: #F8FFB0;
+  border-color: black;
+}
+
+div#flash_error {
+  background: #EA7A6C;
   border-color: black;
 }
 

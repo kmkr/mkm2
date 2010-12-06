@@ -18,19 +18,24 @@ document.observe("dom:loaded", function() {
   worldMap.addLayer(worldMapMarkers);
   worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
 
-    var url = '/positions'
+    var url = '/countries/info'
     new Ajax.Request(url, {
       method: 'get',
       requestHeaders: ['Accept', 'application/json'],
 
       onSuccess: function(transport) {
-        var positions = transport.responseJSON;
-        positions.each(function(position) {
+        var countryInfo = transport.responseJSON;
+        countryInfo.each(function(position) {
           var lonLat = new OpenLayers.LonLat(position.longitude, position.latitude);
           var countryMarker = new OpenLayers.Marker(lonLat.transform(epsgProj, worldMap.getProjectionObject()), icon.clone());
           worldMapMarkers.addMarker(countryMarker);
           // mouse listener
           countryMarker.events.register("mouseover", countryMarker, function(e) {
+          var articleLinks = "";
+          position.articles.each(function(article) {
+            articleLinks += article.title + "<br />";
+          });
+            $('articles_countries').update(position.countryName + "<br />" + articleLinks);
             Effect.Appear('articles_countries', {duration: 0.5});
           });
         });

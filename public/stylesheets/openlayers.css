@@ -1,8 +1,11 @@
 div#countryMap {
-  border: 0.07em solid black;
+  border: 0.07em solid #ccc;
   float: right;
-	width: 400px;
+	width: 380px;
 	height: 300px;
+  padding: 30px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 div#world_map {
