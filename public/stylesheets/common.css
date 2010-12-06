@@ -36,10 +36,27 @@ legend {
   margin-bottom: 8px;
 }
 
+div#flash_error, div#flash_notice, div#flash_warning {
+  margin: 10px auto; 
+  border: 0.07em solid;
+  min-height: 40px;
+  width: 400px;
+  padding: 15px;
+}
+
+div#flash_notice {
+  background: green;
+  border-color: black;
+}
+
 div#articles_countries {
  float: right;
  width: 170px;
  border: 0.07em solid #ccc;
  height: 120px;
  padding: 10px;
+}
+
+.clearboth {
+  clear: both;
 }

@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @countries = Country.all
+    3.times {@article.assets.build}
   end
 
   def show
@@ -23,9 +24,19 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @countries = Country.all
+    3.times {@article.assets.build}
   end
 
   def update
+    @article = Article.find(params[:id])
+
+    if @article.update_attributes(params[:article])
+      flash[:notice] = "Oppdaterte artikkel"
+      redirect_to @article
+    else
+      flash[:error] = "Fikk ikke oppdatert artikkel"
+      redirect_to root_url
+    end
   end
 
   def destroy

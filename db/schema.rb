@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101204134154) do
+ActiveRecord::Schema.define(:version => 20101206203123) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20101204134154) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "assets", :force => true do |t|
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "galleryitem_file_name"
+    t.string   "galleryitem_content_type"
+    t.integer  "galleryitem_file_size"
+    t.datetime "galleryitem_updated_at"
   end
 
   create_table "continents", :force => true do |t|

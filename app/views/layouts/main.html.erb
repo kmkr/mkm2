@@ -9,14 +9,31 @@
   <body>
     <div id="mainwrap">
       <div id="banner">
-        <%= link_to 'Hjem', root_url %>
-        <%= link_to 'Ny artikkel', new_article_path %>
+        <div style="float: left;">
+          <p>
+            <%= link_to 'Hjem', root_url %>
+            <%= link_to 'Ny artikkel', new_article_path %>
+          </p>
+        </div>
         <%= render :partial => 'page/map_banner' %>
         <div id="navigation">
           <%= render :partial => 'continent/continent_navigation', :locals => { :continents => @continents } %>
         </div>
       </div>
       <div id="content">
+        <% if flash[:error] %>
+          <div id="flash_error">
+            <%= flash[:error] %>
+          </div>
+        <% elsif flash[:warning] %>
+          <div id="flash_warning">
+            <%= flash[:warning] %>
+          </div>
+        <% elsif flash[:notice] %>
+          <div id="flash_notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
         <%= yield :layout %>
       </div>
     </div>

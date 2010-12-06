@@ -37,7 +37,25 @@
   <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title, @article.country_id) %>
 </p>
 
+<div>
+  <% f.fields_for :assets do |asset| %>
+    <% if asset.object.new_record? %>
+      <p><%= asset.file_field :galleryitem %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<div id="galleryitems">
+  <% f.fields_for :assets do |asset| %>
+    <% unless asset.object.new_record? %>
+      <div class="galleryitem">
+        <%= image_tag asset.object.galleryitem.url(:thumb) %>
+        <%= asset.check_box :_delete %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <p>
-  <%= f.submit 'Opprett artikkel' %>
+  <%= f.submit 'Send' %>
 </p>

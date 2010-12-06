@@ -9,7 +9,8 @@
   <%= render :partial => 'article_body' %>
 </div>
 
-<div id="article_images">
+<div id="article_galleryitems">
+  <%= render :partial => 'article_galleryitems', :locals => {:assets => @article.assets } %>
 </div>
 
 <div id="article_comments">

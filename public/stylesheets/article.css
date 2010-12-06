@@ -1,0 +1,12 @@
+div.galleryitem {
+  border: #ccc solid 0.07em;
+  padding: 8px;
+  float: left;
+  margin-left: 10px;
+}
+
+div.galleryitem img {
+  border: black solid 0.07em;
+  max-width: 200px;
+  max-height: 200px;
+}
