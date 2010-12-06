@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20101206203123) do
     t.string   "galleryitem_content_type"
     t.integer  "galleryitem_file_size"
     t.datetime "galleryitem_updated_at"
+    t.text     "galleryitem_caption"
+    t.integer  "galleryitem_position"
   end
 
   create_table "continents", :force => true do |t|
