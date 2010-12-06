@@ -6,6 +6,9 @@
 </div>
 
 <div id="article_body">
+  <div id="country_map">
+    <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
+  </div>
   <%= render :partial => 'article_body' %>
 </div>
 

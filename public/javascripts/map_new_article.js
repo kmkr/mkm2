@@ -14,7 +14,7 @@ document.observe("dom:loaded", function() {
 
 
 
-  articleMap = new OpenLayers.Map( 'countryMap', options);
+  articleMap = new OpenLayers.Map( 'country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   
   articleMap.addLayer(layer);
@@ -49,7 +49,7 @@ document.observe("dom:loaded", function() {
       }
     });
     if (mapOpen == false) {
-      Effect.Appear('countryMap');
+      Effect.Appear('country_map');
       mapOpen = true;
     }
   });
