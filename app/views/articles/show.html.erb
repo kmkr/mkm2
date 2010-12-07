@@ -14,7 +14,9 @@
     </form>
     <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
   </div>
-  <%= render :partial => 'article_body' %>
+  <div id="article_content">
+    <%= render :partial => 'article_body' %>
+  </div>
 </div>
 
 <div id="article_galleryitems">

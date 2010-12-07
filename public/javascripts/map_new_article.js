@@ -11,7 +11,8 @@ document.observe("dom:loaded", function() {
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
   var options = { projection: 'EPSG:4326', theme: null}
-
+  var longitudeField = $("article_longitude");
+  var latitudeField = $("article_latitude");
 
 
   articleMap = new OpenLayers.Map( 'country_map', options);
@@ -20,9 +21,16 @@ document.observe("dom:loaded", function() {
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
 
+  var longitudeValue = Form.Element.getValue(longitudeField);
+  var latitudeValue = Form.Element.getValue(latitudeField);
+  console.log(longitudeValue);
+  if (longitudeValue > 0) {
+      articleMap.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
+      Effect.Appear('country_map');
+  }
+
+
   articleMap.events.register("click", articleMap, function(e) {
-    var longitudeField = $("article_longitude");
-    var latitudeField = $("article_latitude");
     var mapPos = this.events.getMousePosition(e);
     position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
     Form.Element.setValue(longitudeField, position.lon);

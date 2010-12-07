@@ -8,3 +8,12 @@ body {
 div#articles_countries {
  background-color: #f6fbff;
 }
+
+a:link, a:visited {
+  color: #107FC9;
+  font-style: none;
+}
+
+a:hover {
+  color: #025D8C;
+}

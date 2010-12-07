@@ -12,11 +12,11 @@ document.observe("dom:loaded", function() {
   }
   var worldMap = new OpenLayers.Map( 'world_map', options);
   var worldMapLayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-  worldMapLayer.setOpacity(.4);
+  worldMapLayer.setOpacity(.6);
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
-  worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
+  worldMap.setCenter(new OpenLayers.LonLat(20,20), 0, false, true);
 
     var timeout;
     $('articles_countries').observe('mouseover', function() {
@@ -42,9 +42,9 @@ document.observe("dom:loaded", function() {
           clearTimeout(timeout);
           var articleLinks = "";
           position.articles.each(function(article) {
-            articleLinks += "<a href='/articles/" + article.id + "'>" + article.title + "</a><br />";
+            articleLinks += "<li><a href='/articles/" + article.id + "'>" + article.title + "</a></li>";
           });
-            $('articles_countries').update(position.countryName + "<br />" + articleLinks);
+            $('articles_countries').update("<h1>" + position.countryName + "</h1><ul>" + articleLinks + "</ul>");
             Effect.Appear('articles_countries', {duration: 0.5});
           });
 

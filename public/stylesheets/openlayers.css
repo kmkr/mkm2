@@ -6,14 +6,9 @@ div#country_map {
   padding: 30px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-left: 20px;
 }
 
-div#world_map {
-  border: 0.07em solid #ccc;
-  margin: 0 auto;
-  width: 510px;
-  height: 230px;
-}
 
 div.olMap {
     z-index: 0;

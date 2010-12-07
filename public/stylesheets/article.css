@@ -10,3 +10,20 @@ div.galleryitem img {
   max-width: 200px;
   max-height: 200px;
 }
+
+div#article_content {
+  margin-bottom: 20px;
+}
+
+div#article_header {
+  margin-bottom: 30px;
+}
+
+div#article_header h1 {
+  font-size: 1.4em;
+}
+
+div#article_header p {
+  color: #A1A1A1;
+  font-size: 0.9em;
+}
