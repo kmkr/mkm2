@@ -8,6 +8,7 @@ document.observe("dom:loaded", function() {
   var size = new OpenLayers.Size(12,12);
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
   var markers = new OpenLayers.Layer.Markers("Markers");
+  OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
   var options = { projection: 'EPSG:4326', theme: null}
 
@@ -21,7 +22,7 @@ document.observe("dom:loaded", function() {
   
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
-  articleMap.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
-    markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
-  Effect.Appear('country_map');
+  var position = new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject());
+  articleMap.setCenter(position, zoom_level*1 + 1, false, true);
+    markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
 });
