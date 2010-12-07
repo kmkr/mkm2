@@ -16,7 +16,7 @@ document.observe("dom:loaded", function() {
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
-  worldMap.setCenter(new OpenLayers.LonLat(20,20), 0, false, true);
+  worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
 
     var timeout;
     $('articles_countries').observe('mouseover', function() {

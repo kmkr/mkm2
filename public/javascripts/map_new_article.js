@@ -1,8 +1,5 @@
 document.observe("dom:loaded", function() {
   var mapOpen = false;
-  var latitude = 0;
-  var longitude = 0;
-  var zoom_level = 0;
   var articleMap, layer, position;
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(12,12);
@@ -13,26 +10,29 @@ document.observe("dom:loaded", function() {
   var options = { projection: 'EPSG:4326', theme: null}
   var longitudeField = $("article_longitude");
   var latitudeField = $("article_latitude");
-
+  var zoomField = $("article_zoom_level");
 
   articleMap = new OpenLayers.Map( 'country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+  layer.setOpacity(.6);
   
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
 
   var longitudeValue = Form.Element.getValue(longitudeField);
   var latitudeValue = Form.Element.getValue(latitudeField);
-  console.log(longitudeValue);
-  if (longitudeValue > 0) {
-      articleMap.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
-      Effect.Appear('country_map');
-  }
-
+  var zoom_level = Form.Element.getValue(zoomField);
+      var position = new OpenLayers.LonLat(longitudeValue, latitudeValue);
+      if (longitudeValue > 0) {
+        markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
+        // Hvorfor virker ikke denne ? :-(
+        //articleMap.setCenter(position.transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
+        Effect.Appear('country_map');
+      }
 
   articleMap.events.register("click", articleMap, function(e) {
     var mapPos = this.events.getMousePosition(e);
-    position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
+    var position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
     Form.Element.setValue(longitudeField, position.lon);
     Form.Element.setValue(latitudeField, position.lat);
     markers.clearMarkers();
@@ -50,9 +50,9 @@ document.observe("dom:loaded", function() {
 
       onSuccess: function(transport) {
         var result = transport.responseJSON.country;
-        latitude = result.latitude;
-        longitude = result.longitude;
-        zoom_level = result.zoom_level;
+        var latitude = result.latitude;
+        var longitude = result.longitude;
+        var zoom_level = result.zoom_level;
         articleMap.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
       }
     });

@@ -1,12 +1,26 @@
-<div id="article_admin_tools">
-  <%= render :partial => "article_admin_tools", :locals => {:article => @article} %>
-</div>
-<div id="article_header">
-  <%= render :partial => 'article_header' %>
-</div>
-
-<div id="article_body">
-  <div id="country_map">
+<div id="article">
+  <div id="article_admin_tools">
+    <%= render :partial => "article_admin_tools", :locals => {:article => @article} %>
+  </div>
+  <div id="article_header">
+    <%= render :partial => 'article_header' %>
+  </div>
+  
+  <div id="article_body">
+    <div id="article_main_image">
+      <%= image_tag @article.main_asset.galleryitem.url(:medium) %>
+      <p><%= @article.main_asset.galleryitem_caption if @article.main_asset %></p>
+    </div>
+    <div id="article_content">
+      <%= render :partial => 'article_body' %>
+    </div>
+  </div>
+  
+  <div id="article_galleryitems">
+    <%= render :partial => 'article_galleryitems', :locals => {:assets => @article.assets } %>
+  </div>
+  
+  <div id="show_article_country_map">
     <form>
     <input type="hidden" id="article_latitude" value="<%= @article.latitude %>" />
     <input type="hidden" id="article_longitude" value="<%= @article.longitude %>" />
@@ -14,14 +28,7 @@
     </form>
     <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
   </div>
-  <div id="article_content">
-    <%= render :partial => 'article_body' %>
+  
+  <div id="article_comments">
   </div>
-</div>
-
-<div id="article_galleryitems">
-  <%= render :partial => 'article_galleryitems', :locals => {:assets => @article.assets } %>
-</div>
-
-<div id="article_comments">
 </div>

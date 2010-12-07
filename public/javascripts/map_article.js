@@ -17,8 +17,9 @@ document.observe("dom:loaded", function() {
   var longitude = Form.Element.getValue('article_longitude');
   var zoom_level = Form.Element.getValue('article_zoom_level');
 
-  articleMap = new OpenLayers.Map( 'country_map', options);
+  articleMap = new OpenLayers.Map( 'show_article_country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+  layer.setOpacity(.6);
   
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
