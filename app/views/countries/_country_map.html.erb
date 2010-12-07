@@ -1,3 +1,7 @@
+<% if editable %>
 <%= javascript_include_tag 'map_new_article.js' %>
+<% else %>
+<%= javascript_include_tag 'map_article.js' %>
+<% end %>
 
 <div id="country_map" style="display: none;"></div>
