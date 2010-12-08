@@ -8,8 +8,10 @@
   
   <div id="article_body">
     <div id="article_main_image">
+    <% if @article.main_asset %>
       <%= image_tag @article.main_asset.galleryitem.url(:medium) %>
-      <p><%= @article.main_asset.galleryitem_caption if @article.main_asset %></p>
+      <p><%= @article.main_asset.galleryitem_caption %></p>
+    <% end %>
     </div>
     <div id="article_content">
       <%= render :partial => 'article_body' %>

@@ -48,6 +48,8 @@ div.galleryitem img {
 
 div#article_content {
   margin-bottom: 20px;
+  width: 65%;
+  border: 0.07em solid black;
 }
 
 div#article_header {

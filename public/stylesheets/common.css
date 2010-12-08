@@ -14,6 +14,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 div#mainwrap {
 	width: 990px;
+  font-size: 1.1em;
 	margin: 10px auto;
 	border: 0.01em solid black;
   font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
