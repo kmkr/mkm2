@@ -1,13 +1,5 @@
 <h1><%= @article.title %></h1>
 <p>
-  <% if @article.end_date - @article.start_date == 0 %>
-    <%= l(@article.start_date, :format => :dy_mo_yr) %> 
-  <% else %>
-    Startet <%= l(@article.start_date, :format => :dy_mo_yr) %> og varte <%= distance_of_time_in_words(@article.end_date, @article.start_date) %>.
-  <% end %>
-  <% if @article.published_date %>
-    Publisert for <%= time_ago_in_words(@article.published_date) %> siden
-  <% else %>
-    Artikkelen er ikke publisert. <%= link_to 'Trykk', publish_article_path(@article) %> for å publisere.
-  <% end %>
+  Innholdet i artikkelen er datert <%= getArticleStartEndDate @article %>
+  <%= getArticlePublishedDetails @article %>
 </p>

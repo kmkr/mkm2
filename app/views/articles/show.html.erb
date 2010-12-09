@@ -10,7 +10,6 @@
     <div id="article_main_image">
     <% if @article.main_asset %>
       <%= image_tag @article.main_asset.galleryitem.url(:medium) %>
-      <p><%= @article.main_asset.galleryitem_caption %></p>
     <% end %>
     </div>
     <div id="article_content">
@@ -30,7 +29,15 @@
     </form>
     <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
   </div>
+
+  <div id="article_details">
+
+    <p>Denne artikkelen omhandler <%= h @article.country.title %> og er
+    datert <%= getArticleStartEndDate(@article).downcase %>. Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
+    
+  </div>
   
   <div id="article_comments">
+    <p>Her skal det komme kommentarfelt</p>
   </div>
 </div>
