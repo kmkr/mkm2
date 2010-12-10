@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
   def destroy
   end
 
-// TODO:
+# TODO:
   def browse 
     article = Article.find(params[:id])
 	  @gallery_item = Asset.find(params[:asset_id])
