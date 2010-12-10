@@ -1,7 +1,11 @@
+<div id="article_galleryview">
 <% assets.each do |asset| %>
-  <div class="galleryitem">
+  <div class="article_galleryitem">
     <%= image_tag asset.galleryitem.url(:medium) %>
   </div>
 <% end %>
+
+<div class="clearboth"></div>
+</div>
 
 <div class="clearboth"></div>

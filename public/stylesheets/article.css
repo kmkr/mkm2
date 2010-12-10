@@ -48,14 +48,14 @@ div#article_main_image div.floatClearer {
   float: left;
 }
 
-div.galleryitem {
+div.article_galleryitem {
   border: #ccc solid 0.07em;
   padding: 8px;
   float: left;
   margin-left: 10px;
 }
 
-div.galleryitem img {
+div.article_galleryitem img {
   border: black solid 0.07em;
   max-width: 200px;
   max-height: 200px;
@@ -94,7 +94,11 @@ div#article_details {
 
 div#article_large_galleryitem {
   margin: 30px auto;
-  width: 80%;
-  height: 950px;
-  border: #ccc 0.07em solid;
+  width: 95%;
+  text-align: center;
+}
+
+div#article_large_galleryitem img {
+  border: 0.07em solid black;
+  margin: 10px;
 }
