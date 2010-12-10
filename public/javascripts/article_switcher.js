@@ -1,20 +1,16 @@
 document.observe("dom:loaded", function() {
   var switchLinkElement = $('switchLink');
   function switchToGallery() {
-    //Effect.Fade('article', {duration: 0.5, queue: 'end'});
-    //Effect.Appear('article_galleryitems', {duration: 0.5, queue: 'end'});
-    $('article').hide();
-    $('article_galleryitems').show();
+    jQuery('#article').fadeOut("slow");
+    jQuery('#article_galleryitems').fadeIn("slow");
     switchLinkElement.innerHTML = '&laquo; Tilbake til artikkel';
     observeClickInGallery();
     return false;
   }
 
   function switchToArticle() {
-    //Effect.Fade('article_galleryitems', {duration: 0.5, queue: 'end'});
-    //Effect.Appear('article', {duration: 0.5, queue: 'end'});
-    $('article_galleryitems').hide();
-    $('article').show();
+    jQuery('#article_galleryitems').fadeOut("slow");
+    jQuery('#article').fadeIn("slow");
     switchLinkElement.innerHTML = 'Vis galleri';
     observeClickInArticle();
     return false;
