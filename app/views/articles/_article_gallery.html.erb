@@ -1,0 +1,15 @@
+<% if @article.assets.size > 0 %>
+  <a href="#" onclick="return false;" id="switchLink">Vis galleri</a>
+  <%= javascript_include_tag 'article_switcher' %>
+  
+  <div id="article_galleryitems" style="display: none;">
+    <%= render :partial => 'article_galleryitems', :locals => {:assets => @article.assets } %>
+
+    <div id="article_large_galleryitem">
+      <%=
+          image_tag @article.main_asset.galleryitem.url(:large)
+      %>
+    </div>
+
+  </div>
+<% end %>

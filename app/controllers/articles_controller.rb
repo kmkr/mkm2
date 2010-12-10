@@ -43,6 +43,12 @@ class ArticlesController < ApplicationController
   def destroy
   end
 
+// TODO:
+  def browse 
+    article = Article.find(params[:id])
+	  @gallery_item = Asset.find(params[:asset_id])
+  end
+
   def publish
     article = Article.find(params[:id])
     publish_article(article)
