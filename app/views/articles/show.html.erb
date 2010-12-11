@@ -1,14 +1,13 @@
 <div id="article_wrapper">
-<!-- GALLERY -->
-  <div id="article_gallery">
-    <%= render :partial => 'article_gallery' %>
-  </div>
 
+<% if @article.assets.size > 0 %>
+  <%= javascript_include_tag 'article_switcher' %>
+  <a href="#" onclick="return false;" id="switchLink">Vis galleri</a>
+<% end %>
 <div id="article">
   <div id="article_admin_tools">
     <%= render :partial => "article_admin_tools", :locals => {:article => @article} %>
   </div>
-
 
   <div id="article_header">
     <%= render :partial => 'article_header' %>
@@ -24,7 +23,6 @@
       <%= render :partial => 'article_body' %>
     </div>
   </div>
-  
   
   <div id="show_article_country_map">
     <form>
@@ -43,6 +41,13 @@
   </div>
   
 </div>
+
+<!-- GALLERY -->
+  <div id="article_gallery">
+    <%= render :partial => 'article_gallery' %>
+  </div>
+
+<!-- COMMENTS -->
   <div id="article_comments">
     <p>Her skal det komme kommentarfelt</p>
   </div>
