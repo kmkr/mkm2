@@ -29,7 +29,7 @@ module ArticlesHelper
     if article.end_date - article.start_date == 0 
       l(article.start_date, :format => :dy_mo_yr)
     else
-       "fra #{l(article.start_date, :format => :dy_mo_yr)} og varte #{distance_of_time_in_words(article.end_date, article.start_date)}"
+       "fra #{l(article.start_date, :format => :dy_mo_yr)} til #{l(article.end_date, :format => :dy_mo_yr)}"
     end
   end
 

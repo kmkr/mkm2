@@ -44,7 +44,7 @@ document.observe("dom:loaded", function() {
           position.articles.each(function(article) {
             articleLinks += "<li><a href='/articles/" + article.id + "'>" + article.title + "</a></li>";
           });
-            $('articles_countries').update("<h1>" + position.countryName + "</h1><ul>" + articleLinks + "</ul>");
+            $('articles_countries').update("<div><h1>" + position.countryName + "</h1></div><ul>" + articleLinks + "</ul>");
             Effect.Appear('articles_countries', {duration: 0.5});
           });
 

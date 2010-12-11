@@ -12,13 +12,15 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    @countries = Country.all
     publish_article @article if @article.published?
     if @article.save
       flash[:notice] = "Artikkel opprettet!"
       redirect_to @article
     else
+    logger.debug @article.errors.size
       flash[:notice] = "Noe gikk galt"
-      redirect_to root_url
+      render :action => 'new'
     end
   end
 
