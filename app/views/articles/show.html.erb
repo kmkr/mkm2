@@ -4,6 +4,7 @@
   <%= javascript_include_tag 'article_switcher' %>
   <a href="#" onclick="return false;" id="switchLink">Vis galleri</a>
 <% end %>
+
 <div id="article">
   <div id="article_admin_tools">
     <%= render :partial => "article_admin_tools", :locals => {:article => @article} %>

@@ -13,10 +13,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @countries = Country.all
-    publish_article @article if @article.published?
     if @article.save
-      flash[:notice] = "Artikkel opprettet!"
-      redirect_to @article
+      flash[:notice] = "Artikkel opprettet, men!"
+      redirect_to update_article_url
     else
     logger.debug @article.errors.size
       flash[:notice] = "Noe gikk galt"
@@ -33,6 +32,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
+   # publish_article @article if @article.published?
     if @article.update_attributes(params[:article])
       flash[:notice] = "Oppdaterte artikkel"
       redirect_to @article
@@ -43,12 +43,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-  end
-
-# TODO:
-  def browse 
-    article = Article.find(params[:id])
-	  @gallery_item = Asset.find(params[:asset_id])
   end
 
   def publish

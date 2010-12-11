@@ -1,10 +1,5 @@
-/* 
- * div#new_article 
- */
-
-
 div#new_article {
-  width: 550px;
+  width: 100%;
 }
 div#new_article p {
   clear: both;

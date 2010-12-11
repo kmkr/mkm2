@@ -78,3 +78,12 @@ div#article_details {
   font-style: italic;
   color: #aaa;
 }
+
+div#left_column {
+  float: left;
+  width: 55%;
+}
+div#right_column {
+  float: right;
+  width: 40%;
+}

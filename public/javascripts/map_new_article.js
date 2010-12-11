@@ -22,13 +22,14 @@ document.observe("dom:loaded", function() {
   var longitudeValue = Form.Element.getValue(longitudeField);
   var latitudeValue = Form.Element.getValue(latitudeField);
   var zoom_level = Form.Element.getValue(zoomField);
-      var position = new OpenLayers.LonLat(longitudeValue, latitudeValue);
-      if (longitudeValue > 0) {
-        markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
-        // Hvorfor virker ikke denne ? :-(
-        //articleMap.setCenter(position.transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
-        Effect.Appear('country_map');
-      }
+  if (longitudeValue > 0) {
+    var position = new OpenLayers.LonLat(longitudeValue, latitudeValue);
+    markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
+    // Hvorfor virker ikke denne ? :-(
+    //articleMap.setCenter(position.transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
+    Effect.Appear('country_map');
+  }
+
 
   articleMap.events.register("click", articleMap, function(e) {
     var mapPos = this.events.getMousePosition(e);

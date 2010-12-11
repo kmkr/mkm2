@@ -1,60 +1,22 @@
 <%= f.error_messages %>
-<p>
-  <%= f.label :title, 'Tittel' %>
-  <%= f.text_field :title %>
-</p>
 
-<p>
-  <%= f.label :body, 'Innhold' %>
-  <%= f.text_area :body %>
-</p>
+<%= javascript_include_tag 'new_article' %>
+<div id="tabs">
 
-<p>
-  <%= f.label(:start_date, 'Startdato') %>
-  <span class="datetime_select">
-    <%= f.datetime_select(:start_date, :default => @article.start_date) %>
-  </span>
-</p>
-
-<p>
-  <%= f.label(:end_date, 'Sluttdato') %>
-  <span class="datetime_select">
-    <%= f.datetime_select(:end_date, :default => @article.end_date) %>
-  </span>
-</p>
-
-<p>
-  <%= f.label :published, 'Publiser' %>
-  <%= f.check_box :published %>
-</p>
-
-<p>
-  <%= f.hidden_field :longitude %>
-  <%= f.hidden_field :latitude %>
-</p>
-
-<p>
-  <%= f.label 'article[country_id]', 'Omtaler' %>
-  <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title, @article.country_id) %>
-</p>
-
-<div>
-  <% f.fields_for :assets do |asset| %>
-    <% if asset.object.new_record? %>
-      <p><%= asset.file_field :galleryitem %></p>
-    <% end %>
-  <% end %>
+<ul>
+<li><a href="#tabs-1">Artikkel</a></li>
+<li><a href="#tabs-2">Last opp bilder og publiser</a></li>
+</ul>
+<div id="tabs-1">
+  <%= render :partial => 'form_tab_1', :locals => {:f => f} %>
 </div>
 
-<div id="galleryitems">
-  <% f.fields_for :assets do |asset| %>
-    <% unless asset.object.new_record? %>
-      <div class="galleryitem">
-        <%= image_tag asset.object.galleryitem.url(:thumb) %>
-        <%= asset.check_box :_delete %>
-      </div>
-    <% end %>
-  <% end %>
+<div id="tabs-2">
+  <%= render :partial => 'form_tab_2', :locals => {:f => f} %>
+</div>
+
+<div class="clearboth"></div>
+
 </div>
 
 <p>
