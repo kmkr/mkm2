@@ -1,18 +1,11 @@
-<p>
-  <%= f.label :published, 'Publiser artikkel' %>
-  <%= f.check_box :published %>
-</p>
-
-<div class="clearboth"></div>
-
 <div id="progressbar"></div>
 
 <div id="drop_area">
-<p>Dra bilder inn hit for å laste opp</p>
+  <p>Last opp filer ved å dra dem inn hit</p>
 </div>
 <div id="degregated_upload_area">
   <p>
-    Ser ut som nettleseren din ikke støtter drag+drop-uploads så du må nøye deg med vanlig :\
+    Ser ut som nettleseren din ikke støtter drag+drop-uploads så du må nøye deg med vanlig opplasting
   </p>
   <!-- Fallback for ikke-html-lesere -->
   <div>
@@ -24,11 +17,7 @@
   </div>
 </div>
 
-<ul id="file_list">
-Ingen nye imgs
-</ul>
-
-
+<div class="clearboth"></div>
 
 <div id="galleryitems">
     <% f.fields_for :assets do |asset| %>

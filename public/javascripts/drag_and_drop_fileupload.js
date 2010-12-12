@@ -1,18 +1,16 @@
 document.observe("dom:loaded", function() {
-    var dropArea = $("drop_area");
-    var fileList = $("file_list");
+  var dropArea = $("drop_area");
 
-
-    function traverseFiles (files) {
-      var li,
-      img,
-      file,
-      dataUrlReader,
-      fileInfo, completed;
+  function traverseFiles (files) {
+    var li,
+    img,
+    file,
+    dataUrlReader,
+    fileInfo, completed;
     jQuery( "#progressbar" ).progressbar({
-        value: 0
-      });
-      completed = 0;
+      value: 0
+    });
+    completed = 0;
 
     fileList.empty();
 
@@ -24,16 +22,6 @@ document.observe("dom:loaded", function() {
         continue;
       }
 
-      li = new Element("li");
-
-      img = new Element("img", {'class': 'thumbnail'});
-      dataUrlReader = new FileReader();
-      dataUrlReader.onload = (function (theImg) {
-        return function (evt) {
-          theImg.src = evt.target.result;
-        };
-      }(img));
-      dataUrlReader.readAsDataURL(file);
 
       binaryReader = new FileReader();
       var imageBinary;
@@ -45,13 +33,11 @@ document.observe("dom:loaded", function() {
           var encodedData = jQuery.URLEncode(jQuery.base64Encode(imageBinary));
           var actionPath = jQuery('#article_form').attr('action').split('/');
           var article_id = actionPath[actionPath.length - 1] * 1;
-          alert(article_id);
           jQuery.ajax({
             type: "POST",
             url: "/assets",
             data: "article_id="+article_id+"&binary_data="+encodedData,
             success: function(msg){
-            console.log(msg);
               completed += 1;
               jQuery( "#progressbar" ).progressbar( "option", "value", (completed/files.length)*100);
             }
@@ -60,44 +46,34 @@ document.observe("dom:loaded", function() {
       }(img));
       binaryReader.readAsBinaryString(file);
 
-      var fileInfo = new Element("div");
-      fileInfo.setStyle({"display": "none"});
-
-      fileInfo.update("Name: " + file.name);
-      fileInfo.update("Type: " + file.type);
-
-      li.appendChild(fileInfo);
-
-      if (typeof img !== "undefined") {
-        li.appendChild(img);
-      }
-      fileList.appendChild(li);
     }
   };
-    if ("files" in DataTransfer.prototype) {
-      // file API is available 
-      jQuery('#degregated_upload_area').hide();
+  if ("files" in DataTransfer.prototype) {
+    // file API is available 
+    jQuery('#degregated_upload_area').hide();
     dropArea.observe("dragleave", function (evt) {
-        this.className = "";
-        evt.preventDefault();
-        evt.stopPropagation();
+          this.className = "";
+         evt.preventDefault();
+          evt.stopPropagation();
         }, false);
 
     dropArea.observe("dragenter", function (evt) {
-        this.className = "over";
-        evt.preventDefault();
-        evt.stopPropagation();
+          this.className = "over";
+          evt.preventDefault();
+          evt.stopPropagation();
         }, false);
 
     dropArea.observe("dragover", function (evt) {
-        evt.preventDefault();
-        evt.stopPropagation();
+          evt.preventDefault();
+          evt.stopPropagation();
         }, false);
 
     dropArea.observe("drop", function (evt) {
         traverseFiles(evt.dataTransfer.files);
-        evt.preventDefault();
-        evt.stopPropagation();
+          evt.preventDefault();
+          evt.stopPropagation();
         }, false);
-    } 
+    }  else {
+      jQuery('#drop_area').hide();
+    }
 });

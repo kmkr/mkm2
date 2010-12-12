@@ -95,10 +95,11 @@ div#progressbar {
 }
 
 div#drop_area {
-  width: 50%;
+  width: 70%;
   margin 0 auto;
   height: 50px;
   border: 0.07em solid #ddd;
+  text-align: center;
 }
 
 div.galleryitem {
@@ -114,4 +115,46 @@ div.galleryitem div.image {
   width: 80%;
   text-align: center;
   margin: 0 auto;
+}
+
+div#new_article {
+  width: 100%;
+}
+div#new_article p {
+  clear: both;
+}
+
+div#new_article label {
+  float: left;
+}
+
+div#new_article input {
+  float: right;
+}
+
+div#new_article span.datetime_select {
+  float: right;
+}
+
+div#new_article select#article_country_id {
+  float: right;
+}
+
+div#new_article textarea {
+  clear: both;
+  width: 98%;
+  height: 200px;
+}
+
+div#new_article ul#file_list {
+  list-style: none;
+}
+
+div#new_article ul#file_list img {
+  float: left;
+  max-width: 90px;
+  max-height: 90px;
+  padding: 5px;
+  border: 0.01em solid #ccc;
+  margin: 10px;
 }
