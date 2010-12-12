@@ -1,0 +1,18 @@
+<div class="comment_wrapper">
+<% content_tag(:div, { :id => dom_id(comment) }) do -%>
+  <div class="comment">
+    <div class="header">
+      <p>
+        <span class="bold"><%= h comment.author %></span> kommenterte for <%= time_ago_in_words comment.created_at %> siden
+      </p>
+    </div>
+
+    <div class="body">
+      <p>
+        <%= h comment.body %>
+      </p>
+    </div>
+
+  </div>
+<% end %>
+</div>

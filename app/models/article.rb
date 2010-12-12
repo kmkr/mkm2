@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
 
   belongs_to :country
   has_many :assets, :dependent => :destroy, :order => 'galleryitem_position'
+  has_many :comments, :dependent => :destroy, :order => 'created_at DESC'
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
   def main_asset

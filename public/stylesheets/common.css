@@ -73,6 +73,10 @@ div#flash_error, div#errorExplanation {
   clear: both;
 }
 
-floatLeft {
+.floatLeft {
   float: left;
+}
+
+.bold {
+  font-weight: bold;
 }

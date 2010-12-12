@@ -50,6 +50,27 @@
 
 <!-- COMMENTS -->
   <div id="article_comments">
-    <p>Her skal det komme kommentarfelt</p>
+    <div id="new_comment_wrapper">
+    <% remote_form_for [@article, @comment] do |f| %>
+        <p>
+          <%= f.label :author, 'Navn' %>
+          <%= f.text_field :author %>
+        </p>
+        <p>
+          <%= f.label :body, 'Kommentar' %>
+          <%= f.text_field :body %>
+        </p>
+
+      <div class="clearboth"></div>
+        <p>
+          <%= f.submit 'Kommenter' %>
+        </p>
+      <% end %>
+      <div class="clearboth"></div>
+    </div>
+
+    <div id="comments">
+      <%= render :partial => 'comments/comment', :collection => @article.comments %>
+    </div>
   </div>
 </div>
