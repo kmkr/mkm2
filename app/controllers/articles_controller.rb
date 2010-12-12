@@ -57,7 +57,12 @@ class ArticlesController < ApplicationController
   end
 
   def preview
-    @article = Article.find(params[:id])
+    if params[:id]
+      @article = Article.find(params[:id])
+    else 
+      @article = Article.new
+    end
+
     @data = params[:data]
 
     respond_to do |format|
