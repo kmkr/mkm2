@@ -26,8 +26,8 @@ document.observe("dom:loaded", function() {
     var position = new OpenLayers.LonLat(longitudeValue, latitudeValue);
     markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
     // Hvorfor virker ikke denne ? :-(
-    //articleMap.setCenter(position.transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
     Effect.Appear('country_map');
+    //articleMap.setCenter(new OpenLayers.LonLat(longitudeValue*1, latitudeValue*1).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
   }
 
 
