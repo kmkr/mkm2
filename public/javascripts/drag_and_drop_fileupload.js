@@ -12,8 +12,6 @@ document.observe("dom:loaded", function() {
     });
     completed = 0;
 
-    fileList.empty();
-
     for (var i=0, il=files.length; i<il; i++) {
       jQuery('#progressbar').effect('appear');
       file = files[i];

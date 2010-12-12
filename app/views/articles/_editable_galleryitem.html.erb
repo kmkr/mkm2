@@ -1,8 +1,8 @@
 <% unless asset.object.new_record? %>
-  <div class="galleryitem">
-    <div class="image">
-      <%= image_tag asset.object.galleryitem.url(:thumb) %>
-    </div>
+  <li class="galleryitem">
+    <%= asset.hidden_field :galleryitem_position %>
+    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <span class="left"><%= image_tag asset.object.galleryitem.url(:thumb) %></span>
     <p>
       <%= asset.label :galleryitem_caption, 'Tekst' %>
       <%= asset.text_field :galleryitem_caption %>
@@ -11,5 +11,6 @@
       <%= asset.label :_destroy, 'Slette bilde?' %>
       <%= asset.check_box :_destroy %>
     </p>
-  </div>
+  </li>
+  <div class="clearboth"></div>
 <% end %>

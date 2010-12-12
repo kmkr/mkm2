@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
   validates_length_of :body, :minimum => 100
 
   belongs_to :country
-  has_many :assets, :dependent => :destroy
+  has_many :assets, :dependent => :destroy, :order => 'galleryitem_position'
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
   def main_asset
