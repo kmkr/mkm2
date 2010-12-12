@@ -159,12 +159,6 @@ div#new_article select#article_country_id {
   float: right;
 }
 
-div#new_article textarea {
-  clear: both;
-  width: 98%;
-  height: 200px;
-}
-
 div#new_article ul#file_list {
   list-style: none;
 }

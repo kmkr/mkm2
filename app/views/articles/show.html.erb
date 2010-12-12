@@ -7,7 +7,7 @@
 
 <div id="article">
   <div id="article_admin_tools">
-    <%= render :partial => "article_admin_tools", :locals => {:article => @article} %>
+    <%= render :partial => "article_admin_tools", :locals => { :article => @article } %>
   </div>
 
   <div id="article_header">
@@ -15,14 +15,7 @@
   </div>
   
   <div id="article_body">
-    <div id="article_main_image">
-    <% if @article.main_asset %>
-      <%= image_tag @article.main_asset.galleryitem.url(:medium) %>
-    <% end %>
-    </div>
-    <div id="article_content">
-      <%= render :partial => 'article_body' %>
-    </div>
+      <%= render :partial => 'article_body', :locals => { :article => @article, :body => @article.body } %>
   </div>
   
   <div id="show_article_country_map">

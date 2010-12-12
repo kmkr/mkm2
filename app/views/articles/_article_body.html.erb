@@ -1,4 +1,9 @@
-<p>
-  <%= imagify @article.body, @article.assets %>
-  <div class="clearboth"></div>
-</p>
+<div id="article_main_image">
+<% if article.main_asset %>
+  <%= image_tag article.main_asset.galleryitem.url(:medium) %>
+<% end %>
+</div>
+<div id="article_content">
+  <%= imagify RedCloth.new(body).to_html, article.assets %>
+</div>
+<div class="clearboth"></div>

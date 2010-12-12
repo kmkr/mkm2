@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  layout :choose_layout
+
   def new
     @article = Article.new
     @countries = Country.all
@@ -54,9 +56,27 @@ class ArticlesController < ApplicationController
     redirect_to article
   end
 
+  def preview
+    @article = Article.find(params[:id])
+    @data = params[:data]
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   private
   def publish_article(article)
     article.published_date = Time.now
+  end
+
+  def choose_layout
+  logger.debug action_name
+    if 'preview'.include? action_name
+      'preview_article'
+    else
+      'main'
+    end
   end
 
 end

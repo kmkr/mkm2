@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'markitup/jquery.markitup.js', 'markitup_boot' %>
 <div id="right_column">
 <%= render :partial => 'countries/country_map', :locals => {:editable => true} %>
 </div>
@@ -8,10 +9,6 @@
   <%= f.text_field :title %>
 </p>
 
-<p>
-  <%= f.label :body, 'Innhold' %>
-  <%= f.text_area :body %>
-</p>
 
 <p>
   <%= f.label(:start_date, 'Startdato') %>
@@ -39,3 +36,10 @@
 </p>
 </div>
 
+<div class="clearboth">
+<p>
+  <%= f.label :body, 'Innhold' %>
+  <div class="clearboth"></div>
+  <%= f.text_area :body %>
+</p>
+</div>
