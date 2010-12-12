@@ -1,70 +1,31 @@
 <div id="article_wrapper">
-
-<% if @article.assets.size > 0 %>
-  <%= javascript_include_tag 'article_switcher' %>
-  <a href="#" onclick="return false;" id="switchLink">Vis galleri</a>
-<% end %>
-
-<div id="article">
-  <div id="article_admin_tools">
-    <%= render :partial => "article_admin_tools", :locals => { :article => @article } %>
-  </div>
-
-  <div id="article_header">
-    <%= render :partial => 'article_header' %>
-  </div>
   
-  <div id="article_body">
-      <%= render :partial => 'article_body', :locals => { :article => @article, :body => @article.body } %>
-  </div>
-  
-  <div id="show_article_country_map">
-    <form>
-    <input type="hidden" id="article_latitude" value="<%= @article.latitude %>" />
-    <input type="hidden" id="article_longitude" value="<%= @article.longitude %>" />
-    <input type="hidden" id="article_zoom_level" value="<%= @article.country.zoom_level %>" />
-    </form>
-    <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
-  </div>
+  <div id="article">
+    <div id="article_admin_tools">
+      <%= render :partial => "article_admin_tools", :locals => { :article => @article } %>
+    </div>
+   
+    <div id="article_header">
+      <%= render :partial => 'article_header' %>
+    </div>
 
-  <div id="article_details">
-
-    <p>Denne artikkelen omhandler <%= h @article.country.title %> og er
-    datert <%= getArticleStartEndDate(@article).downcase %>. Artikkelen har <%= pluralize @article.assets.size, 'bilde', 'bilder' %> i galleriet. Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
+    <div id="article_tabs">
+      <%= render :partial => 'article_tabs' %>
+    </div>
+   
+    <div id="article_details">
+   
+      <p>Denne artikkelen omhandler <%= h @article.country.title %> og er
+      datert <%= getArticleStartEndDate(@article).downcase %>. Artikkelen har
+      <%= pluralize @article.assets.size, 'bilde', 'bilder' %> i galleriet, og
+      <%= pluralize @article.comments.size, 'kommentar', 'kommentarer' %>.
+      Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
     
-  </div>
-  
-</div>
-
-<!-- GALLERY -->
-  <div id="article_gallery">
-    <%= render :partial => 'article_gallery' %>
-  </div>
-
-<!-- COMMENTS -->
-  <div id="article_comments">
-    <div id="new_comment_wrapper">
-    <% remote_form_for [@article, @comment] do |f| %>
-        <p>
-          <%= f.label :author, 'Navn' %>
-          <%= f.text_field :author %>
-        </p>
-        <p>
-          <%= f.label :body, 'Kommentar' %>
-          <%= f.text_field :body %>
-        </p>
-
-      <div class="clearboth"></div>
-        <p>
-          <%= f.submit 'Kommenter' %>
-        </p>
-      <% end %>
-      <div class="clearboth"></div>
     </div>
-
-    <div id="comments">
-      <%= render :partial => 'comments/comment', :collection => @article.comments %>
+     
+    <!-- COMMENTS -->
+    <div id="article_comments">
+      <%= render :partial => 'article_comments' %>
     </div>
-
   </div>
 </div>

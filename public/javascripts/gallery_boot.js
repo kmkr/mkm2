@@ -52,5 +52,4 @@ var galleries = jQuery('.ad-gallery').adGallery({
     }
   }
 });
-jQuery('#article_galleryitems').hide();
 });

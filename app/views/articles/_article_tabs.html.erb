@@ -1,0 +1,16 @@
+<ul>
+  <li><a href="#article_tab">Artikkel</a></li>
+  <li><a href="#gallery_tab">Bildegalleri</a></li>
+</ul>
+
+<div id="article_tab">
+  <%= render :partial => 'article_maincontent' %>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery_tab">
+  <div id="article_gallery">
+    <%= render :partial => 'article_gallery' %>
+  </div>
+</div>
+<%= javascript_include_tag 'article_switcher' %>
