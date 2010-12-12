@@ -1,23 +1,25 @@
-document.observe("dom:loaded", function() {
-  $$('.continent').each(function(el) {
-    var ulElem = Element.firstDescendant(el);
-    el.observe('mouseenter', function() {
-        ulElem.blindDown({duration: 0.1});
+jQuery(function() {
+  jQuery('.continent').each(function(index, el) {
+    var element = jQuery(el);
+    var ulElem = element.children('.countries').first();
+    element.mouseenter(function() {
+      ulElem.slideDown();
     });
 
-    el.observe('mouseleave', function() {
-        ulElem.blindUp({duration: 0.1});
+    element.mouseleave(function() {
+      ulElem.slideUp();
     });
   });
 
-  $$('.country').each(function(el) {
-    var ulElem = Element.firstDescendant(el);
-    el.observe('mouseenter', function() {
-        ulElem.blindDown({duration: 0.1});
+  jQuery('.country').each(function(index, el) {
+    var element = jQuery(el);
+    var ulElem = element.children('.articles').first();
+    element.mouseenter(function() {
+      ulElem.effect('slide');
     });
 
-    el.observe('mouseleave', function() {
-        ulElem.blindUp({duration: 0.1});
+    element.mouseleave(function() {
+      ulElem.hide();
     });
   });
 });

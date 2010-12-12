@@ -16,7 +16,7 @@ div#articles_countries div {
   background-color: #0A93FC;
   background: -moz-linear-gradient(top,  #73C2FF,  #EDF7FF);
   background: -webkit-gradient(linear, left top, left bottom, from(#025D8C), to(#EDF7FF));
-  border-bottom: 0.07em #0A93FC solid;
+  border-bottom: 0.07em #73C2FF solid;
 }
 
 a:link, a:visited {

@@ -5,7 +5,7 @@ div#navigation {
   z-index: 1000;
 }
 
-div#navigation ul.continents {
+div#navigation ul {
   text-align: center;
 }
 
@@ -14,45 +14,37 @@ div#navigation li {
   list-style-type: none;
   display: block;
   background-color: #fff;
+  border: 0.01em solid #ccc;
 }
 div#navigation li.continent {
-  border: 0.01em solid black;
   display: inline-block;
-  width: 150px;
+  width: 140px;
   height: 40px;
-}
-
-div#navigation li ul {
-/*  visibility: hidden;*/
-  text-align: left;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: -moz-linear-gradient(top,  #eee,  #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
 }
 
 div#navigation li ul li.country {
-  border: 0.01em solid red;
-  margin-left: 20px;
-  width: 126px;
+  width: 120px;
+  margin: 0 10px;
   height: 30px;
-}
-
-div#navigation li ul li ul {
-  /*visibility: hidden;*/
 }
 
 div#navigation li ul li ul li.article {
-  height: 30px;
-  width: 200px;
-  border: 0.01em solid green;
+  font-size: 0.9em;
+  height: 20px;
+  width: 170px;
 }
 
 div#navigation li ul.countries {
-  /*display: block;*/
   position: absolute;
   padding-top: 25px;
 }
 
 div#navigation li ul li ul.articles {
-  /*display: block;*/
   position: relative;
-  left: 132px;
-  top: -24px;
+  left: 125px;
+  top: -28px;
 }

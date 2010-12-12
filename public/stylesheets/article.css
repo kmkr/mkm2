@@ -178,6 +178,12 @@ div#new_article ul#file_list img {
   margin: 10px;
 }
 
+/* COMMENTS */
+
+div#article_comments {
+  margin-top: 50px;
+}
+
 div#comments div.comment_wrapper, div#new_comment_wrapper {
   -moz-border-radius: 4px;
   border-radius: 4px;
