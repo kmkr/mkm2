@@ -3,33 +3,29 @@
   <%= f.check_box :published %>
 </p>
 
-<p>Denne skal byttes ut med drag+drop</p>
+<p>Dra bilder inn hit for å laste opp</p>
+
+<div id="progressbar"></div>
+
+<div id="drop_area"></div>
+
+<ul id="file_list">
+Ingen nye imgs
+</ul>
+
+<!-- Fallback for ikke-html-lesere -->
 <div>
-  <% f.fields_for :assets do |asset| %>
-    <% if asset.object.new_record? %>
-      <p><%= asset.file_field :galleryitem %></p>
-    <% end %>
-  <% end %>
+  <%# f.fields_for :assets do |asset| %>
+    <%# if asset.object.new_record? %>
+      <p><%#= asset.file_field :galleryitem %></p>
+    <%# end %>
+  <%# end %>
 </div>
 
-<% if @article.created_at %>
+
+
 <div id="galleryitems">
-  <% f.fields_for :assets do |asset| %>
-    <% unless asset.object.new_record? %>
-      <div class="galleryitem">
-      <p>
-        <%= image_tag asset.object.galleryitem.url(:thumb) %>
-      </p>
-      <p>
-        <%= asset.label :galleryitem_caption, 'Bildetekst' %>
-        <%= asset.text_field :galleryitem_caption %>
-      </p>
-      <p>
-        <%= asset.label :_delete, 'Marker for å slette bilde' %>
-        <%= asset.check_box :_delete %>
-      </p>
-      </div>
+    <% f.fields_for :assets do |asset| %>
+      <%= render :partial => 'editable_galleryitem', :locals => { :asset => asset } %>
     <% end %>
-  <% end %>
 </div>
-<% end %>

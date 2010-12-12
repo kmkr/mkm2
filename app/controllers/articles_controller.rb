@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @countries = Country.all
-    3.times {@article.assets.build}
   end
 
   def show
@@ -14,8 +13,8 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     @countries = Country.all
     if @article.save
-      flash[:notice] = "Artikkel opprettet, men!"
-      redirect_to update_article_url
+      flash[:notice] = "Artikkel opprettet, på tide å laste opp bilder!"
+      redirect_to edit_article_url(@article, :anchor => 'tabs-2')
     else
     logger.debug @article.errors.size
       flash[:notice] = "Noe gikk galt"
@@ -26,7 +25,6 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @countries = Country.all
-    3.times {@article.assets.build}
   end
 
   def update

@@ -23,7 +23,7 @@ document.observe("dom:loaded", function() {
         clearTimeout(timeout);
     });
     $('articles_countries').observe('mouseout', function() {
-            timeout=setTimeout("Effect.SwitchOff('articles_countries')", 4000);
+            timeout=setTimeout("jQuery('#articles_countries').effect('explode')", 4000);
     });
 
     var url = '/countries/info'
@@ -45,11 +45,11 @@ document.observe("dom:loaded", function() {
             articleLinks += "<li><a href='/articles/" + article.id + "'>" + article.title + "</a></li>";
           });
             $('articles_countries').update("<div><h1>" + position.countryName + "</h1></div><ul>" + articleLinks + "</ul>");
-            Effect.Appear('articles_countries', {duration: 0.5});
+            jQuery('#articles_countries').fadeIn();
           });
 
           countryMarker.events.register("mouseout", countryMarker, function(e) {
-            timeout=setTimeout("Effect.SwitchOff('articles_countries')", 4000);
+            timeout=setTimeout("jQuery('#articles_countries').effect('explode')", 4000);
           });
         });
       }

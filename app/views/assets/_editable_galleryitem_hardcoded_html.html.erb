@@ -1,0 +1,16 @@
+      <div class="galleryitem">
+        <div class="image">
+          <img alt="<%= @asset.galleryitem_caption %>" src="<%= @asset.galleryitem.url(:thumb) %>">
+        </div>
+      <p>
+        <label for="article_assets_attributes_<%= asset_number %>_galleryitem_caption">Tekst</label>
+        <input id="article_assets_attributes_<%= asset_number %>_galleryitem_caption" name="article[assets_attributes][<%= asset_number %>][galleryitem_caption]" size="30" type="text">
+      </p>
+
+      <p>
+        <label for="article_assets_attributes_<%= asset_number %>__destroy">Slette bilde?</label>
+        <input name="article[assets_attributes][<%= asset_number %>][_destroy]" value="0" type="hidden"><input id="article_assets_attributes_<%= asset_number %>__destroy" name="article[assets_attributes][<%= asset_number %>][_destroy]" value="0" type="checkbox">
+      </p>
+      </div>
+    
+  <input id="article_assets_attributes_<%= asset_number %>_id" name="article[assets_attributes][<%= asset_number %>][id]" value="<%= @asset.id %>" type="hidden">

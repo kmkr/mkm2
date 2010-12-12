@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AssetTest < ActiveSupport::TestCase
+class AssetsControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

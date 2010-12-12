@@ -1,65 +1,79 @@
 document.observe("dom:loaded", function() {
     var dropArea = $("drop_area");
     var fileList = $("file_list");
-    console.log(dropArea);
-    console.log(fileList);
+
 
     function traverseFiles (files) {
-    console.log("traversing");
-    var li,
-    img,
-    file,
-    reader,
-    fileInfo;
+      var li,
+      img,
+      file,
+      dataUrlReader,
+      fileInfo, completed;
+    jQuery( "#progressbar" ).progressbar({
+        value: 0
+      });
+      completed = 0;
+
     fileList.empty();
 
     for (var i=0, il=files.length; i<il; i++) {
-    file = files[i];
-    if (!file.type.match('image.*')) {
-    console.log("not an image");
-    continue;
-    }
-
-    li = new Element("li");
-
-    img = new Element("img", {'class': 'thumbnail'});
-    reader = new FileReader();
-    reader.onload = (function (theImg) {
-        return function (evt) {
-        theImg.src = evt.target.result;
-        };
-        }(img));
-    reader.readAsDataURL(file);
-
-    // Send fila her med xhr...
-    var url = "/articles/update" + ....
-    new Ajax.Request(url, {
-      method: 'post',
-
-      onSuccess: function(transport) {
-        var result = transport.responseJSON.country;
-        latitude = result.latitude;
-        longitude = result.longitude;
-        zoom_level = result.zoom_level;
-        map.setCenter(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, map.getProjectionObject()), zoom_level, false, true);
+      jQuery('#progressbar').effect('appear');
+      file = files[i];
+      if (!file.type.match('image.*')) {
+        alert("Fil nummer " + i + " ser ikke ut som et bilde");
+        continue;
       }
-    });
 
-    var fileInfo = new Element("div");
-    fileInfo.setStyle({"display": "none"});
+      li = new Element("li");
 
-    fileInfo.update("Name: " + file.name);
-    fileInfo.update("Type: " + file.type);
+      img = new Element("img", {'class': 'thumbnail'});
+      dataUrlReader = new FileReader();
+      dataUrlReader.onload = (function (theImg) {
+        return function (evt) {
+          theImg.src = evt.target.result;
+        };
+      }(img));
+      dataUrlReader.readAsDataURL(file);
 
-    li.appendChild(fileInfo);
+      binaryReader = new FileReader();
+      var imageBinary;
+      binaryReader.onload = (function (theImg) {
+        return function (evt) {
+           imageBinary = evt.target.result;
+          // looks like the image is ok
+          // send it to the server
+          var encodedData = jQuery.URLEncode(jQuery.base64Encode(imageBinary));
+          var actionPath = jQuery('#article_form').attr('action').split('/');
+          var article_id = actionPath[actionPath.length - 1] * 1;
+          alert(article_id);
+          jQuery.ajax({
+            type: "POST",
+            url: "/assets",
+            data: "article_id="+article_id+"&binary_data="+encodedData,
+            success: function(msg){
+            console.log(msg);
+              completed += 1;
+              jQuery( "#progressbar" ).progressbar( "option", "value", (completed/files.length)*100);
+            }
+         });
+        };
+      }(img));
+      binaryReader.readAsBinaryString(file);
 
-    if (typeof img !== "undefined") {
-      li.appendChild(img);
+      var fileInfo = new Element("div");
+      fileInfo.setStyle({"display": "none"});
 
+      fileInfo.update("Name: " + file.name);
+      fileInfo.update("Type: " + file.type);
+
+      li.appendChild(fileInfo);
+
+      if (typeof img !== "undefined") {
+        li.appendChild(img);
+      }
+      fileList.appendChild(li);
     }
-    fileList.appendChild(li);
-    }
-    };
+  };
 
     dropArea.observe("dragleave", function (evt) {
         this.className = "";

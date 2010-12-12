@@ -87,3 +87,31 @@ div#right_column {
   float: right;
   width: 40%;
 }
+
+div#progressbar {
+  width: 50%
+  margin: 0 auto;
+  display: hidden;
+}
+
+div#drop_area {
+  width: 30%;
+  margin 0 auto;
+  height: 50px;
+  border: 0.07em solid #ddd;
+}
+
+div.galleryitem {
+  width: 333px;
+  margin: 10px;
+  font-size: 0.8em;
+  border: 0.07em solid #eee;
+  height: 220px;
+  float: left;
+}
+
+div.galleryitem div.image {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}

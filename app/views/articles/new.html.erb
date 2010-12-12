@@ -1,7 +1,7 @@
 <div id="new_article">
   <fieldset>
     <legend>Ny artikkel</legend>
-    <% form_for @article, :html => {:multipart => true } do |f| %>
+    <% form_for @article, :html => {:article => 'article_form', :multipart => true } do |f| %>
       <%= render :partial => 'form', :locals => {:f => f} %>
     <% end %>
   </fieldset>

@@ -1,0 +1,15 @@
+<% unless asset.object.new_record? %>
+  <div class="galleryitem">
+    <div class="image">
+      <%= image_tag asset.object.galleryitem.url(:thumb) %>
+    </div>
+    <p>
+      <%= asset.label :galleryitem_caption, 'Tekst' %>
+      <%= asset.text_field :galleryitem_caption %>
+    </p>
+    <p>
+      <%= asset.label :_destroy, 'Slette bilde?' %>
+      <%= asset.check_box :_destroy %>
+    </p>
+  </div>
+<% end %>
