@@ -10,19 +10,24 @@
 <div id="drop_area">
 <p>Dra bilder inn hit for å laste opp</p>
 </div>
+<div id="degregated_upload_area">
+  <p>
+    Ser ut som nettleseren din ikke støtter drag+drop-uploads så du må nøye deg med vanlig :\
+  </p>
+  <!-- Fallback for ikke-html-lesere -->
+  <div>
+    <% f.fields_for :assets do |asset| %>
+      <% if asset.object.new_record? %>
+        <p><%= asset.file_field :galleryitem %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <ul id="file_list">
 Ingen nye imgs
 </ul>
 
-<!-- Fallback for ikke-html-lesere -->
-<div>
-  <%# f.fields_for :assets do |asset| %>
-    <%# if asset.object.new_record? %>
-      <p><%#= asset.file_field :galleryitem %></p>
-    <%# end %>
-  <%# end %>
-</div>
 
 
 <div id="galleryitems">

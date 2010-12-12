@@ -20,7 +20,7 @@ document.observe("dom:loaded", function() {
       jQuery('#progressbar').effect('appear');
       file = files[i];
       if (!file.type.match('image.*')) {
-        alert("Fil nummer " + i + " ser ikke ut som et bilde");
+        alert("Fil nummer " + i + " ser ikke ut til å være et bilde");
         continue;
       }
 
@@ -74,7 +74,9 @@ document.observe("dom:loaded", function() {
       fileList.appendChild(li);
     }
   };
-
+    if ("files" in DataTransfer.prototype) {
+      // file API is available 
+      jQuery('#degregated_upload_area').hide();
     dropArea.observe("dragleave", function (evt) {
         this.className = "";
         evt.preventDefault();
@@ -97,4 +99,5 @@ document.observe("dom:loaded", function() {
         evt.preventDefault();
         evt.stopPropagation();
         }, false);
+    } 
 });
