@@ -14,7 +14,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 div#mainwrap {
 	width: 990px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #222222;
 	margin: 10px auto;
 	border: 0.01em solid black;
@@ -41,30 +41,32 @@ legend {
   margin-bottom: 8px;
 }
 
-div#erroriExplanation, div#flash_error, div#flash_notice, div#flash_warning {
+div#errorExplanation, div#flash_error, div#flash_notice, div#flash_warning {
   margin: 10px auto; 
   border: 0.07em solid;
-  min-height: 40px;
+  min-height: 25px;
   width: 400px;
-  padding: 15px;
-  -moz-box-shadow: 0 0 10px #888;
-  -webkit-box-shadow: 0 0 10px#888;
-  box-shadow: 0 0 10px #888;
+  padding: 7px;
+  -moz-box-shadow: 0 0 3px #ccc;
+  -webkit-box-shadow: 0 0 3px#ccc;
+  box-shadow: 0 0 3px #ccc;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 div#flash_notice {
-  background: #99ffb6;
-  border-color: #7ed095;
+  background: #fcfaf1;
+  border-color: #fcefa1;
 }
 
 div#flash_warning {
-  background: #ffea96;
-  border-color: #e8d58b;
+  background: #feeed6;
+  border-color: #f8893f;
 }
 
 div#flash_error, div#errorExplanation {
-  background: #ffab9d;
-  border-color: #eca195;
+  background: #fef8f6;
+  border-color: #cd0a0a;
 }
 
 .clearboth {

@@ -1,17 +1,12 @@
 <div id="progressbar"></div>
-
   <p>
-    <span class="ui-icon ui-icon-info">
       Dra filene inn i boksen under for å laste opp filer
-    </span>
   </p>
 <div id="drop_area">
 </div>
 <div id="degregated_upload_area">
   <p>
-    <span class="ui-icon ui-icon-error">
       Ser ut som nettleseren din ikke støtter drag+drop-uploads så du må nøye deg med vanlig opplasting
-    </span>
   </p>
   <!-- Fallback for ikke-html-lesere -->
   <div>
@@ -30,20 +25,5 @@
     <% f.fields_for :assets do |asset| %>
       <%= render :partial => 'editable_galleryitem', :locals => { :asset => asset } %>
     <% end %>
-      <script>
-        jQuery(function() {
-            jQuery( "#sortable" ).sortable({
-              update: function(event, ui) {
-              var listItems = jQuery('#sortable li');
-                jQuery.each(listItems, function(index, listItem) {
-                  item = jQuery(listItem).children('input').first();
-                  item.val(index);
-                });
-              }
-            });
-            jQuery( "#sortable" ).disableSelection();
-            });
-                    </script>
-
   </ul>
 </div>

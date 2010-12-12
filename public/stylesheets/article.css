@@ -96,7 +96,7 @@ div#progressbar {
 
 div#drop_area {
   width: 70%;
-  margin 0 auto;
+  margin: 0 auto;
   height: 50px;
   border: 0.07em solid #ddd;
   text-align: center;
@@ -104,6 +104,9 @@ div#drop_area {
 
 div#galleryitems ul {
   list-style-type: none;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 li.galleryitem {

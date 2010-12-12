@@ -1,4 +1,5 @@
 jQuery(function() {
+
 var galleries = jQuery('.ad-gallery').adGallery({
   loader_image: '/images/loader.gif',
   thumb_opacity: 0.7, // Opacity that the thumbs fades to/from, (1 removes fade effect)
@@ -15,9 +16,10 @@ var galleries = jQuery('.ad-gallery').adGallery({
   slideshow: {
     enable: false
   },
-  effect: 'fade', // or 'slide-vert', 'resize', 'fade', 'none' or false
+  effect: 'slide-hori', // or 'slide-vert', 'resize', 'fade', 'none' or false
   enable_keyboard_move: true, // Move to next/previous image with keyboard arrows?
   cycle: true, // If set to false, you can't go from the last image to the first, and vice versa
+  easing: 'easeInElastic',
   // All callbacks has the AdGallery objects as 'this' reference
   callbacks: {
     // Executes right after the internal init, can be used to choose which images
@@ -50,4 +52,5 @@ var galleries = jQuery('.ad-gallery').adGallery({
     }
   }
 });
+jQuery('#article_galleryitems').hide();
 });

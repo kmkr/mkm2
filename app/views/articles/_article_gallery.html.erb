@@ -1,6 +1,5 @@
 <% if @article.assets.size > 0 %>
   <%= javascript_include_tag 'gallery/jquery.ad-gallery' %>
-  <script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 
   <%= javascript_include_tag 'gallery_boot' %>
   <div id="article_galleryitems">
@@ -17,9 +16,4 @@
       </div>
     </div>
   </div>
-  <script>
-document.observe("dom:loaded", function() {
-    jQuery('#article_galleryitems').hide();
-    });
-  </script>
 <% end %>
