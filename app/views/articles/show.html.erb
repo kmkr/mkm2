@@ -37,7 +37,7 @@
   <div id="article_details">
 
     <p>Denne artikkelen omhandler <%= h @article.country.title %> og er
-    datert <%= getArticleStartEndDate(@article).downcase %>. Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
+    datert <%= getArticleStartEndDate(@article).downcase %>. Artikkelen har <%= pluralize @article.assets.size, 'bilde', 'bilder' %> i galleriet. Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
     
   </div>
   
