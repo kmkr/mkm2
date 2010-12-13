@@ -1,2 +1,3 @@
-page.insert_html(:top, 'galleryitems', { :partial => 'editable_galleryitem_hardcoded_html', :locals => { :asset => @asset, :asset_number => @article.assets.size + 1 }})
+page.insert_html(:bottom, 'sortable', { :partial => 'editable_galleryitem_hardcoded_html', :locals => { :asset => @asset, :asset_number => @article.assets.size + 1 }})
+page << "jQuery('#drop_area').effect('transfer', { to: '##{dom_id(@asset)}', className: 'ui-effects-transfer' }, 1000);"
 page[dom_id(@asset)].visual_effect :highlight

@@ -80,3 +80,8 @@ div#flash_error, div#errorExplanation {
 .bold {
   font-weight: bold;
 }
+
+.ui-effects-transfer {
+  background-color: #CFD4E6;
+  border: 1px solid #000000;
+}

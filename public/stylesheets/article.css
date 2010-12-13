@@ -95,11 +95,22 @@ div#progressbar {
 }
 
 div#drop_area {
-  width: 70%;
-  margin: 0 auto;
-  height: 50px;
-  border: 0.07em solid #ddd;
+  width: 40%;
+  margin: 15px auto;
+  margin-bottom: 30px;
+  height: 80px;
+  border: 0.07em dashed #888;
   text-align: center;
+}
+
+div#drop_area.dragenter {
+  border: 0.07em solid #888;
+}
+
+div#drop_help {
+  float: left;
+  margin: 40px 10px 0 0;
+  font-size: 0.7em;
 }
 
 div#galleryitems ul {

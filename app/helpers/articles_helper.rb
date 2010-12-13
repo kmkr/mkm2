@@ -36,7 +36,7 @@ module ArticlesHelper
 
   def getArticlePublishedDetails(article)
     if article.published_date
-      "Publisert for #{time_ago_in_words(article.published_date)} siden."
+      "Artikkelen ble publisert for #{time_ago_in_words(article.published_date)} siden."
     else
       "Artikkelen er ikke publisert. #{link_to 'Trykk', publish_article_path(article)} for å publisere."
     end

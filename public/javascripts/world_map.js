@@ -23,7 +23,7 @@ document.observe("dom:loaded", function() {
         clearTimeout(timeout);
     });
     $('articles_countries').observe('mouseout', function() {
-            timeout=setTimeout("jQuery('#articles_countries').effect('explode')", 4000);
+            timeout=setTimeout("jQuery('#articles_countries').hide('explode', 600)", 4000);
     });
 
     var url = '/countries/info'
@@ -49,7 +49,7 @@ document.observe("dom:loaded", function() {
           });
 
           countryMarker.events.register("mouseout", countryMarker, function(e) {
-            timeout=setTimeout("jQuery('#articles_countries').effect('explode')", 4000);
+            timeout=setTimeout("jQuery('#articles_countries').hide('explode', 600)", 4000);
           });
         });
       }

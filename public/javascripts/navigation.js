@@ -15,7 +15,7 @@ jQuery(function() {
     var element = jQuery(el);
     var ulElem = element.children('.articles').first();
     element.mouseenter(function() {
-      ulElem.effect('slide');
+      ulElem.show();
     });
 
     element.mouseleave(function() {

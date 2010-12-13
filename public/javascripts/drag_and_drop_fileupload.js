@@ -1,45 +1,73 @@
 document.observe("dom:loaded", function() {
   var dropArea = $("drop_area");
+  var filesWaiting = [];
+  var ongoingTransfer = false;
+  var completedTransfers = 0;
+  var totalNumFiles = 0;
+  jQuery( "#progressbar" ).progressbar({ value: 0 });
+  jQuery("#progressbar").hide();
+
+  function transferFile(postData) {
+     jQuery.ajax({
+       type: "POST",
+       url: "/assets",
+       data: postData,
+       success: function(msg){
+          updateCompletion(1);
+         if (filesWaiting.length > 0) {
+            var file = filesWaiting.shift();
+            transferFile(file);
+         } else {
+            ongoingTransfer = false;
+         }
+       }
+    });
+  }
+
+  function updateCompletion(num) {
+    completedTransfers += num;
+    var newValue = (completedTransfers/totalNumFiles)*100;
+    jQuery( "#progressbar" ).progressbar( "option", "value", newValue);
+
+    if (newValue == 100) {
+      jQuery("#progressbar").hide('bounce', 1000);
+      jQuery("#statusupdate").html('Lastet opp ' + totalNumFiles + " fil(er)");
+      jQuery("#statusdiv").effect('highlight');
+    }
+  }
 
   function traverseFiles (files) {
-    var li,
-    img,
-    file,
-    dataUrlReader,
-    fileInfo, completed;
-    jQuery( "#progressbar" ).progressbar({
-      value: 0
-    });
-    completed = 0;
+    var li, img, file, fileInfo; 
+    totalNumFiles += files.length;
+    updateCompletion(0); // Fire change 
 
     for (var i=0, il=files.length; i<il; i++) {
-      jQuery('#progressbar').effect('appear');
+      jQuery('#progressbar').show();
       file = files[i];
       if (!file.type.match('image.*')) {
         alert("Fil nummer " + i + " ser ikke ut til å være et bilde");
         continue;
       }
 
-
-      binaryReader = new FileReader();
-      var imageBinary;
+      var binaryReader = new FileReader();
       binaryReader.onload = (function (theImg) {
         return function (evt) {
-           imageBinary = evt.target.result;
+
+           var imageBinary = evt.target.result;
           // looks like the image is ok
           // send it to the server
-          var encodedData = jQuery.URLEncode(jQuery.base64Encode(imageBinary));
+          var base64Value = jQuery.base64Encode(imageBinary);
+          var encodedData = encodeURIComponent(base64Value);
           var actionPath = jQuery('#article_form').attr('action').split('/');
           var article_id = actionPath[actionPath.length - 1] * 1;
-          jQuery.ajax({
-            type: "POST",
-            url: "/assets",
-            data: "article_id="+article_id+"&binary_data="+encodedData,
-            success: function(msg){
-              completed += 1;
-              jQuery( "#progressbar" ).progressbar( "option", "value", (completed/files.length)*100);
-            }
-         });
+          var postData = "article_id="+article_id+"&binary_data="+encodedData;
+
+          if (ongoingTransfer == true) {
+            filesWaiting.push(postData);
+          } else {
+            ongoingTransfer = true;
+            transferFile(postData);
+         }
         };
       }(img));
       binaryReader.readAsBinaryString(file);
@@ -56,7 +84,7 @@ document.observe("dom:loaded", function() {
         }, false);
 
     dropArea.observe("dragenter", function (evt) {
-          this.className = "over";
+          this.className = "dragenter";
           evt.preventDefault();
           evt.stopPropagation();
         }, false);
