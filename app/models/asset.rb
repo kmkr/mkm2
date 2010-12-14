@@ -4,9 +4,9 @@ class Asset < ActiveRecord::Base
   belongs_to :article
   has_attached_file :galleryitem, 
     :styles => {
-      :thumb => '150x150>',
-      :medium => '600x600>',
-      :large => '1280x1280>'
+      :thumb => '250x250>',
+      :medium => '700x700>',
+      :large => '1480x1480>'
     },
     :storage => :ftp,
     :path => "/:attachment/:id/:style/:filename",

@@ -34,3 +34,15 @@ div#articles_countries h1 {
 div#articles_countries ul {
   list-style: none;
 }
+
+div#map_random_images_wrap {
+}
+
+div#random_image {
+  clear: left;
+  top: 5px;
+  left: 30px;
+  float: left;
+  max-width: 200px;
+  max-height: 200px;
+}

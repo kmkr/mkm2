@@ -9,6 +9,10 @@
       <%= asset.text_field :galleryitem_caption %>
     </p>
     <p>
+      <%= asset.label :candidate_for_random, 'Tilfeldig bilde?' %>
+      <%= asset.check_box :candidate_for_random %>
+    </p>
+    <p>
       <%= asset.label :_destroy, 'Slette bilde?' %>
       <%= asset.check_box :_destroy %>
     </p>
