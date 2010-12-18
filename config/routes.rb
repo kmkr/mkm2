@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :countries, :collection => { :info => :get }
 
   map.resources :articles, :member => { :publish => :get, :preview => :post }, :collection => { :preview => :post } do |article|
-    article.resources :assets
+    article.resources :assets, :comments
   end
    # :has_many => :comments, :member => { :publish => :get, :preview => :post }
   #:collection => { :preview => :post },

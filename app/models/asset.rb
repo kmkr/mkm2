@@ -14,9 +14,14 @@ class Asset < ActiveRecord::Base
 
   def dataupload=(base64EncodedFile) 
     binary = Base64.decode64 base64EncodedFile
-    writeFile = File.open('/tmp/upload.gif', 'w') { |f| f.write(binary) }
-    readFile = File.open('/tmp/upload.gif', 'r')
+    writeFile = File.open('/tmp/upload', 'w') { |f| f.write(binary) }
+    readFile = File.open('/tmp/upload', 'r')
     self.galleryitem = readFile
+  end
+
+  def self.selected_best_images_sorted_randomly
+    random_assets = Asset.find_all_by_candidate_for_random true  
+    random_assets.shuffle
   end
 
 end

@@ -12,16 +12,4 @@ class AssetsController < ApplicationController
     end
   end
 
-  def random
-    random_assets = Asset.find_all_by_candidate_for_random true  
-    json = ""
-    random_assets.each do |asset|
-      json = json + "{\"asset\":\"#{asset.galleryitem.url(:thumb)}\"},"
-    end
-
-    json = "[" + json.chop + "]"
-
-    render :json => json
-  end
-
 end
