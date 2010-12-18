@@ -1,7 +1,15 @@
 <div class="clearboth"></div>
-<div id="map_random_images_wrap">
-  <div id="random_image">1</div>
-<div id="world_map"></div>
-</div>
 <div id="articles_countries" style="display: none;"></div>
-<%= javascript_include_tag 'world_map', 'random_image_shuffle' %>
+
+
+<div id="random_img_wrapper">
+  <div id="random_imgs">
+  <% @random_assets.each do |asset| %>
+    <%= image_tag(asset.galleryitem.url(:thumb)) %>
+  <% end %>
+  </div>
+</div>
+
+
+<div id="world_map"></div>
+<%= javascript_include_tag 'world_map' %>

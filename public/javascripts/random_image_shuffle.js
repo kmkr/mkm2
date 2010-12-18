@@ -1,45 +1,50 @@
-jQuery(function() {
-  var randomImgDiv = jQuery('#random_image'); 
-  var randomImages = [];
-  var currentCounter = 0;
-  var url = '/assets/random';
-    randomImgDiv.animate({
-      opacity: 0,
-    }, 1);
-  new Ajax.Request(url, {
-    method: 'get',
-    requestHeaders: ['Accept', 'application/json'],
-    onSuccess: function(transport) {
-      jQuery.each(transport.responseJSON, function(i, val) {
-        randomImages.push(val.asset); 
-      });
-      loopRandomImages();
-    }
+jQuery(function() { 
+  // between -5 and 5 is the key
+  jQuery('#random_imgs img').each(function(idx, element) {
+    jQuery(element).rotate(Math.random()*10 -5); 
+  });
+});
+
+jQuery(function() { //perform actions when DOM is ready
+  var z = 0; //for setting the initial z-index's
+  var inAnimation = false; //flag for testing if we are in a animation
+
+  jQuery('#random_imgs canvas, #random_imgs img').each(function(idx, element) { //set the initial z-index's
+    z++; //at the end we have the highest z-index value stored in the z variable
+    jQuery(this).css('z-index', z); //apply increased z-index to <img>
   });
 
+  function swapFirstLast(isFirst) {
+    if(inAnimation) return false; //if already swapping pictures just return
+    else inAnimation = true; //set the flag that we process a image
 
-  function loopRandomImages() {
-    switchImage();
+    var processZindex, direction, newZindex, inDeCrease; //change for previous or next image
+
+    if(isFirst) { processZindex = z; direction = '-'; newZindex = 1; inDeCrease = 1; } //set variables for "next" action
+    else { processZindex = 1; direction = ''; newZindex = z; inDeCrease = -1; } //set variables for "previous" action
+
+    jQuery('#random_imgs canvas, #random_imgs img').each(function() { //process each image
+      if(jQuery(this).css('z-index') == processZindex) { //if its the image we need to process
+        jQuery(this).animate({ 'top' : direction + jQuery(this).height() + 'px' }, 'slow', function() { //animate the img above/under the gallery (assuming all pictures are equal height)
+          jQuery(this).css('z-index', newZindex) //set new z-index
+            .animate({ 'top' : '0' }, 'slow', function() { //animate the image back to its original position
+              inAnimation = false; //reset the flag
+            });
+        });
+      } else { //not the image we need to process, only in/de-crease z-index
+        jQuery(this).animate({ 'top' : '0' }, 'slow', function() { //make sure to wait swapping the z-index when image is above/under the gallery
+          jQuery(this).css('z-index', parseInt(jQuery(this).css('z-index')) + inDeCrease); //in/de-crease the z-index by one
+        });
+      }
+    });
+
+    return false; //don't follow the clicked link
   }
 
-  function switchImage() {
-    var str = "<img src=\"" + randomImages[currentCounter] + "\" />";
-    randomImgDiv.html(str);
 
-    setTimeout(switchImage, 10500);
-    currentCounter++;
-
-    randomImgDiv.animate({
-      opacity: 1,
-    }, 3000);
-    randomImgDiv.animate({
-      opacity: 1,
-    }, 2000);
-    randomImgDiv.animate({
-      opacity: 0,
-    }, 3000);
-    if (currentCounter == randomImages.length-1) {
-      currentCounter = 0;
-    }
+  setInterval(swapImg, 8000);
+  function swapImg() {
+    swapFirstLast(true);
   }
+
 });
