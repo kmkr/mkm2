@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
 
   def initialize
     @continents = Continent.all
+    @random_assets = Asset.find_all_by_candidate_for_random true  
   end
 end
