@@ -281,6 +281,7 @@ Wilq32.PhotoEffect.prototype={
 			this._canvas.style.left = -this._widthAddHalf + "px";
 			this._canvas.style.top = -this._heightAddHalf + "px";
 			this._canvas.Wilq32 = this._temp.Wilq32;
+      console.log("width %s height %s left: %s top: %s", this._width, this._height, -this._widthAddHalf, -this._heightAddHalf); 
 			
 			this._temp.appendChild(this._canvas);
 			this._temp.style.width=this._width+"px";
@@ -348,6 +349,9 @@ Wilq32.PhotoEffect.prototype={
 		}
 		else if (supportedCSS)
 		return function(angle){
+			this._img.style['padding']="10px 10px 25px 10px";
+			this._img.style['border']="1px solid black";
+			this._img.style['background']="#fff";
 			this._img.style[supportedCSS]="rotate("+angle+"deg)";
 		}
 		else 
@@ -357,8 +361,9 @@ Wilq32.PhotoEffect.prototype={
 			if (!this._img.width||typeof angle!="number") return;
 			angle=(angle%360)* rad;
 			// clear canvas	
-			this._canvas.width = this._width+this._widthAdd;
-			this._canvas.height = this._height+this._heightAdd;
+			this._canvas.width = this._width+this._widthAdd + 20;
+			this._canvas.height = this._height+this._heightAdd + 55;
+
 						
 			// REMEMBER: all drawings are read from backwards.. so first function is translate, then rotate, then translate, translate..
 			this._cnv.translate(this._widthAddHalf,this._heightAddHalf);	// at least center image on screen
@@ -366,7 +371,19 @@ Wilq32.PhotoEffect.prototype={
 			this._cnv.rotate(angle);										// rotate image
 			this._cnv.translate(-this._widthHalf,-this._heightHalf);		// move image to its center, so we can rotate around its center
 			this._cnv.scale(this._aspectW,this._aspectH); // SCALE - if needed ;)
-			this._cnv.drawImage(this._img, 0, 0);							// First - we draw image
+
+      this._cnv.fillStyle = '#ffffff';
+      this._cnv.lineWidth = 0.8;
+      this._cnv.strokeSTyle = "#ddd";
+      this._cnv.moveTo(0,0);
+      this._cnv.lineTo(this._width + 20, 0); 
+      this._cnv.lineTo(this._width + 20, this._height + 55); 
+      this._cnv.lineTo(0, this._height + 55);
+      this._cnv.lineTo(0, 0);
+      this._cnv.fill();
+      this._cnv.stroke();
+      this._cnv.closePath();
+			this._cnv.drawImage(this._img, 10, 10);							// First - we draw image
 		}
 
 	})()

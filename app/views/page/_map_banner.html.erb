@@ -5,7 +5,9 @@
 <div id="random_img_wrapper">
   <div id="random_imgs">
   <% @random_assets.each do |asset| %>
-    <%= image_tag(asset.galleryitem.url(:thumb)) %>
+    <span class="random_img">
+      <%= image_tag(asset.galleryitem.url(:thumb)) %>
+    </span>
   <% end %>
   </div>
 </div>
