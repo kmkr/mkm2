@@ -39,7 +39,7 @@ div#articles_countries ul {
 #random_imgs { position: relative; }
 #random_imgs img { position: absolute; top: 0; left: 0; }
 
-#loader { position: absolute; top: 0; left:0; height: 458px; width: 100%; background: url(../images/ajax-loader.gif) white no-repeat center center; z-index: 9999; }
+#loader { position: absolute; top: 0; left:0; height: 458px; width: 100%; background: url(/images/loader.gif) white no-repeat center center; z-index: 9999; }
 
 div#random_imgs canvas, div#random_imgs img {
   float: left;
@@ -48,3 +48,5 @@ div#random_imgs canvas, div#random_imgs img {
   max-width: 200px;
   max-height: 200px;
 }
+
+

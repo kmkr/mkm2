@@ -25,14 +25,14 @@ jQuery(function() { //perform actions when DOM is ready
 
     jQuery('#random_imgs canvas, #random_imgs img').each(function() { //process each image
       if(jQuery(this).css('z-index') == processZindex) { //if its the image we need to process
-        jQuery(this).animate({ 'top' : direction + jQuery(this).height() + 'px' }, 'slow', function() { //animate the img above/under the gallery (assuming all pictures are equal height)
+        jQuery(this).animate({ 'top' : direction + jQuery(this).height() + 'px' }, 300, function() { //animate the img above/under the gallery (assuming all pictures are equal height)
           jQuery(this).css('z-index', newZindex) //set new z-index
-            .animate({ 'top' : '0' }, 'slow', function() { //animate the image back to its original position
+            .animate({ 'top' : '0' }, 300, function() { //animate the image back to its original position
               inAnimation = false; //reset the flag
             });
         });
       } else { //not the image we need to process, only in/de-crease z-index
-        jQuery(this).animate({ 'top' : '0' }, 'slow', function() { //make sure to wait swapping the z-index when image is above/under the gallery
+        jQuery(this).animate({ 'top' : '0' }, 300, function() { //make sure to wait swapping the z-index when image is above/under the gallery
           jQuery(this).css('z-index', parseInt(jQuery(this).css('z-index')) + inDeCrease); //in/de-crease the z-index by one
         });
       }
