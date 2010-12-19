@@ -18,9 +18,7 @@ jQuery(function () {
     // set the mouseover and mouseout on both element
     jQuery([trigger.get(0), popup.get(0)]).mouseenter(function () {
 
-      console.log("zidx %s maxZidx %s", jQuery(this).css("z-index"), maxZIndex);
       if (jQuery(this).css("z-index") != maxZIndex) { return; }
-      console.log("over");
       // stops the hide event if we move from the trigger to the popup element
       if (hideDelayTimer) clearTimeout(hideDelayTimer);
 
@@ -48,7 +46,6 @@ jQuery(function () {
         });
       }
     }).mouseleave(function () {
-    console.log("leave");
       // reset the timer if we get fired again - avoids double animations
       if (hideDelayTimer) clearTimeout(hideDelayTimer);
       
