@@ -5,9 +5,17 @@
 <div id="random_img_wrapper">
   <div id="random_imgs">
   <% @random_assets.each do |asset| %>
+    <div class="bubbleInfo">
     <span class="random_img">
       <%= image_tag(asset.galleryitem.url(:thumb)) %>
     </span>
+    <div class="popup">
+      <% unless asset.galleryitem_caption.blank? %>
+        <p class="italic">"<%= h asset.galleryitem_caption %>"</p>
+      <% end %>
+      <p>Bildet tilhører <%= link_to (h asset.article.title), article_path(asset.article) %></p>
+    </div>
+    </div>
   <% end %>
   </div>
 </div>

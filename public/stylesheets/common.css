@@ -85,3 +85,23 @@ div#flash_error, div#errorExplanation {
   background-color: #CFD4E6;
   border: 1px solid #000000;
 }
+
+.popup {
+  position: absolute;
+  background: #fcfaf1;
+  border: 0.07em solid #ebeae1;
+  display: none; 
+  width: 200px;
+  z-index: 50;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.popup p {
+  font-size: 0.8em;
+}
+
+.italic {
+  font-style: italic;
+}
