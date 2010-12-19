@@ -7,7 +7,7 @@
   <% @random_assets.each do |asset| %>
     <div class="bubbleInfo">
     <span class="random_img">
-      <%= image_tag(asset.galleryitem.url(:thumb)) %>
+      <%= image_tag(asset.galleryitem.url(:thumb), :alt => asset.galleryitem_caption) %>
     </span>
     <div class="popup">
       <% unless asset.galleryitem_caption.blank? %>

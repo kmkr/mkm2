@@ -376,13 +376,16 @@ Wilq32.PhotoEffect.prototype={
       this._cnv.strokeSTyle = "#ddd";
       this._cnv.moveTo(0,0);
       this._cnv.lineTo(this._width + 20, 0); 
-      this._cnv.lineTo(this._width + 20, this._height + 55); 
-      this._cnv.lineTo(0, this._height + 55);
+      this._cnv.lineTo(this._width + 20, this._height + 65); 
+      this._cnv.lineTo(0, this._height + 65);
       this._cnv.lineTo(0, 0);
       this._cnv.fill();
       this._cnv.stroke();
       this._cnv.closePath();
+      this._cnv.font = 'sans-serif 5px';
 			this._cnv.drawImage(this._img, 10, 10);							// First - we draw image
+      this._cnv.fillStyle = '#777';
+      this._cnv.fillText(jQuery(this._img).attr("alt"), 10, this._height + 45, this._width);
 		}
 
 	})()

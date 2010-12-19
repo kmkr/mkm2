@@ -2,14 +2,24 @@ jQuery(function() {
   jQuery('.continent').each(function(index, el) {
     var element = jQuery(el);
     var ulElem = element.children('.countries').first();
+    var animationOn = false;
     element.mouseenter(function() {
-      ulElem.slideDown();
+      if (!animationOn) {
+        animationOn = true;
+        ulElem.slideDown(300, 'swing', function() {
+          animationOn = false;
+        });
+      }
     });
 
     element.mouseleave(function() {
-      ulElem.slideUp();
+      animationOn = true;
+      ulElem.slideUp(300, 'swing', function() {
+        animationOn = false;
+      });
     });
   });
+
 
   jQuery('.country').each(function(index, el) {
     var element = jQuery(el);
