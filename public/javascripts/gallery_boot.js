@@ -48,7 +48,7 @@ var galleries = jQuery('.ad-gallery').adGallery({
     // This gets fired right before old_image is about to go away, and new_image
     // is about to come in
     beforeImageVisible: function(new_image, old_image) {
-      // Do something wild!
+      // todo: implementer hashchange
     }
   }
 });
