@@ -15,7 +15,7 @@ jQuery(function () {
     var popup = jQuery('.popup', this).css('opacity', 0);
 
     // set the mouseover and mouseout on both element
-    jQuery([trigger.get(0), popup.get(0)]).mouseover(function () {
+    jQuery([trigger.get(0), popup.get(0)]).mouseenter(function () {
       // stops the hide event if we move from the trigger to the popup element
       if (hideDelayTimer) clearTimeout(hideDelayTimer);
 
@@ -42,7 +42,7 @@ jQuery(function () {
           shown = true;
         });
       }
-    }).mouseout(function () {
+    }).mouseleave(function () {
       // reset the timer if we get fired again - avoids double animations
       if (hideDelayTimer) clearTimeout(hideDelayTimer);
       

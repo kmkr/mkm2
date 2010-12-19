@@ -96,6 +96,9 @@ div#flash_error, div#errorExplanation {
   -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 5px;
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px#ccc;
+  box-shadow: 0 0 5px #ccc;
 }
 
 .popup p {
