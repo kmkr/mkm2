@@ -36,9 +36,7 @@ jQuery(function() {
     var position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
     longitudeField.val(position.lon);
     latitudeField.val(position.lat);
-    console.log(articleMap.getZoom());
     zoomField.val(articleMap.getZoom());
-    console.log(zoomField);
     markers.clearMarkers();
     markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
   });

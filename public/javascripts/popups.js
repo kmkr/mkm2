@@ -7,7 +7,7 @@ jQuery(function () {
     // options
     var distance = 10;
     var time = 250;
-    var hideDelay = 500;
+    var hideDelay = 900;
 
     var hideDelayTimer = null;
 
@@ -30,8 +30,8 @@ jQuery(function () {
 
         // reset position of popup box
         popup.css({
-          top: '30px',
-          left: '-170px',
+          top: '80px',
+          left: '-150px',
           display: 'block' // brings the popup back in to view
         })
 
@@ -64,4 +64,8 @@ jQuery(function () {
       }, hideDelay);
     });
   });
+
+  
+
 });
+

@@ -279,7 +279,7 @@ Wilq32.PhotoEffect.prototype={
 			this._canvas.setAttribute('width',this._width);
 			//this._canvas.style.position="relative";
 			this._canvas.style.left = -this._widthAddHalf + "px";
-			this._canvas.style.top = -this._heightAddHalf + "px";
+			//this._canvas.style.top = -this._heightAddHalf + "px";
 			this._canvas.Wilq32 = this._temp.Wilq32;
 			
 			this._temp.appendChild(this._canvas);

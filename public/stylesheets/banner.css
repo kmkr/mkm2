@@ -36,17 +36,17 @@ div#articles_countries ul {
 }
 
 #random_img_wrapper { position: relative; float: left; margin-top: 50px; }
-#random_imgs { position: relative; }
-#random_imgs img { position: absolute; top: 0; left: 0; }
 
-#loader { position: absolute; top: 0; left:0; height: 458px; width: 100%; background: url(/images/loader.gif) white no-repeat center center; z-index: 9999; }
-
+div#random_imgs {
+  position: relative;
+  top: -62px;
+}
 div#random_imgs canvas, div#random_imgs img {
   float: left;
   position: absolute;
   margin-left: 30px;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 

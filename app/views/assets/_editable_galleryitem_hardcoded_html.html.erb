@@ -10,10 +10,16 @@
   </p>
 
   <p>
+    <label for="article_assets_attributes_<%= asset_number %>_candidate_for_random">Tilfeldig bilde?</label>
+    <input id="article_assets_attributes_<%= asset_number %>_candidate_for_random" name="article[assets_attributes][<%= asset_number %>][candidate_for_random]" type="checkbox">
+  </p>
+
+  <p>
     <label for="article_assets_attributes_<%= asset_number %>__destroy">Slette bilde?</label>
     <input name="article[assets_attributes][<%= asset_number %>][_destroy]" value="0" type="hidden">
     <input id="article_assets_attributes_<%= asset_number %>__destroy" name="article[assets_attributes][<%= asset_number %>][_destroy]" value="1" type="checkbox">
   </p>
+
 </li>
 
 <div class="clearboth"></div>

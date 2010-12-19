@@ -13,10 +13,12 @@
   <body>
     <div id="mainwrap">
       <div id="banner">
-        <div style="float: left;">
-          <p>
-            <%= link_to 'Hjem', root_url %>
-            <%= link_to 'Ny artikkel', new_article_path %>
+        <div>
+          <p style="float: right;">
+            <%= link_to "<span class='ui-icon ui-icon-home'></span>", root_url %>
+          </p>
+          <p style="float: right;">
+            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path %>
           </p>
         </div>
         <%= render :partial => 'page/map_banner' %>
