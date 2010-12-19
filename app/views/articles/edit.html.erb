@@ -2,7 +2,6 @@
   <fieldset>
     <legend>Endre artikkel</legend>
     <% form_for @article, :html => {:id => 'article_form', :multipart => true } do |f| %>
-      <input type="hidden" id="article_zoom_level" value="<%= @article.country.zoom_level %>" />
       <%= render :partial => 'form', :locals => {:f => f} %>
     <% end %>
   </fieldset>

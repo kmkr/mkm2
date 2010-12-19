@@ -1,4 +1,4 @@
-document.observe("dom:loaded", function() {
+jQuery(function() {
   var mapOpen = false;
   var articleMap, layer, position;
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
@@ -8,9 +8,9 @@ document.observe("dom:loaded", function() {
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
   var options = { projection: 'EPSG:4326', theme: null}
-  var longitudeField = $("article_longitude");
-  var latitudeField = $("article_latitude");
-  var zoomField = $("article_zoom_level");
+  var longitudeField = jQuery("#article_longitude");
+  var latitudeField = jQuery("#article_latitude");
+  var zoomField = jQuery("#article_zoom_level");
 
   articleMap = new OpenLayers.Map( 'country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
@@ -19,14 +19,14 @@ document.observe("dom:loaded", function() {
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
 
-  var longitudeValue = Form.Element.getValue(longitudeField);
-  var latitudeValue = Form.Element.getValue(latitudeField);
-  var zoom_level = Form.Element.getValue(zoomField);
+  var longitudeValue = longitudeField.val();
+  var latitudeValue = latitudeField.val();
+  var zoom_level = zoomField.val();
   if (longitudeValue > 0) {
     var position = new OpenLayers.LonLat(longitudeValue, latitudeValue);
     markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
-    // Hvorfor virker ikke denne ? :-(
-    Effect.Appear('country_map');
+    // Hvorfor virker ikke denne ? 
+    jQuery('#country_map').show('fade');
     //articleMap.setCenter(new OpenLayers.LonLat(longitudeValue*1, latitudeValue*1).transform(epsgProj, articleMap.getProjectionObject()), zoom_level, false, true);
   }
 
@@ -34,8 +34,11 @@ document.observe("dom:loaded", function() {
   articleMap.events.register("click", articleMap, function(e) {
     var mapPos = this.events.getMousePosition(e);
     var position = articleMap.getLonLatFromPixel(mapPos).transform(articleMap.getProjectionObject(), epsgProj);
-    Form.Element.setValue(longitudeField, position.lon);
-    Form.Element.setValue(latitudeField, position.lat);
+    longitudeField.val(position.lon);
+    latitudeField.val(position.lat);
+    console.log(articleMap.getZoom());
+    zoomField.val(articleMap.getZoom());
+    console.log(zoomField);
     markers.clearMarkers();
     markers.addMarker(new OpenLayers.Marker(position.transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
   });
@@ -58,7 +61,7 @@ document.observe("dom:loaded", function() {
       }
     });
     if (mapOpen == false) {
-      Effect.Appear('country_map');
+      jQuery('#country_map').show('fade');
       mapOpen = true;
     }
   });

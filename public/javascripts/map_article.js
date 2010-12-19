@@ -24,6 +24,6 @@ document.observe("dom:loaded", function() {
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);
   var position = new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject());
-  articleMap.setCenter(position, zoom_level*1 + 1, false, true);
+  articleMap.setCenter(position, zoom_level, false, true);
     markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
 });
