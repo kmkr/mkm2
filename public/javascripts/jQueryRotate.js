@@ -281,7 +281,6 @@ Wilq32.PhotoEffect.prototype={
 			this._canvas.style.left = -this._widthAddHalf + "px";
 			this._canvas.style.top = -this._heightAddHalf + "px";
 			this._canvas.Wilq32 = this._temp.Wilq32;
-      console.log("width %s height %s left: %s top: %s", this._width, this._height, -this._widthAddHalf, -this._heightAddHalf); 
 			
 			this._temp.appendChild(this._canvas);
 			this._temp.style.width=this._width+"px";
