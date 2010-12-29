@@ -1,6 +1,7 @@
 div#navigation {
   width: 100%;
   z-index: 1000;
+  font-size: 1.2em;
 }
 
 div#navigation ul {
@@ -15,6 +16,11 @@ div#navigation li {
   border: 0.07em solid #ccc;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+div#navigation li span {
+  position: absolute;
+  right: 12px;
 }
 div#navigation li.continent {
   display: inline-block;
