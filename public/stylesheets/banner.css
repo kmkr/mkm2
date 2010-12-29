@@ -1,6 +1,16 @@
-div#banner{
-	height: 330px;
+/* logo and banner content */
+div#banner {
+ background-image: url('/images/logo.png');
+ background-repeat: no-repeat;
+ padding: 150px 100px 0 100px;
+	height: 350px;
   position: relative;
+}
+
+div#world_map_wrapper {
+  margin: 0 auto;
+  width: 480px;
+  height: 275px;
 }
 
 div#world_map {
@@ -23,6 +33,7 @@ div#articles_countries {
 
 div#articles_countries div, div#articles_countries ul {
   padding: 10px;
+  clear: both;
 }
 
 
@@ -44,9 +55,7 @@ div#random_imgs {
 div#random_imgs canvas, div#random_imgs img {
   float: left;
   position: absolute;
-  margin-left: 30px;
+  margin-left: 12px;
   max-width: 300px;
   max-height: 300px;
 }
-
-

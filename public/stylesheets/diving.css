@@ -1,7 +1,8 @@
 /* http://www.colourlovers.com/palette/378098/blue_celebration */
+/* http://www.colourlovers.com/palette/1392490/Dark_Graffiti */
 body {
   background-color: #EDF7FF;
-  background: -moz-linear-gradient(top,  #C9E7FF,  #EDF7FF);
+  background: -moz-linear-gradient(top,  #ecf8ff, #daf2ff);
   background: -webkit-gradient(linear, left top, left bottom, from(#C9E7FF), to(#EDF7FF));
 }
 
@@ -20,12 +21,12 @@ div#articles_countries div {
 }
 
 a:link, a:visited {
-  color: #107FC9;
+  color: #AD3481;
   font-style: none;
 }
 
 a:hover {
-  color: #025D8C;
+  color: #5293B9;
 }
 
 div.dragenter {

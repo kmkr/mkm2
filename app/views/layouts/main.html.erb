@@ -11,21 +11,23 @@
     <title><%= 'MKM :: ' %><%= h @title %></title>
   </head>
   <body>
-    <div id="mainwrap">
+  <div id="outermostWrap">
       <div id="banner">
         <div>
           <p style="float: right;">
             <%= link_to "<span class='ui-icon ui-icon-home'></span>", root_url, :title => 'Hjem' %>
           </p>
           <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path, 'Lag ny artikkel' %>
+            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path, :title => 'Lag ny artikkel' %>
           </p>
         </div>
         <%= render :partial => 'page/map_banner' %>
         <div id="navigation">
           <%= render :partial => 'continent/continent_navigation', :locals => { :continents => @continents } %>
+          <div class="clearboth"></div>
         </div>
       </div>
+    <div id="mainwrap">
       <div id="content">
         <% if flash[:error] %>
           <div id="flash_error">
@@ -43,6 +45,7 @@
         <%= yield :layout %>
         <div class="clearboth"></div>
       </div>
+    </div>
     </div>
   </body>
 </html>
