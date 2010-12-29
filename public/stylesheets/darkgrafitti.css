@@ -1,9 +1,8 @@
-/* http://www.colourlovers.com/palette/378098/blue_celebration */
 /* http://www.colourlovers.com/palette/1392490/Dark_Graffiti */
 body {
-  background-color: #EDF7FF;
+  background-color: #daf2ff;
   background: -moz-linear-gradient(top,  #ecf8ff, #daf2ff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#C9E7FF), to(#EDF7FF));
+  background: -webkit-gradient(linear, left top, left bottom, from(#ecf8ff), to(#daf2ff));
 }
 
 div#articles_countries {
@@ -14,10 +13,10 @@ div#articles_countries {
 }
 
 div#articles_countries div {
-  background-color: #0A93FC;
-  background: -moz-linear-gradient(top,  #73C2FF,  #EDF7FF);
-  background: -webkit-gradient(linear, left top, left bottom, from(#73C2FF), to(#EDF7FF));
-  border-bottom: 0.07em #73C2FF solid;
+  background-color: #DD0858;
+  background: -moz-linear-gradient(top,  #DD0858,  #ffc4da);
+  background: -webkit-gradient(linear, left top, left bottom, from(#DD0858), to(#ffc4da));
+  border-bottom: 0.07em #DD0858 solid;
 }
 
 a:link, a:visited {
