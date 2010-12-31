@@ -1,5 +1,6 @@
 class AssetsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
+  before_filter :check_authorization
 
   def create
     @article = Article.find(params[:article_id])

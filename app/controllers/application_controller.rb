@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  # Scrub sensitive parameters from your log
+  # Scrub parameters from the log
   filter_parameter_logging :password, :binary_data
 
   def initialize
@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     @random_assets = Asset.selected_best_images_sorted_randomly
   end
 
-nil
   def check_authorization
     begin
       user = User.find(session[:user_id])
