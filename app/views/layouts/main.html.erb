@@ -15,10 +15,16 @@
       <div id="banner">
         <div>
           <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-home'></span>", root_url, :title => 'Hjem' %>
+            <%= link_to "<span class='ui-icon ui-icon-home'></span>", root_url, :title => 'Home' %>
           </p>
           <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path, :title => 'Lag ny artikkel' %>
+            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path, :title => 'Create new article' %>
+          </p>
+          <p style="float: right;">
+            <%= link_to "<span class='ui-icon ui-icon-locked'></span>", login_path, :title => 'Log in' %>
+          </p>
+          <p style="float: right;">
+            <%= link_to "<span class='ui-icon ui-icon-unlocked'></span>", logout_path, :title => 'Log out' %>
           </p>
         </div>
         <%= render :partial => 'page/map_banner' %>
