@@ -14,4 +14,18 @@ class ApplicationController < ActionController::Base
     @continents = Continent.all
     @random_assets = Asset.selected_best_images_sorted_randomly
   end
+
+nil
+  def check_authorization
+    begin
+      user = User.find(session[:user_id])
+    rescue ActiveRecord::RecordNotFound
+      reset_session
+    end 
+
+    unless user 
+      flash[:notice] = "Please log in"
+      redirect_to(login_path)
+    end 
+  end
 end

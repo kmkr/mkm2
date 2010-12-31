@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   layout :choose_layout
+  before_filter :check_authorization, :except => [ :show, :preview, :choose_layout ]
 
   def new
     @article = Article.new
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     @countries = Country.all
     if @article.save
-      flash[:notice] = "Artikkel opprettet, på tide å laste opp bilder!"
+      flash[:notice] = "Article was successfully created, time to upload some pictures!"
       redirect_to edit_article_url(@article, :anchor => 'tabs-2')
     else
     logger.debug @article.errors.size
@@ -37,10 +38,10 @@ class ArticlesController < ApplicationController
 
    # publish_article @article if @article.published?
     if @article.update_attributes(params[:article])
-      flash[:notice] = "Oppdaterte artikkel"
+      flash[:notice] = "Article updated"
       redirect_to @article
     else
-      flash[:error] = "Fikk ikke oppdatert artikkel"
+      flash[:error] = "Unable to update article"
       redirect_to root_url
     end
   end
@@ -52,7 +53,7 @@ class ArticlesController < ApplicationController
     article = Article.find(params[:id])
     publish_article(article)
     article.save
-    flash[:notice] = "Artikkel publisert!"
+    flash[:notice] = "Article #{article.title} is now published!"
     redirect_to article
   end
 
