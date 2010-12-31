@@ -5,17 +5,17 @@
   <span class="left"><img alt="<%= @asset.galleryitem_caption %>" src="<%= @asset.galleryitem.url(:thumb) %>"></span>
   
   <p>
-    <label for="article_assets_attributes_<%= asset_number %>_galleryitem_caption">Tekst</label>
+    <label for="article_assets_attributes_<%= asset_number %>_galleryitem_caption">Text</label>
     <input id="article_assets_attributes_<%= asset_number %>_galleryitem_caption" name="article[assets_attributes][<%= asset_number %>][galleryitem_caption]" size="30" type="text">
   </p>
 
   <p>
-    <label for="article_assets_attributes_<%= asset_number %>_candidate_for_random">Tilfeldig bilde?</label>
+    <label for="article_assets_attributes_<%= asset_number %>_candidate_for_random">Show up in random image box?</label>
     <input id="article_assets_attributes_<%= asset_number %>_candidate_for_random" name="article[assets_attributes][<%= asset_number %>][candidate_for_random]" type="checkbox">
   </p>
 
   <p>
-    <label for="article_assets_attributes_<%= asset_number %>__destroy">Slette bilde?</label>
+    <label for="article_assets_attributes_<%= asset_number %>__destroy">Delete?</label>
     <input name="article[assets_attributes][<%= asset_number %>][_destroy]" value="0" type="hidden">
     <input id="article_assets_attributes_<%= asset_number %>__destroy" name="article[assets_attributes][<%= asset_number %>][_destroy]" value="1" type="checkbox">
   </p>

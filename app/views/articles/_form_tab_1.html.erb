@@ -5,19 +5,19 @@
 
 <div id="left_column">
 <p>
-  <%= f.label :title, 'Tittel' %>
+  <%= f.label :title %>
   <%= f.text_field :title %>
 </p>
 
 <p>
-  <%= f.label(:start_date, 'Startdato') %>
+  <%= f.label :start_date %>
   <span class="datetime_select">
     <%= f.datetime_select(:start_date, :default => @article.start_date) %>
   </span>
 </p>
 
 <p>
-  <%= f.label(:end_date, 'Sluttdato') %>
+  <%= f.label :end_date %>
   <span class="datetime_select">
     <%= f.datetime_select(:end_date, :default => @article.end_date) %>
   </span>
@@ -30,7 +30,7 @@
 </p>
 
 <p>
-  <%= f.label 'article[country_id]', 'Omtaler' %>
+  <%= f.label 'article[country_id]', 'Country' %>
   <%= select_tag "article[country_id]", options_from_collection_for_select(@countries, :id, :title, @article.country_id) %>
 </p>
 </div>

@@ -5,15 +5,15 @@
     <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
     <span class="left"><%= image_tag asset.object.galleryitem.url(:thumb) %></span>
     <p>
-      <%= asset.label :galleryitem_caption, 'Tekst' %>
+      <%= asset.label :galleryitem_caption, 'Text' %>
       <%= asset.text_field :galleryitem_caption %>
     </p>
     <p>
-      <%= asset.label :candidate_for_random, 'Tilfeldig bilde?' %>
+      <%= asset.label :candidate_for_random, 'Show up in random image box?' %>
       <%= asset.check_box :candidate_for_random %>
     </p>
     <p>
-      <%= asset.label :_destroy, 'Slette bilde?' %>
+      <%= asset.label :_destroy, 'Delete?' %>
       <%= asset.check_box :_destroy %>
     </p>
   </li>

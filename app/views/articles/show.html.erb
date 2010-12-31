@@ -15,11 +15,11 @@
    
     <div id="article_details">
    
-      <p>Denne artikkelen omhandler <%= h @article.country.title %> og er
-      datert <%= getArticleStartEndDate(@article).downcase %>. Artikkelen har
-      <%= pluralize @article.assets.size, 'bilde', 'bilder' %> i galleriet, og
-      <%= pluralize @article.comments.size, 'kommentar', 'kommentarer' %>.
-      Skriv gjerne en kommentar til oss under, da blir vi glade!</p>
+      <p>This article tells about <%= h @article.country.title %> and is
+      dated <%= getArticleStartEndDate(@article).downcase %>. The article has
+      <%= pluralize @article.assets.size, 'picture', 'pictures' %> in the gallery, and
+      <%= pluralize @article.comments.size, 'comment', 'comments' %>.
+      Please write us a comment below, that'll make us happy!</p>
     
     </div>
      

@@ -4,7 +4,7 @@ document.observe("dom:loaded", function() {
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
   var worldMapMarkers = new OpenLayers.Layer.Markers("Markers");
   var options = { projection: 'EPSG:4326', controls: [
-    new OpenLayers.Control.Navigation(),
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: false}),
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Attribution()
   ],
