@@ -43,7 +43,7 @@ div#content{
 legend {
   display: block;
   font-size: 1.2em;
-  border-bottom: 0.07em solid #ccc;
+  border-bottom: 0.07em solid #402C31;
   margin-bottom: 8px;
 }
 
@@ -53,9 +53,9 @@ div#errorExplanation, div#flash_error, div#flash_notice, div#flash_warning {
   min-height: 25px;
   width: 400px;
   padding: 7px;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px#ccc;
-  box-shadow: 0 0 3px #ccc;
+  -moz-box-shadow: 0 0 3px #402C31;
+  -webkit-box-shadow: 0 0 3px#402C31;
+  box-shadow: 0 0 3px #402C31;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
@@ -89,7 +89,7 @@ div#flash_error, div#errorExplanation {
 
 .ui-effects-transfer {
   background-color: #CFD4E6;
-  border: 1px solid #000000;
+  border: 1px solid #402C31;
 }
 
 .popup {
@@ -102,9 +102,9 @@ div#flash_error, div#errorExplanation {
   -moz-border-radius: 10px;
   border-radius: 10px;
   padding: 5px;
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px#ccc;
-  box-shadow: 0 0 5px #ccc;
+  -moz-box-shadow: 0 0 5px #402C31;
+  -webkit-box-shadow: 0 0 5px#402C31;
+  box-shadow: 0 0 5px #402C31;
 }
 
 .popup p {

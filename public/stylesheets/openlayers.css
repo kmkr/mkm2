@@ -3,7 +3,7 @@ div#country_map {
   margin-left: 20px;
 }
 div#country_map, div#show_article_country_map {
-  border: 0.07em solid #ccc;
+  border: 0.07em solid #402C31;
 	width: 380px;
 	height: 300px;
   padding: 30px;

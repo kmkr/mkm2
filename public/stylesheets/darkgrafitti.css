@@ -7,9 +7,9 @@ body {
 
 div#articles_countries {
  background-color: #fcfcff;
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px#ccc;
-  box-shadow: 0 0 5px #ccc;
+  -moz-box-shadow: 0 0 5px #402C31;
+  -webkit-box-shadow: 0 0 5px#402C31;
+  box-shadow: 0 0 5px #402C31;
 }
 
 div#articles_countries div {
