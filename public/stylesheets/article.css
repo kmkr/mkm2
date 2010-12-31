@@ -3,6 +3,14 @@ div#article p {
   margin-left: 0;
 }
 
+div#article p.ad-image-description {
+  margin: 0;
+}
+
+div#article div#article_galleryitems div.ad-gallery div.ad-nav {
+  margin: 0 auto;
+}
+
 div#article h2 {
   margin-top: 35px;
   clear: left;

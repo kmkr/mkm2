@@ -348,6 +348,9 @@ Wilq32.PhotoEffect.prototype={
 		}
 		else if (supportedCSS)
 		return function(angle){
+			this._img.style['margin']="60px 20px 0 0";
+			this._img.style['max-width']="220px";
+			this._img.style['max-height']="220px";
 			this._img.style['padding']="10px 10px 25px 10px";
 			this._img.style['border']="1px solid black";
 			this._img.style['background']="#fff";
