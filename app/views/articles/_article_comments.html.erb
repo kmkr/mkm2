@@ -1,17 +1,17 @@
 <div id="new_comment_wrapper">
   <% remote_form_for [@article, @comment] do |f| %>
     <p>
-      <%= f.label :author, 'Navn' %>
+      <%= f.label :author, 'Name' %>
       <%= f.text_field :author %>
     </p>
     <p>
-      <%= f.label :body, 'Kommentar' %>
+      <%= f.label :body, 'Comment' %>
       <%= f.text_field :body %>
     </p>
 
     <div class="clearboth"></div>
       <p>
-        <%= f.submit 'Kommenter' %>
+        <%= f.submit %>
       </p>
   <% end %>
   <div class="clearboth"></div>

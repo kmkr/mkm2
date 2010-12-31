@@ -15,10 +15,10 @@
    
     <div id="article_details">
    
-      <p>This article tells about <%= h @article.country.title %> and is
-      dated <%= getArticleStartEndDate(@article).downcase %>. The article has
-      <%= pluralize @article.assets.size, 'picture', 'pictures' %> in the gallery, and
-      <%= pluralize @article.comments.size, 'comment', 'comments' %>.
+      <p>This article is written about <span class="bold"><%= h @article.country.title %></span> and is
+      dated <%= getArticleStartEndDate(@article) %>. The article has
+      <span class="bold"><%= pluralize @article.assets.size, 'picture', 'pictures' %></span> in the gallery, and
+      <span class="bold"><%= pluralize @article.comments.size, 'comment', 'comments' %></span>.
       Please write us a comment below, that'll make us happy!</p>
     
     </div>

@@ -27,18 +27,18 @@ module ArticlesHelper
 
   def getArticleStartEndDate(article)
     if article.end_date - article.start_date == 0 
-      l(article.start_date, :format => :dy_mo_yr)
+      article.start_date.strftime("%A %d %B")
     else
-       "fra #{l(article.start_date, :format => :dy_mo_yr)} til #{l(article.end_date, :format => :dy_mo_yr)}"
+       "from #{article.start_date.strftime("%A %d %B")} to #{article.end_date.strftime("%A %d %B")}"
     end
   end
 
 
   def getArticlePublishedDetails(article)
     if article.published_date
-      "Artikkelen ble publisert for #{time_ago_in_words(article.published_date)} siden."
+      "Published #{time_ago_in_words(article.published_date)} ago."
     else
-      "Artikkelen er ikke publisert. #{link_to 'Trykk', publish_article_path(article)} for å publisere."
+      "The article is not yet published. #{link_to 'Click', publish_article_path(article)} to publish."
     end
   end
 end

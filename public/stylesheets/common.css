@@ -114,3 +114,7 @@ div#flash_error, div#errorExplanation {
 .italic {
   font-style: italic;
 }
+
+.bold {
+  font-weight: bold;
+}
