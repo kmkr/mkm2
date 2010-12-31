@@ -12,7 +12,7 @@
       <% unless asset.galleryitem_caption.blank? %>
         <p class="italic">"<%= h asset.galleryitem_caption %>"</p>
       <% end %>
-      <p>Bildet tilhører <%= link_to (h asset.article.title), article_path(asset.article) %></p>
+      <p>This picture belongs to <%= link_to (h asset.article.title), article_path(asset.article) %></p>
     </div>
     </div>
   <% end %>
