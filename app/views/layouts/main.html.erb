@@ -26,6 +26,11 @@
           <p style="float: right;">
             <%= link_to "<span class='ui-icon ui-icon-unlocked'></span>", logout_path, :title => 'Log out' %>
           </p>
+          <% if session[:user_id] and session[:user_id].to_s =~ /\d+/ %>
+          <p style="float: right;">
+            <%= link_to "<span class='ui-icon ui-icon-wrench'></span>", edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
+          </p>
+          <% end %>
         </div>
         <%= render :partial => 'page/map_banner' %>
         <div id="navigation">

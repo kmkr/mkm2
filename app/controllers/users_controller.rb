@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
+  before_filter :check_authorization, :except => [ :new, :create ]
   
 
   # render new.rhtml
@@ -19,10 +20,25 @@ class UsersController < ApplicationController
       # reset session
       self.current_user = @user # !! now logged in
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      flash[:notice] = "Thanks for signing up!"
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "We couldn't set up that account, sorry."
       render :action => 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    user = User.find(params[:id])
+    if user.update_attributes(params[:user])
+      flash[:notice] = "User updated successfully"
+      redirect_to root_path
+    else
+      flash[:error] = "Unable to update user"
+      redirect_to :edit
     end
   end
 end

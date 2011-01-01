@@ -21,8 +21,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was successfully created, time to upload some pictures!"
       redirect_to edit_article_url(@article, :anchor => 'tabs-2')
     else
-    logger.debug @article.errors.size
-      flash[:notice] = "Noe gikk galt"
+      flash[:error] = "Unable to create article"
       render :action => 'new'
     end
   end
