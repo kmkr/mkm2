@@ -4,13 +4,11 @@ document.observe("dom:loaded", function() {
   var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
   var worldMapMarkers = new OpenLayers.Layer.Markers("Markers");
   var options = { projection: 'EPSG:4326', controls: [
-    new OpenLayers.Control.Navigation({zoomWheelEnabled: false}),
-    new OpenLayers.Control.ArgParser(),
-    new OpenLayers.Control.Attribution()
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: false})
   ],
   theme: null
   }
-  var worldMap = new OpenLayers.Map( 'world_map');
+  var worldMap = new OpenLayers.Map( 'world_map', options);
   var worldMapLayer = new OpenLayers.Layer.Google(
     "gphy",
     {type: G_PHYSICAL_MAP}
@@ -19,8 +17,9 @@ document.observe("dom:loaded", function() {
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
+  worldMapLayer.setOpacity(.7);
 
-  worldMap.setCenter(new OpenLayers.LonLat(10.2, 48.9), 1);
+  worldMap.setCenter(new OpenLayers.LonLat(0, 0), 1);
   worldMap.zoomToMaxExtent();
 
 

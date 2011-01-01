@@ -15,13 +15,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 div#outermostWrap {
   width: 1190px;
   margin: 10px auto;
-  font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
+ font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
+ font-size: 15px;
 }
 
 
 div#mainwrap {
 	width: 960px;
-  font-size: 15px;
   color: #222222;
 	margin: 0 auto;
 	border: 1px solid black;

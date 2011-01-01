@@ -241,3 +241,6 @@ div#new_comment_wrapper input {
   float: right;
 }
 
+div#article input {
+  width: 250px;
+}

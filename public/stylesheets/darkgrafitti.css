@@ -7,16 +7,17 @@ body {
 
 div#articles_countries {
   background: #fbcb34;
+  font-size: 14px;
   -moz-box-shadow: 0 0 5px #402C31;
   -webkit-box-shadow: 0 0 5px#402C31;
   box-shadow: 0 0 5px #402C31;
 }
 
 div#articles_countries div {
-  background-color: #DD0858;
-  background: -moz-linear-gradient(top,  #DD0858,  #ffc4da);
+  background-color: #fbcb34;
+  background: -moz-linear-gradient(top,  #fbcb34,  #ffc4da);
   background: -webkit-gradient(linear, left top, left bottom, from(#DD0858), to(#ffc4da));
-  border-bottom: 1px #DD0858 solid;
+  border-bottom: 1px #fbcb34 solid;
 }
 
 a:link, a:visited {

@@ -11,10 +11,9 @@ div#banner {
 
 div#articles_countries {
  float: left;
- margin: 25px 25px;
- width: 200px;
- border: 1px solid #402C31;
- height: 200px;
+ margin-left: 190px;
+ width: 180px;
+ min-height: 200px;
   padding: 0;
 }
 
