@@ -6,7 +6,7 @@ body {
 }
 
 div#articles_countries {
- background-color: #fcfcff;
+  background: #fbcb34;
   -moz-box-shadow: 0 0 5px #402C31;
   -webkit-box-shadow: 0 0 5px#402C31;
   box-shadow: 0 0 5px #402C31;

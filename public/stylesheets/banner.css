@@ -4,18 +4,17 @@ div#banner {
  background-image: url('/images/logo.png');
  background-repeat: no-repeat;
  padding: 150px 100px 0 100px;
-	height: 350px;
+	height: 400px;
   position: relative;
 }
 
 
 div#articles_countries {
- float: right;
- margin: 25px 25px 0 0;
+ float: left;
+ margin: 25px 25px;
  width: 200px;
  border: 1px solid #402C31;
  height: 200px;
-  background: #EDF7FF;
   padding: 0;
 }
 

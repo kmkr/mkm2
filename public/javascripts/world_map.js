@@ -10,13 +10,19 @@ document.observe("dom:loaded", function() {
   ],
   theme: null
   }
-  var worldMap = new OpenLayers.Map( 'world_map', options);
-  var worldMapLayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-  worldMapLayer.setOpacity(1);
+  var worldMap = new OpenLayers.Map( 'world_map');
+  var worldMapLayer = new OpenLayers.Layer.Google(
+    "gphy",
+    {type: G_PHYSICAL_MAP}
+    );
+
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
-  worldMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);
+
+  worldMap.setCenter(new OpenLayers.LonLat(10.2, 48.9), 1);
+  worldMap.zoomToMaxExtent();
+
 
     var timeout;
     $('articles_countries').observe('mouseover', function() {
@@ -54,7 +60,5 @@ document.observe("dom:loaded", function() {
         });
       }
     });
-
-
 
 });

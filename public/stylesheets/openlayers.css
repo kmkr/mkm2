@@ -1,14 +1,10 @@
-div#world_map_wrapper {
-  margin: 0 auto;
-  width: 480px;
-  height: 275px;
-}
-
 div#world_map, div#user_map {
+  float: right;
+  margin-right: 145px;
+  margin-top: -55px;
   border: 1px solid #402C31;
-  margin: 0 auto;
-  width: 450px;
-  height: 250px;
+  width: 330px;
+  height: 200px;
 }
 
 div#country_map {
@@ -23,7 +19,6 @@ div#country_map, div#show_article_country_map {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-
 
 div.olMap {
     z-index: 0;

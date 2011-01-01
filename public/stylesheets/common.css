@@ -21,7 +21,7 @@ div#outermostWrap {
 
 div#mainwrap {
 	width: 960px;
-  font-size: 16px;
+  font-size: 15px;
   color: #222222;
 	margin: 0 auto;
 	border: 1px solid black;
@@ -117,4 +117,9 @@ div#flash_error, div#errorExplanation {
 
 .bold {
   font-weight: bold;
+}
+
+div.olLayerGoogleCopyright, div.olLayerGooglePoweredBy {
+  display: none;
+  visibility: hidden;
 }
