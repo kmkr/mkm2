@@ -1,0 +1,12 @@
+#random_img_wrapper {position: relative; left: 640px; margin-top: 50px; }
+
+div#random_imgs {
+  position: relative;
+}
+div#random_imgs canvas, div#random_imgs img {
+  float: left;
+  position: absolute;
+  margin-left: 12px;
+  max-width: 400px;
+  max-height: 400px;
+}

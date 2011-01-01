@@ -12,7 +12,7 @@ document.observe("dom:loaded", function() {
   }
   var worldMap = new OpenLayers.Map( 'world_map', options);
   var worldMapLayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-  worldMapLayer.setOpacity(.8);
+  worldMapLayer.setOpacity(1);
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);

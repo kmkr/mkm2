@@ -1,25 +1,6 @@
 <div class="clearboth"></div>
 <div id="articles_countries" style="display: none;"></div>
 
-<div id="random_img_wrapper">
-  <div id="random_imgs">
-  <% @random_assets.each do |asset| %>
-    <div class="bubbleInfo">
-    <span class="random_img">
-      <%= image_tag(asset.galleryitem.url(:thumb), :alt => asset.galleryitem_caption) %>
-    </span>
-    <div class="popup">
-      <% unless asset.galleryitem_caption.blank? %>
-        <p class="italic">"<%= h asset.galleryitem_caption %>"</p>
-      <% end %>
-      <p>This picture belongs to <%= link_to (h asset.article.title), article_path(asset.article) %></p>
-    </div>
-    </div>
-  <% end %>
-  </div>
-</div>
-
-
 <div id="world_map_wrapper">
   <div id="world_map"></div>
 </div>
