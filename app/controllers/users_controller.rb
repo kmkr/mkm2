@@ -33,12 +33,14 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    if user.update_attributes(params[:user])
-      flash[:notice] = "User updated successfully"
-      redirect_to root_path
-    else
-      flash[:error] = "Unable to update user"
-      redirect_to :edit
+    logger.debug("Skal save #{user.login} med #{params}")
+    new_latitude = params[:latitude]
+    new_longitude = params[:longitude]
+    user.current_latitude = new_latitude
+    user.current_longitude = new_longitude
+    if user.save
+      logger.debug("All ok!!!!")
+      render :nothing => true
     end
   end
 end

@@ -1,3 +1,16 @@
+div#world_map_wrapper {
+  margin: 0 auto;
+  width: 480px;
+  height: 275px;
+}
+
+div#world_map, div#user_map {
+  border: 1px solid #402C31;
+  margin: 0 auto;
+  width: 450px;
+  height: 250px;
+}
+
 div#country_map {
   float: right;
   margin-left: 20px;

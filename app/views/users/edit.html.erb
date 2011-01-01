@@ -1,2 +1,13 @@
 edit user <%= @user.login %>!
 
+<script>
+  var user_longitude;
+  var user_latitude;
+  var user_id = <%= @user.id %>;
+<% if @user.current_longitude and @user.current_latitude %>
+  user_longitude = <%= @user.current_longitude %>;
+  user_latitude = <%= @user.current_latitude %>;
+<% end %>
+</script>
+<div id="user_map"></div>
+<%= javascript_include_tag 'user_map' %>

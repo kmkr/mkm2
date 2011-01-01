@@ -1,4 +1,5 @@
 /* logo and banner content */
+/* see openlayers.css for world map */
 div#banner {
  background-image: url('/images/logo.png');
  background-repeat: no-repeat;
@@ -7,18 +8,6 @@ div#banner {
   position: relative;
 }
 
-div#world_map_wrapper {
-  margin: 0 auto;
-  width: 480px;
-  height: 275px;
-}
-
-div#world_map {
-  border: 1px solid #402C31;
-  margin: 0 auto;
-  width: 450px;
-  height: 250px;
-}
 
 div#articles_countries {
  float: right;
@@ -34,7 +23,6 @@ div#articles_countries div, div#articles_countries ul {
   padding: 10px;
   clear: both;
 }
-
 
 div#articles_countries h1 {
   text-align: center;
