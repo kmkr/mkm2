@@ -27,9 +27,9 @@ module ArticlesHelper
 
   def getArticleStartEndDate(article)
     if article.end_date - article.start_date == 0 
-      article.start_date.strftime("%A %d %B")
+      format_date(article.start_date)
     else
-       "from #{article.start_date.strftime("%A %d %B")} to #{article.end_date.strftime("%A %d %B")}"
+       "from #{format_date(article.start_date)} to #{format_date(article.end_date)}"
     end
   end
 
@@ -41,4 +41,24 @@ module ArticlesHelper
       "The article is not yet published. #{link_to 'Click', publish_article_path(article)} to publish."
     end
   end
+
+
+  private
+
+  def format_date(date) 
+    date.strftime("%A %d#{suffix(date.day)} of %B") 
+  end
+
+  def suffix(value)
+    case value
+    when 1,21,31
+      suffix = "st"
+    when 2,22
+      suffix = "nd"
+    when 3,23
+      suffix = "rd"
+    else
+      suffix = "th"
+    end 
+  end 
 end
