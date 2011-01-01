@@ -14,21 +14,21 @@
   <div id="outermostWrap">
       <div id="banner">
         <div>
-          <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-home'></span>", root_url, :title => 'Home' %>
+          <p style="float: left;">
+            <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-home'></span>", root_url, :title => 'Home' %>
           </p>
-          <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-circle-plus'></span>", new_article_path, :title => 'Create new article' %>
+          <p style="float: left;">
+            <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-circle-plus'></span>", new_article_path, :title => 'Create new article' %>
           </p>
-          <p style="float: right;">
-            <%= link_to_login_with_IP "<span class='ui-icon ui-icon-locked'></span>", :title => 'Log in' %>
+          <p style="float: left;">
+            <%= link_to_login_with_IP "<span class='ui-state-default ui-corner-all ui-icon ui-icon-locked'></span>", :title => 'Log in' %>
           </p>
-          <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-unlocked'></span>", logout_path, :title => 'Log out' %>
+          <p style="float: left;">
+            <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-unlocked'></span>", logout_path, :title => 'Log out' %>
           </p>
           <% if session[:user_id] and session[:user_id].to_s =~ /\d+/ %>
-          <p style="float: right;">
-            <%= link_to "<span class='ui-icon ui-icon-wrench'></span>", edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
+          <p style="float: left;">
+            <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-wrench'></span>", edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
           </p>
           <% end %>
         </div>
