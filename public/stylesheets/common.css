@@ -22,9 +22,8 @@ div#outermostWrap {
 
 div#mainwrap {
 	width: 960px;
-  color: #222222;
 	margin: 0 auto;
-	border: 1px solid black;
+	border: 1px solid #6b301e;
   background: #fff;
   -moz-border-radius: 10px;
   border-radius: 10px;

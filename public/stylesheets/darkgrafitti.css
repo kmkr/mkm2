@@ -1,8 +1,9 @@
 /* http://www.colourlovers.com/palette/1392490/Dark_Graffiti */
 body {
   background-color: #daf2ff;
-  background: -moz-linear-gradient(top,  #ecf8ff, #daf2ff);
+  background: -moz-linear-gradient(top,  #ffc3a6, #fadfd0);
   background: -webkit-gradient(linear, left top, left bottom, from(#ecf8ff), to(#daf2ff));
+  color: #222222;
 }
 
 div#articles_countries {
@@ -21,12 +22,12 @@ div#articles_countries div {
 }
 
 a:link, a:visited {
-  color: #AD3481;
+  color: #9f1c24;
   font-style: none;
 }
 
 a:hover {
-  color: #7973A3;
+  color: #6b301e;
 }
 
 div.dragenter {
