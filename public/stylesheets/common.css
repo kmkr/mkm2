@@ -60,13 +60,26 @@ div#errorExplanation, div#flash_error, div#flash_notice, div#flash_warning {
   margin: 10px auto; 
   border: 1px solid;
   min-height: 25px;
-  width: 400px;
+  width: 300px;
   padding: 7px;
   -moz-box-shadow: 0 0 3px #402C31;
   -webkit-box-shadow: 0 0 3px#402C31;
   box-shadow: 0 0 3px #402C31;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+div#errorExplanation ul, div#flash_error ul, div#flash_notice ul, div#flash_warning ul {
+  margin-left: 20px;
+}
+
+div#errorExplanation h2, div#flash_error h2, div#flash_notice h2, div#flash_warning h2 {
+  margin-top: 0;
+}
+
+div.fieldWithErrors input {
+  display: inline;
+  border: 1px solid red;
 }
 
 div#flash_notice {

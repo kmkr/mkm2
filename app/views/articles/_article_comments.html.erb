@@ -1,20 +1,5 @@
 <div id="new_comment_wrapper">
-  <% remote_form_for [@article, @comment] do |f| %>
-    <p>
-      <%= f.label :author, 'Name' %>
-      <%= f.text_field :author %>
-    </p>
-    <p>
-      <%= f.label :body, 'Comment' %>
-      <%= f.text_field :body %>
-    </p>
-
-    <div class="clearboth"></div>
-      <p>
-        <%= f.submit 'Submit' %>
-      </p>
-  <% end %>
-  <div class="clearboth"></div>
+  <%= render :partial => 'comments/new' %>
 </div>
 <div id="comments">
   <%= render :partial => 'comments/comment', :collection => @article.comments %>
