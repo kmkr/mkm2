@@ -1,3 +1,18 @@
-<div class="fresh_article">
-<%= newest_article.title %>
+<div>
+<% if newest_article.main_asset %>
+<%= image_tag newest_article.main_asset.galleryitem.url(:thumb) %>
+<% end %>
+<h1>Our latest published article is '<%= link_to h(newest_article.title), article_path(newest_article) %>'</h1>
+
+<p>The article is from <%= h newest_article.country.title %>, and was <%=
+getArticlePublishedDetails(newest_article).downcase %>. The article has <%= newest_article.assets.size %> images
+
+<% if newest_article.comments.empty? %>
+but <span class="bold">no</span> comments. <%= link_to 'Be the first to comment on this article', article_path(newest_article) %>!
+<% else %>
+and <span class="bold"><%= newest_article.comments.size %> comments.
+<% end %>
+
+</p>
+
 </div>
