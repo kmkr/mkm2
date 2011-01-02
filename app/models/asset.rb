@@ -23,9 +23,4 @@ class Asset < ActiveRecord::Base
     self.galleryitem = readFile
   end
 
-  def self.selected_best_images_sorted_randomly
-    random_assets = Asset.find_all_by_candidate_for_random true  
-    random_assets.shuffle
-  end
-
 end
