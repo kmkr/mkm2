@@ -1,7 +1,7 @@
 /* logo and banner content */
 /* see openlayers.css for world map */
 div#banner {
-  padding: 235px 100px 0 100px;
+  padding: 255px 100px 0 100px;
 	height: 380px;
   position: relative;
 }
