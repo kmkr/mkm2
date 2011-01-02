@@ -3,6 +3,10 @@ div#article p {
   margin-left: 0;
 }
 
+div#article h1 {
+  margin-bottom: 2px;
+}
+
 div#article p.ad-image-description {
   margin: 0;
 }
