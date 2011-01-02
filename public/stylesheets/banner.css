@@ -1,20 +1,20 @@
 /* logo and banner content */
 /* see openlayers.css for world map */
 div#banner {
- background-image: url('/images/logo.png');
- background-repeat: no-repeat;
- padding: 150px 100px 0 100px;
-	height: 400px;
+  padding: 235px 100px 0 100px;
+	height: 380px;
   position: relative;
 }
 
 
 div#articles_countries {
- float: left;
- margin-left: 190px;
- width: 180px;
- min-height: 200px;
-  padding: 0;
+ margin-left: 20px;
+ float: right;
+ width: 200px;
+ background: url('/images/article_countries_bkg.png') no-repeat;
+ height: 201px;
+  padding: 5px;
+  font-size: 14px;
 }
 
 div#articles_countries div, div#articles_countries ul {
@@ -24,6 +24,7 @@ div#articles_countries div, div#articles_countries ul {
 
 div#articles_countries h1 {
   text-align: center;
+  margin-left: -15px;
   margin-bottom: 3px;
 }
 
@@ -31,3 +32,18 @@ div#articles_countries ul {
   list-style: none;
 }
 
+div#bird {
+  z-index: 100;
+  position: absolute;
+  bottom: 200px;
+  margin-left: 40px;
+}
+
+div#bird img {
+  width: 290px;
+}
+
+img#logo {
+  position: absolute;
+  z-index: 0;
+}

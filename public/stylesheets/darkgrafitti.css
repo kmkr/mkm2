@@ -1,33 +1,22 @@
 /* http://www.colourlovers.com/palette/1392490/Dark_Graffiti */
 body {
-  background-color: #daf2ff;
-  background: -moz-linear-gradient(top,  #ffc3a6, #fadfd0);
+  background-color: #e9ddaf;
+  background: -moz-linear-gradient(top,  #fff7ed, #fff0ed);
   background: -webkit-gradient(linear, left top, left bottom, from(#ecf8ff), to(#daf2ff));
   color: #222222;
 }
 
-div#articles_countries {
-  background: #fbcb34;
-  font-size: 14px;
-  -moz-box-shadow: 0 0 5px #402C31;
-  -webkit-box-shadow: 0 0 5px#402C31;
-  box-shadow: 0 0 5px #402C31;
-}
-
-div#articles_countries div {
-  background-color: #fbcb34;
-  background: -moz-linear-gradient(top,  #fbcb34,  #ffc4da);
-  background: -webkit-gradient(linear, left top, left bottom, from(#DD0858), to(#ffc4da));
-  border-bottom: 1px #fbcb34 solid;
+div#mainwrap {
+	border: 1px solid #402c31;
 }
 
 a:link, a:visited {
-  color: #9f1c24;
+  color: #a21a21;
   font-style: none;
 }
 
 a:hover {
-  color: #6b301e;
+  color: #ca202c;
 }
 
 div.dragenter {

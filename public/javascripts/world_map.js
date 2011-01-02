@@ -17,10 +17,10 @@ document.observe("dom:loaded", function() {
   worldMap.addLayer(worldMapLayer);
   
   worldMap.addLayer(worldMapMarkers);
-  worldMapLayer.setOpacity(.7);
+  worldMapLayer.setOpacity(.8);
 
-  worldMap.setCenter(new OpenLayers.LonLat(0, 0), 1);
   worldMap.zoomToMaxExtent();
+  worldMap.setCenter(new OpenLayers.LonLat(0, 0), 1);
 
 
     var timeout;
