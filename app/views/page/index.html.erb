@@ -1,25 +1,22 @@
-<h1>mkm</h1>
-<p>her skal det komme</p>
-<ul>
-<li>kart over hvor vi er</li>
-<li>travel quotes?</li>
-<li>en kort intro</li>
-<li>nyeste artikkel</li>
-</ul>
+<div id="welcome_box">
+  <h1>mkm</h1>
+
+  <p>Greetings and welcome to our totally renewed blog. The web site has
+  radically changed, and contains solely our travel articles (as these articles
+  tend to be the most interesting reads anyway). The travel articles from the
+  old blog have been rewritten with extensive improvements on quality and
+  readability, and the rest of the articles are removed entirely.  We tell the
+  stories as we remember them while we struggle to write to inspire other
+  travellers from our experiences on the trail and track.</p>
+
+</div>
+
 <div id="random_img_wrapper">
-  <div id="random_imgs">
-  <% @random_assets.each do |asset| %>
-    <div class="bubbleInfo">
-    <span class="random_img">
-      <%= image_tag(asset.galleryitem.url(:thumb), :alt => asset.galleryitem_caption) %>
-    </span>
-    <div class="popup">
-      <% unless asset.galleryitem_caption.blank? %>
-        <p class="italic">"<%= h asset.galleryitem_caption %>"</p>
-      <% end %>
-      <p>This picture belongs to <%= link_to (h asset.article.title), article_path(asset.article) %></p>
-    </div>
-    </div>
-  <% end %>
-  </div>
+  <%= render :partial => 'random_images' %>
+</div>
+
+<div class="clearboth"></div>
+
+<div id="newest_articles">
+  <%= render :partial => 'newest_article', :collection => @newest_articles %>
 </div>
