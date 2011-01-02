@@ -1,7 +1,9 @@
 class PageController < ApplicationController
 
   def index
-    @newest_articles = Article.find(:first, :order => 'published_date DESC').to_a
+    articles = Article.find(:all, :order => 'updated_at DESC', :conditions => 'published_date not null')
+    @newest_articles = articles.first.to_a
+    @random_articles = (articles - @newest_articles).shuffle.first(4) 
   end
 
 end

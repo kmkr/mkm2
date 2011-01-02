@@ -12,14 +12,21 @@
   corresponding country in which the article writes about.</p>
 
 </div>
+
 <div id="random_img_wrapper">
-  <%= render :partial => 'random_images' %>
+  <%#= render :partial => 'random_images' %>
 </div>
 
 <div class="clearboth"></div>
 
-<div id="newest_articles">
-  <h1>Newest article</h1>
-  <%= render :partial => 'newest_article', :collection => @newest_articles %>
+  <h1>Newest and random articles</h1>
+<div id="random_articles">
+  <ul id="random_articles_list">
+  <%= render :partial => 'random_article', :collection => @newest_articles + @random_articles %>
+  </ul>
+  <ul id="output">
+  <%= render :partial => 'random_article_output', :collection => @newest_articles + @random_articles %>
+  </ul>
 </div>
 
+<%= javascript_include_tag 'jquery.featureList-1.0.0', 'random_image_boot' %>

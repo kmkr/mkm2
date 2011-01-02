@@ -55,6 +55,8 @@ legend {
 }
 
 div#errorExplanation, div#flash_error, div#flash_notice, div#flash_warning {
+  position: relative;
+  z-index: 10;
   margin: 10px auto; 
   border: 1px solid;
   min-height: 25px;

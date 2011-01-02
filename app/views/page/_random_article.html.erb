@@ -1,0 +1,14 @@
+<li>
+<a href="javascript:;">
+<% if random_article.main_asset %>
+<%= image_tag random_article.main_asset.galleryitem.url(:thumb) %>
+<% else %>
+No pic
+<% end %>
+<h2><%= h(truncate(random_article.title, :length => 15, :omission => '...')) %></h2>
+
+<p>Updated <%= time_ago_in_words(random_article.updated_at) %> ago, published <%= time_ago_in_words(random_article.published_date) %> ago</p>
+
+</a>
+
+</li>

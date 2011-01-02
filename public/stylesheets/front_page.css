@@ -1,19 +1,11 @@
 div#welcome_box {
-  width: 45%;
-  float: left;
-  margin-bottom: 25px;
+  position: relative;
+  z-index: 10;
 }
 
-div#newest_articles {
-  width: 45%;
-  clear: both;
-  float: left; 
-}
-
-div#newest_articles img {
-  float: right;
-  border: 1px solid #402c31;
-}
+div#welcome_box p {
+  background-color: #fff;
+  }
 
 #random_img_wrapper {position: relative; left: 640px; margin-top: 50px; }
 
@@ -26,4 +18,113 @@ div#random_imgs canvas, div#random_imgs img {
   margin-left: 12px;
   max-width: 400px;
   max-height: 400px;
+}
+
+div#random_articles h2 {
+margin: 0;  
+padding: 7px 0 0 0;
+         font-size: 16px;
+         text-transform: uppercase;
+}
+
+div#random_articles {
+  margin-top: 20px;
+clear: both;
+width: 872px;
+height: 440px;
+overflow: hidden;
+position: relative;
+}
+
+div#random_articles ul {
+position: absolute;
+top: 0;
+     list-style: none; 
+padding: 0;
+margin: 0;
+}
+
+ul#random_articles_list {
+left: 0;
+      z-index: 2;
+width: 320px;
+}
+
+ul#random_articles_list li {
+  font-size: 12px;
+  font-family: Arial;
+}
+
+ul#random_articles_list li img {
+padding: 5px;
+border: none;
+float: left;
+margin: 10px 10px 0 0;
+  border: dashed 1px #7e6d4b;
+  padding: 1px 0 2px 1px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+ul#random_articles_list li a {
+color: #222;
+       text-decoration: none;  
+display: block;
+padding: 10px;
+height: 60px;
+outline: none;
+}
+
+ul#random_articles_list li a:hover {
+  text-decoration: underline;
+}
+
+ul#random_articles_list li a.current {
+background:  url('/images/feature-tab-current.png');
+color: #FFF;
+}
+
+ul#random_articles_list li a.current:hover {
+  text-decoration: none;
+cursor: default;
+}
+
+ul#random_articles_list li p {
+display: inline-block;
+width: 200px;
+}
+
+ul#output {
+right: 0;
+width: 585px;
+height: 440px;
+position: relative;
+}
+
+ul#output img {
+  max-width: 588px;
+  max-height: 440px;
+}
+
+ul#output li {
+position: absolute;
+width: 588px;
+height: 440px;
+}
+
+
+ul#output li a {
+position: absolute;
+bottom: 10px;
+right: 200px;
+padding: 8px 12px;
+         text-decoration: none;
+         font-size: 11px;
+color: #FFF;
+background: #000;
+            -moz-border-radius: 5px;
+}
+
+ul#output li a:hover {
+background: #D33431;
 }
