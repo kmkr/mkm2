@@ -8,6 +8,7 @@ class Asset < ActiveRecord::Base
       :medium => '700x700>',
       :large => '1480x1480>'
     },
+    :convert_options => { :all => '-auto-orient' },
     :storage => :ftp,
     :path => "/:attachment/:id/:style/:filename",
     :url => "http://84.234.222.3/mkm_2/:id/:style/:filename"

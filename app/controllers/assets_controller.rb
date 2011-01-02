@@ -3,8 +3,9 @@ class AssetsController < ApplicationController
   before_filter :check_authorization
 
   def create
-    @article = Article.find(params[:article_id])
-    @asset = Asset.new(:article_id => params[:article_id], :dataupload => UploadedObj.new(params[:binary_data], params[:file_name]))
+    @article = Article.find(params[:article_id], :include => :assets)
+    asset_size = @article.assets.size
+    @asset = Asset.new(:galleryitem_position => asset_size+1, :article_id => params[:article_id], :dataupload => UploadedObj.new(params[:binary_data], params[:file_name]))
 
     if @asset.save
       respond_to do |format|

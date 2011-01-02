@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id], :include => :assets)
     @title = @article.title
     @comment = Comment.new
   end
