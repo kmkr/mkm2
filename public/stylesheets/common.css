@@ -18,6 +18,11 @@ h1 {
   margin-bottom: 10px;
 }
 
+div.overlay_wrapper {
+  position: relative;
+  z-index: 2;
+}
+
 div#outermostWrap {
   width: 1190px;
   margin: 10px auto;
@@ -39,7 +44,6 @@ div#mainwrap {
 }
 
 div#content{
-  margin-top: 20px;
   padding: 7px;
 }
 

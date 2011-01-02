@@ -1,5 +1,6 @@
 div#navigation {
   clear: both;
+  position: relative;
   width: 100%;
   z-index: 1000;
   font-size: 1.1em;
@@ -20,10 +21,6 @@ div#navigation li {
   border-radius: 4px;
 }
 
-div#navigation li span {
-  position: absolute;
-  right: 12px;
-}
 div#navigation li.continent {
   display: inline-block;
   width: 140px;
@@ -46,11 +43,13 @@ div#navigation li ul li ul li.article {
 
 div#navigation li ul.countries {
   position: absolute;
+  z-index: 1001;
   padding-top: 25px;
 }
 
 div#navigation li ul li ul.articles {
   position: relative;
-  left: 125px;
-  top: -25px;
+  z-index: 1002;
+  left: 122px;
+  top: -23px;
 }
