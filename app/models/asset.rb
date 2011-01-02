@@ -12,10 +12,13 @@ class Asset < ActiveRecord::Base
     :path => "/:attachment/:id/:style/:filename",
     :url => "http://84.234.222.3/mkm_2/:id/:style/:filename"
 
-  def dataupload=(base64EncodedFile) 
+  def dataupload=(uploadedObj)
+    base64EncodedFile = uploadedObj.binaryData
+    fileName = uploadedObj.fileName
     binary = Base64.decode64 base64EncodedFile
-    writeFile = File.open('/tmp/upload', 'w') { |f| f.write(binary) }
-    readFile = File.open('/tmp/upload', 'r')
+    tmpFileName = "#{RAILS_ROOT}/tmp/#{fileName}"
+    writeFile = File.open(tmpFileName, 'w') { |f| f.write(binary) }
+    readFile = File.open(tmpFileName, 'r')
     self.galleryitem = readFile
   end
 

@@ -31,7 +31,7 @@ document.observe("dom:loaded", function() {
 
     if (newValue == 100) {
       jQuery("#progressbar").hide('bounce', 1000);
-      jQuery("#statusupdate").html('Lastet opp ' + totalNumFiles + " fil(er)");
+      jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
       jQuery("#statusdiv").effect('highlight');
     }
   }
@@ -45,22 +45,24 @@ document.observe("dom:loaded", function() {
       jQuery('#progressbar').show();
       file = files[i];
       if (!file.type.match('image.*')) {
-        alert("Fil nummer " + i + " ser ikke ut til å være et bilde");
+        alert("File number " + i + " does not look like an image");
         continue;
       }
 
+      var fileName = file.fileName;
       var binaryReader = new FileReader();
       binaryReader.onload = (function (theImg) {
         return function (evt) {
 
-           var imageBinary = evt.target.result;
+          var imageBinary = evt.target.result;
           // looks like the image is ok
           // send it to the server
           var base64Value = jQuery.base64Encode(imageBinary);
+          var fileNameEncoded = encodeURIComponent(fileName);
           var encodedData = encodeURIComponent(base64Value);
           var actionPath = jQuery('#article_form').attr('action').split('/');
           var article_id = actionPath[actionPath.length - 1] * 1;
-          var postData = "article_id="+article_id+"&binary_data="+encodedData;
+          var postData = "article_id="+article_id+"&file_name="+fileNameEncoded+ "&binary_data="+encodedData;
 
           if (ongoingTransfer == true) {
             filesWaiting.push(postData);

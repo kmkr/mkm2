@@ -2,11 +2,13 @@ development:
   host: 84.234.222.3
   username: mkm
   password: mkmuser55
+  passive: true
 test:
   host: 192.168.1.110
   username: mkm
   password: mkmuser
 production:
-  host: 192.168.1.110
+  host: 84.234.222.3
   username: mkm
-  password: mkmuser
+  password: mkmuser55
+  passive: true

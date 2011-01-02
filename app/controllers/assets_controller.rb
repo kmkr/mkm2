@@ -4,7 +4,7 @@ class AssetsController < ApplicationController
 
   def create
     @article = Article.find(params[:article_id])
-    @asset = Asset.new(:article_id => params[:article_id], :dataupload => params[:binary_data])
+    @asset = Asset.new(:article_id => params[:article_id], :dataupload => UploadedObj.new(params[:binary_data], params[:file_name]))
 
     if @asset.save
       respond_to do |format|
@@ -13,4 +13,12 @@ class AssetsController < ApplicationController
     end
   end
 
+end
+
+class UploadedObj
+  attr_reader :binaryData, :fileName
+  def initialize(binaryData, fileName)
+    @binaryData = binaryData
+    @fileName = fileName
+  end
 end
