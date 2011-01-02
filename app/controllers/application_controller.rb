@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
 
   def initialize
     @continents = Continent.all
-    @random_assets = Asset.selected_best_images_sorted_randomly
     @locations = User.all.collect {|user| { :longitude => user.current_longitude, :latitude => user.current_latitude } }
   end
 
