@@ -8,7 +8,7 @@
 getArticlePublishedDetails(newest_article).downcase %>. The article has <%= newest_article.assets.size %> images
 
 <% if newest_article.comments.empty? %>
-but <span class="bold">no</span> comments. <%= link_to 'Be the first to comment on this article', article_path(newest_article) %>!
+but <span class="bold">no</span> comments. Be the first to <%= link_to 'comment', article_path(newest_article) %> on this article!
 <% else %>
 and <span class="bold"><%= newest_article.comments.size %> comments.
 <% end %>
