@@ -3,7 +3,8 @@ jQuery(function() {
   var articleMap, layer, position;
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(12,12);
-  var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
+  var size = new OpenLayers.Size(10,10);
+  var icon = new OpenLayers.Icon('/images/ball_red.png', size, 0);
   var markers = new OpenLayers.Layer.Markers("Markers");
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   

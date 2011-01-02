@@ -1,7 +1,7 @@
 jQuery(function() {
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
-  var size = new OpenLayers.Size(12,12);
-  var icon = new OpenLayers.Icon('http://www.virtualdisasterviewer.com/vdv/images/red_point.gif', size, 0);
+  var size = new OpenLayers.Size(10,10);
+  var icon = new OpenLayers.Icon('/images/ball_yellow.png', size, 0);
   var userMapMarkers = new OpenLayers.Layer.Markers("Markers");
   var options = { projection: 'EPSG:4326', controls: [
     new OpenLayers.Control.Navigation({zoomWheelEnabled: false}),

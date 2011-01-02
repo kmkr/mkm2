@@ -33,13 +33,11 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    logger.debug("Skal save #{user.login} med #{params}")
     new_latitude = params[:latitude]
     new_longitude = params[:longitude]
     user.current_latitude = new_latitude
     user.current_longitude = new_longitude
     if user.save
-      logger.debug("All ok!!!!")
       render :nothing => true
     end
   end

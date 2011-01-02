@@ -47,3 +47,12 @@ img#logo {
   position: absolute;
   z-index: 0;
 }
+
+div.user_location {
+  display: none;
+}
+
+div#tools {
+  z-index: 200;
+  position: absolute;
+}
