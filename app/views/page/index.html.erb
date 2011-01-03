@@ -18,7 +18,8 @@
   <h1>Newest and random articles</h1>
 <div id="random_articles">
   <ul id="random_articles_list">
-  <%= render :partial => 'random_article', :collection => @newest_articles + @random_articles %>
+  <%= render :partial => 'random_article', :collection => @newest_articles, :locals => {:image_type => 'fresh'} %>
+  <%= render :partial => 'random_article', :collection => @random_articles, :locals => {:image_type => 'random'} %>
   </ul>
   <ul id="output">
   <%= render :partial => 'random_article_output', :collection => @newest_articles + @random_articles %>

@@ -42,7 +42,7 @@ ul#random_articles_list li {
   font-family: Arial;
 }
 
-ul#random_articles_list li img {
+ul#random_articles_list li img.smallimg {
 padding: 5px;
 border: none;
 float: left;
@@ -51,6 +51,11 @@ margin: 10px 10px 0 0;
   padding: 1px 0 2px 1px;
   max-width: 50px;
   max-height: 50px;
+}
+
+ul#random_articles_list li img.overlayimg {
+  position: absolute;
+  left: 0;
 }
 
 ul#random_articles_list li a {
