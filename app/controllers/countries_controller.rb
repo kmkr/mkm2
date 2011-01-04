@@ -1,4 +1,6 @@
 class CountriesController < ApplicationController
+  before_filter :check_authorization, :except => [:show, :info]
+
   def show
     @country = Country.find(params[:id])
 
@@ -14,5 +16,9 @@ class CountriesController < ApplicationController
     respond_to do |format|
       format.json {render :json => positions}
     end
+  end
+
+  def edit 
+    @countries = Country.all
   end
 end

@@ -7,6 +7,7 @@ div#article h1 {
   margin-bottom: 2px;
 }
 
+
 div#article p.ad-image-description {
   margin: 0;
 }
@@ -243,6 +244,15 @@ div#new_comment_wrapper label {
 
 div#new_comment_wrapper input {
   float: right;
+}
+
+div#new_article div#progress {
+  display: none;
+  text-align: center;
+}
+
+div#new_article div#progress_wrapper {
+  height: 55px;
 }
 
 div#article input {

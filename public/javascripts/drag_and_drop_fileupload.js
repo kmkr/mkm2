@@ -1,5 +1,5 @@
-document.observe("dom:loaded", function() {
-  var dropArea = $("drop_area");
+jQuery(function() {
+  var dropArea = $("#drop_area");
   var filesWaiting = [];
   var ongoingTransfer = false;
   var completedTransfers = 0;
@@ -29,8 +29,9 @@ document.observe("dom:loaded", function() {
     var newValue = (completedTransfers/totalNumFiles)*100;
     jQuery( "#progressbar" ).progressbar( "option", "value", newValue);
 
-    if (newValue == 100) {
-      jQuery("#progressbar").hide('bounce', 1000);
+    if (newValue == 100) { //completed
+      jQuery("#progress").hide(); 
+      jQuery("#progressbar").hide('fade', 500);
       jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
       jQuery("#statusdiv").effect('highlight');
     }
@@ -43,6 +44,7 @@ document.observe("dom:loaded", function() {
 
     for (var i=0, il=files.length; i<il; i++) {
       jQuery('#progressbar').show();
+      jQuery('#progress').show();
       file = files[i];
       if (!file.type.match('image.*')) {
         alert("File number " + i + " does not look like an image");
@@ -79,28 +81,28 @@ document.observe("dom:loaded", function() {
   if ("files" in DataTransfer.prototype) {
     // file API is available 
     jQuery('#degregated_upload_area').hide();
-    dropArea.observe("dragleave", function (evt) {
+    dropArea.bind("dragleave", function (evt) {
           this.className = "";
          evt.preventDefault();
           evt.stopPropagation();
-        }, false);
+        });
 
-    dropArea.observe("dragenter", function (evt) {
+    dropArea.bind("dragenter", function (evt) {
           this.className = "dragenter";
           evt.preventDefault();
           evt.stopPropagation();
-        }, false);
+        });
 
-    dropArea.observe("dragover", function (evt) {
+    dropArea.bind("dragover", function (evt) {
           evt.preventDefault();
           evt.stopPropagation();
-        }, false);
+        });
 
-    dropArea.observe("drop", function (evt) {
-        traverseFiles(evt.dataTransfer.files);
+    dropArea.bind("drop", function (evt) {
+        traverseFiles(evt.originalEvent.dataTransfer.files);
           evt.preventDefault();
           evt.stopPropagation();
-        }, false);
+        });
     }  else {
       jQuery('#drop_area').hide();
     }

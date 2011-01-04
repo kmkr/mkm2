@@ -333,11 +333,8 @@
       // Wait until all thumbs are loaded, and then set the width of the ul
       var inter = setInterval(
         function() {
-        console.log(thumb_count);
-        console.log(thumbs_loaded);
           if(thumb_count == thumbs_loaded) {
             thumb_wrapper_width -= 100;
-            console.log(thumb_wrapper_width);
             var list = context.nav.find('.ad-thumb-list');
             list.css('width', thumb_wrapper_width +'px');
             var i = 1;

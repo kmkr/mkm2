@@ -13,9 +13,9 @@ jQuery(function() {
   var options = { projection: 'EPSG:4326', theme: null}
 
 
-  var latitude = Form.Element.getValue('article_latitude');
-  var longitude = Form.Element.getValue('article_longitude');
-  var zoom_level = Form.Element.getValue('article_zoom_level');
+  var latitude = $('#article_latitude').val();
+  var longitude = $('#article_longitude').val();
+  var zoom_level = $('#article_zoom_level').val();
 
   articleMap = new OpenLayers.Map( 'show_article_country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
