@@ -47,16 +47,18 @@ jQuery(function() {
   });
   
 
-  Event.observe("article_country_id", "change", function(event) {
-    var countryId = $(this).options[this.selectedIndex].value;
+  jQuery("#article_country_id").change(function(event) {
+    var countryId = jQuery(this).val();
 
     var url = '/countries/' + countryId
-    new Ajax.Request(url, {
-      method: 'get',
-      requestHeaders: ['Accept', 'application/json'],
+    jQuery.ajax({ 
+      url: url,
+      beforeSend: function(xhrObj){
+        xhrObj.setRequestHeader("Accept","application/json");
+      },
 
-      onSuccess: function(transport) {
-        var result = transport.responseJSON.country;
+      success: function(transport) {
+        var result = transport.country;
         var latitude = result.latitude;
         var longitude = result.longitude;
         var zoom_level = result.zoom_level;

@@ -1,6 +1,7 @@
 <li>
-<% if random_article_output.main_asset %>
-<%= image_tag random_article_output.main_asset.galleryitem.url(:medium) %>
+<% unless random_article_output.assets.empty? %>
+<% a=random_article_output.assets %>
+<%= image_tag a[rand(a.size)].galleryitem.url(:medium) %>
 <% end %>
 
 <%= link_to 'Open the article', article_path(random_article_output) %>

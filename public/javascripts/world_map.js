@@ -1,4 +1,4 @@
-document.observe("dom:loaded", function() {
+jQuery(function() {
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(10,10);
   var icon_red = new OpenLayers.Icon('/images/ball_red.png', size, 0);
@@ -25,30 +25,35 @@ document.observe("dom:loaded", function() {
 
 
   var timeout;
-  $('articles_countries').observe('mouseover', function() {
+  jQuery('#articles_countries').mouseover(function() {
       clearTimeout(timeout);
   });
-  $('articles_countries').observe('mouseout', function() {
+  jQuery('#articles_countries').mouseout(function() {
           timeout=setTimeout("jQuery('#articles_countries').hide('explode', 600)", 4000);
   });
 
   var url = '/countries/info'
-  new Ajax.Request(url, {
-    method: 'get',
-    requestHeaders: ['Accept', 'application/json'],
+  jQuery.ajax({
+    url: url,
+    dataType: 'json',
+    beforeSend: function(xhrObj){
+      xhrObj.setRequestHeader("Accept","application/json");
+    },
 
-    onSuccess: function(transport) {
-      var countryInfo = transport.responseJSON;
-      countryInfo.each(function(position) {
-        var marker = plotMarker(position, icon_red.clone());
+    success: function(transport) {
+      var countryInfo = transport;
+      jQuery.each(countryInfo, function(idx, country) {
+        var marker = plotMarker(country, icon_red.clone());
         // mouse listener
         marker.events.register("mouseover", marker, function(e) {
           clearTimeout(timeout);
           var articleLinks = "";
-          position.articles.each(function(article) {
+          jQuery.each(country.articles, function(idx, article) {
             articleLinks += "<li><a href='/articles/" + article.id + "'>" + article.title + "</a></li>";
           });
-          $('articles_countries').update("<div><h1>" + position.countryName + "</h1></div><ul>" + articleLinks + "</ul>");
+          jQuery('#articles_countries').html(
+          "<div><h1>" + country.countryName + "</h1></div><ul>" + articleLinks + "</ul>"
+          );
           jQuery('#articles_countries').fadeIn();
         });
 

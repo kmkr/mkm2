@@ -1,4 +1,4 @@
-document.observe("dom:loaded", function() {
+jQuery(function() {
   var mapOpen = false;
   var latitude = 0;
   var longitude = 0;
