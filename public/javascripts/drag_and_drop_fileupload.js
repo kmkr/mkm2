@@ -34,6 +34,8 @@ jQuery(function() {
       jQuery("#progressbar").hide('fade', 500);
       jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
       jQuery("#statusdiv").effect('highlight');
+      totalNumFiles = 0;
+      completedTransfers = 0;
     }
   }
 
