@@ -1,0 +1,20 @@
+<div id="edit_countries">
+<h1>Edit countries</h1>
+<ul id="country_list">
+<%= render :partial => 'country', :collection => @countries %>
+</ul>
+</div>
+
+<% remote_form_for @country do |f| %>
+<p>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label 'country[continent_id]', 'Continent' %>
+  <%= select_tag "country[continent_id]", options_from_collection_for_select(@continents, :id, :title, @country.continent_id) %>
+</p>
+<p>
+  <%= f.submit 'Submit' %>
+</p>
+<% end %>
