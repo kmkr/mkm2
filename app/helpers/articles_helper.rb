@@ -46,7 +46,7 @@ module ArticlesHelper
   private
 
   def format_date(date) 
-    date.strftime("%A %d#{suffix(date.day)} of %B") 
+    date.strftime("%A %d#{suffix(date.day)} of %B %Y") 
   end
 
   def suffix(value)

@@ -348,9 +348,9 @@
               i++;
             }
             clearInterval(inter);
-          }
+          };
         },
-        500
+        100
       );
     },
     initKeyEvents: function() {
