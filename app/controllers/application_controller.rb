@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
     end 
 
     unless user 
+      session[:return_to] = request.request_uri
       flash[:notice] = "Please log in"
       redirect_to(login_path)
     end 
