@@ -3,6 +3,10 @@ div#welcome_box {
   z-index: 10;
 }
 
+div#front_page h1 {
+  margin-top: 35px;
+}
+
 div#welcome_box p {
   background-color: #fff;
   }
@@ -122,3 +126,12 @@ background: #402c31;
 ul#output li a:hover {
 background: #ca202c;
 }
+
+div#welcome_box img {
+  float: left;
+}
+
+div#welcome_box p {
+  width: 70%;
+  float: right;
+  }
