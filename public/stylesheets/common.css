@@ -26,7 +26,7 @@ div.overlay_wrapper {
 div#outermostWrap {
   width: 1190px;
   margin: 10px auto;
- font-family: georgia, "Bitstream Charter", verdana, sans-serif, "Lucida Grande", "Lucida Sans Unicode", lucida;
+ font-family: ubuntu, georgia, verdana, sans-serif;
  font-size: 15px;
 }
 
