@@ -1,8 +1,10 @@
 <li>
 <% unless random_article_output.assets.empty? %>
 <% a=random_article_output.assets %>
-<%= image_tag a[rand(a.size)].galleryitem.url(:medium) %>
+<%= link_to image_tag(a[rand(a.size)].galleryitem.url(:medium)), article_path(random_article_output) %>
 <% end %>
 
+<span>
 <%= link_to 'Open the article', article_path(random_article_output) %>
+</span>
 </li>

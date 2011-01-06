@@ -12,6 +12,6 @@
 
 </div>
 
-  <div>
-    <p>This article has <%= @article.assets.size %> pictures in the gallery, you might want to <%= link_to_function 'check them out', 'scrollToAndSwitchToTab(1);' %> .</p>
-  </div>
+<div>
+  <p>The gallery <%= @article.assets.size == 1 ? 'has' : 'have' %> <%= pluralize(@article.assets.size, 'picture', 'pictures') %>, you might want to <%= link_to_function 'check it out', 'scrollToAndSwitchToTab(1);' %> .</p>
+</div>

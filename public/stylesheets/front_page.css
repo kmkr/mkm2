@@ -110,7 +110,7 @@ height: 440px;
 }
 
 
-ul#output li a {
+ul#output li span a {
 position: absolute;
 bottom: 10px;
 right: 200px;
@@ -123,7 +123,7 @@ background: #402c31;
             border-radius: 5px;
 }
 
-ul#output li a:hover {
+ul#output li span a:hover {
 background: #ca202c;
 }
 
