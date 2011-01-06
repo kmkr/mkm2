@@ -9,4 +9,9 @@
     <input type="hidden" id="article_zoom_level" value="<%= @article.country.zoom_level %>" />
   </form>
   <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
+
 </div>
+
+  <div>
+    <p>This article has <%= @article.assets.size %> pictures in the gallery, you might want to <%= link_to_function 'check them out', 'scrollToAndSwitchToTab(1);' %> .</p>
+  </div>
