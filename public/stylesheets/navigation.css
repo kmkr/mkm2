@@ -45,6 +45,7 @@ div#navigation li ul.countries {
   position: absolute;
   z-index: 1001;
   padding-top: 25px;
+  top: 25px;
 }
 
 div#navigation li ul li ul.articles {
