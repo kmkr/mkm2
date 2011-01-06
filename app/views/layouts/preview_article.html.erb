@@ -3,14 +3,15 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <%= stylesheet_link_tag :all, :cache => true %>
-    <script>
-      jQuery.noConflict();
-    </script>
   </head>
   <body>
-    <div id="mainwrap">
-      <div id="content">
-        <%= yield :layout %>
+    <div id="previewFrame">
+    <div id="outermostWrap">
+      <div id="mainwrap">
+        <div id="content">
+          <%= yield :layout %>
+        </div>
+      </div>
       </div>
     </div>
   </body>

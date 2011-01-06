@@ -1,15 +1,16 @@
 module ArticlesHelper
   def imagify(text, assets)
-    regex = /<h2>([^>]+>)[\n\s]+<p>([^\.]+\.\s){2}/
+    regex = /<h2>([^<]+<\/h2>)/
     regex_paragraphs = /<h2>.*<\/h2>[\n\s]+<p>.*<\/p>/
     min_size = 370
     text.sub!("<h2>", "<h2 class='visited'>")
 
     num_paragraphs = text.split(regex_paragraphs).size
-    num_images = assets.count - 1
+    num_images = assets.count
 
-    max_iterations = [ num_paragraphs, num_images].min
+    max_iterations = [ num_paragraphs, num_images-1].min
     
+    currentIdx = 1
     max_iterations.times do |i|
       match = text.match(regex_paragraphs)
       unless match and match[0].size > min_size
@@ -17,8 +18,11 @@ module ArticlesHelper
         next
       end
       text.sub!(regex) {
-      "<span class='floatLeft'></span><h2 class='visited'>#{$1}<p>#{$2}<span class='article_image'>#{image_tag assets[i+1].galleryitem.url(:medium), :class => 'text_image'}</span>"
+      "<span class='article_image'>#{image_tag assets[currentIdx].galleryitem.url(:medium), :class => 'text_image'}</span><h2 class='visited'>#{$1}"
       }
+
+      currentIdx += 1
+      min_size +=80 if i == 0
     end
 
     text

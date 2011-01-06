@@ -80,7 +80,16 @@ jQuery(function() {
 
     }
   };
-  if ("files" in DataTransfer.prototype) {
+  var dataTransferAvailable = true;
+  try {
+  var dt = DataTransfer;
+  if (!("files" in DataTransfer.prototype)) {
+    dataTransferAvailable = false;
+  }
+  } catch (e) {
+    dataTransferAvailable = false;
+  }
+  if (dataTransferAvailable) {
     // file API is available 
     jQuery('#degregated_upload_area').hide();
     dropArea.bind("dragleave", function (evt) {

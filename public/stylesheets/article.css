@@ -21,20 +21,16 @@ div#article h2 {
   clear: left;
 }
 
-span.article_image {
-  clear: right;
-  display: inline-block;
-  margin: 15px 0 15px 15px;
-  float: right;
-}
-
 span.article_image img.text_image {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 320px;
+  max-height: 320px;
   border: 1px solid #402C31;
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
   box-shadow: 0 0 2px #888;
+  float: right;
+  clear: right;
+  margin-top: 30px;
 }
 
 div#article_main_image {
@@ -63,7 +59,7 @@ div#article_main_image div.floatClearer {
 
 div#article_content p, div#article_content div.image_text {
   margin-bottom: 20px;
-  width: 78%;
+  width: 60%;
 }
 
 div#article_header {
@@ -81,7 +77,7 @@ div#article div#article_header p {
 }
 
 div#show_article_country_map {
-  margin: 10px auto;
+  margin: 25px auto 10px auto;
 }
 
 div#article_details {
@@ -257,4 +253,8 @@ div#new_article div#progress_wrapper {
 
 div#article input {
   width: 250px;
+}
+
+div#new_article div#tabs-1 ul .markItUpButton1 {
+  display: none;
 }
