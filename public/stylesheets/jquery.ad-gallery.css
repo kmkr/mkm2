@@ -94,7 +94,7 @@
   }
     .ad-gallery .ad-info {
       font-size: 0.7em;
-      display: none;
+      text-align: center;
     }
     .ad-gallery .ad-slideshow-controls {
       float: right;
