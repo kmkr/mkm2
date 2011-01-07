@@ -14,7 +14,7 @@ GEM
     activesupport (3.0.3)
     arel (2.0.6)
     builder (2.1.2)
-    i18n (0.5.0)
+    i18n (0.4.2)
     paperclip (2.3.6)
       activerecord
       activesupport
@@ -25,4 +25,5 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (= 4.2.3)
+  i18n (= 0.4.2)
   paperclip (= 2.3.6)
