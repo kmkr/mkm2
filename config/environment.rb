@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'paperclip'
   config.gem 'RedCloth'
+  config.gem "aws-s3", :lib => "aws/s3"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -42,3 +43,4 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+AWS::S3::DEFAULT_HOST = "s3-eu-west-1.amazonaws.com"
