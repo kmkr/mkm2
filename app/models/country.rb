@@ -1,5 +1,5 @@
 class Country < ActiveRecord::Base
-  has_many :articles
+  has_many :articles, :conditions => 'published_date IS NOT NULL'
   belongs_to :continent
 
   def self.country_info

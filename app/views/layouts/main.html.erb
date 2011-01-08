@@ -28,6 +28,9 @@
           <p style="float: left;">
             <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-wrench'></span>", edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
           </p>
+          <p style="float: left;">
+            <%= link_to "<span class='ui-state-default ui-corner-all ui-icon ui-icon-folder-open'></span>", articles_path, :title => 'List all articles' %>
+          </p>
           <% end %>
         </div>
         <%= render :partial => 'page/map_banner' %>

@@ -11,6 +11,10 @@ class Article < ActiveRecord::Base
     assets.first if assets.first
   end
 
+  def published?
+    published_date != nil 
+  end
+
   def self.all
     # sjekk etter admin her, kall super. hvis ikke admin, kall super med kun publiserte
     super

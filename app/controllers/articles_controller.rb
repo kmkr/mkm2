@@ -8,6 +8,10 @@ class ArticlesController < ApplicationController
     4.times { @article.assets.build }
   end
 
+  def index
+    @articles = Article.all
+  end
+
   def show
     @article = Article.find(params[:id], :include => :assets)
     @title = @article.title
