@@ -15,7 +15,8 @@ class Asset < ActiveRecord::Base
 #    :path => "#{
 #    YAML::load(File.open("#{RAILS_ROOT}/config/s3.yml"))[RAILS_ENV]["bucket"]
 #    }/:attachment/:id/:style/:filename",
-    :path => "/:attachment/:id/:style/:filename"
+    :path => "/:attachment/:id/:style/:filename",
+    :s3_host_alias => YAML::load(File.open("#{RAILS_ROOT}/config/s3.yml"))[RAILS_ENV]["s3_host_alias"]
 
   def dataupload=(uploadedObj)
     base64EncodedFile = uploadedObj.binaryData
