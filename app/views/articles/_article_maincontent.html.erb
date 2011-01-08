@@ -6,7 +6,7 @@
   <form>
     <input type="hidden" id="article_latitude" value="<%= @article.latitude %>" />
     <input type="hidden" id="article_longitude" value="<%= @article.longitude %>" />
-    <input type="hidden" id="article_zoom_level" value="<%= @article.country.zoom_level %>" />
+    <input type="hidden" id="article_zoom_level" value="<%= @article.zoom_level %>" />
   </form>
   <%= render :partial => 'countries/country_map', :locals => {:editable => false} %>
 
