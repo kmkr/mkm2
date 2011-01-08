@@ -1,8 +1,8 @@
 /* http://www.colourlovers.com/palette/1392490/Dark_Graffiti */
 body {
-  background-color: #e9ddaf;
+  background-color: #fff7ed;
   background: -moz-linear-gradient(top,  #fff7ed, #fff0ed);
-  background: -webkit-gradient(linear, left top, left bottom, from(#ecf8ff), to(#daf2ff));
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff7ed), to(#fff0ed));
   color: #222222;
 }
 
