@@ -53,9 +53,6 @@ jQuery(function() {
     var url = '/countries/' + countryId
     jQuery.ajax({ 
       url: url,
-      beforeSend: function(xhrObj){
-        xhrObj.setRequestHeader("Accept","application/json");
-      },
 
       success: function(transport) {
         var result = transport.country;

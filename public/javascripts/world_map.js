@@ -36,9 +36,6 @@ jQuery(function() {
   jQuery.ajax({
     url: url,
     dataType: 'json',
-    beforeSend: function(xhrObj){
-      xhrObj.setRequestHeader("Accept","application/json");
-    },
 
     success: function(transport) {
       var countryInfo = transport;

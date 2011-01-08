@@ -7,7 +7,7 @@
 */
 
 (function($) {
-	$.ajaxSettings.accepts._default = "text/javascript, text/html, application/xml, text/xml, */*";
+	$.ajaxSettings.accepts._default = "text/javascript, application/json, text/html, application/xml, text/xml, */*";
 })(jQuery);
 
 
