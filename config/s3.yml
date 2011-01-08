@@ -9,4 +9,4 @@ production:
   access_key_id: 'AKIAIPZQLJ2KHPQE3ULA'
   secret_access_key: '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'
   bucket: "mkmproduction"
-  s3_host_alias: 's3-eu-west-1.amazonaws.com'
+  s3_host_alias: 's3-eu-west-1.amazonaws.com/mkmproduction'
