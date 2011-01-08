@@ -1,1 +1,6 @@
-<li><%= link_to(h(article_preview.title), article_path(article_preview)) %> Published: <%= article_preview.published? %>
+<li>
+  <%= link_to(h(article_preview.title), article_path(article_preview)) %>
+  <% unless article_preview.published? %>
+  <span class="bold">Not</span> published
+  <% end %>
+</li>

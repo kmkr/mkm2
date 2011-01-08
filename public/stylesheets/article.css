@@ -258,3 +258,12 @@ div#article input {
 div#new_article div#tabs-1 ul .markItUpButton1 {
   display: none;
 }
+
+div#list_articles {
+  position: relative;
+  z-index: 8;
+}
+
+div#list_articles h1 span {
+  background: #fff;
+}
