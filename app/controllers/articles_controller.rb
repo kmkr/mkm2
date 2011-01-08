@@ -39,7 +39,6 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
-   # publish_article @article if @article.published?
     if @article.update_attributes(params[:article])
       flash[:notice] = "Article updated"
       redirect_to @article

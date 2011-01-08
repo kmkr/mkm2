@@ -41,7 +41,7 @@ div#article_main_image {
 div#article_main_image p {
   font-style: italic;
   font-size: 0.8em;
-  font-color: #aaa;
+  font-color: #888;
 }
 
 div#article_main_image img {
@@ -85,7 +85,7 @@ div#article_details {
   margin: 30px auto;
   font-size: 0.8em;
   font-style: italic;
-  color: #aaa;
+  color: #888;
 }
 
 div#left_column {
