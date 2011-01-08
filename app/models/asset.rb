@@ -11,7 +11,8 @@ class Asset < ActiveRecord::Base
     :convert_options => { :all => '-auto-orient' },
     :storage => :ftp,
     :path => "/:attachment/:id/:style/:filename",
-    :url => "http://84.234.222.3/mkm_2/:id/:style/:filename"
+    :url => YAML::load(File.open("#{RAILS_ROOT}/config/paperclipftp.yml"))[RAILS_ENV]["url"]
+
 
   def dataupload=(uploadedObj)
     base64EncodedFile = uploadedObj.binaryData

@@ -3,12 +3,14 @@ development:
   username: mkm
   password: mkmuser55
   passive: true
+  url: "http://84.234.222.3/mkm_2/:id/:style/:filename"
 test:
   host: 192.168.1.110
   username: mkm
   password: mkmuser
 production:
   host: 84.234.222.3
-  username: mkm
+  username: mkmp
   password: mkmuser55
   passive: true
+  url: "http://84.234.222.3/mkm_p/:id/:style/:filename"
