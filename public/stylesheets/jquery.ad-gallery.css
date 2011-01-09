@@ -157,8 +157,8 @@
           }
             .ad-gallery .ad-thumbs li a img {
               border: 3px solid #CCC;
-              max-width: 200px;
-              max-height: 200px;
+              max-width: 190px;
+              max-height: 190px;
               display: block;
             }
             .ad-gallery .ad-thumbs li a.ad-active img {
