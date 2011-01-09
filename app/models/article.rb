@@ -1,6 +1,5 @@
 class Article < ActiveRecord::Base
-  validates_presence_of :latitude, :longitude, :title, :country, :body
-  validates_length_of :body, :minimum => 100
+  validates_presence_of :latitude, :longitude, :title, :country
 
   belongs_to :country
   has_many :assets, :dependent => :destroy, :order => 'galleryitem_position'
@@ -15,8 +14,4 @@ class Article < ActiveRecord::Base
     published_date != nil 
   end
 
-  def self.all
-    # sjekk etter admin her, kall super. hvis ikke admin, kall super med kun publiserte
-    super
-  end
 end
