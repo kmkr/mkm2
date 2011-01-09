@@ -26,15 +26,13 @@ jQuery(function() {
     jQuery('#country_map').show();
     var p = new OpenLayers.LonLat(longitudeValue*1, latitudeValue*1);
     var position = p.transform(epsgProj, articleMap.getProjectionObject())
-    // Hvorfor virker ikke denne i FF?
       try {
         articleMap.setCenter(p, zoom_level*1);
+        markers.addMarker(new OpenLayers.Marker(position, icon.clone()));
       } catch (e) {
         console.log("unable to set map center. Running FF? %o", e);
       }
-    markers.addMarker(new OpenLayers.Marker(position, icon.clone()));
   }
-
 
   articleMap.events.register("click", articleMap, function(e) {
     var mapPos = this.events.getMousePosition(e);

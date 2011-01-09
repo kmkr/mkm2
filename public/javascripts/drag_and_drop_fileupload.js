@@ -33,7 +33,7 @@ jQuery(function() {
       jQuery("#progress").hide(); 
       jQuery("#progressbar").hide('fade', 500);
       jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
-      jQuery("#statusdiv").effect('highlight');
+      jQuery("#statusdiv").show('highlight');
       totalNumFiles = 0;
       completedTransfers = 0;
     }
@@ -41,24 +41,26 @@ jQuery(function() {
 
   function traverseFiles (files) {
     var li, img, file, fileInfo; 
+    var readFiles = 0;
     totalNumFiles += files.length;
     updateCompletion(0); // Fire change 
 
     for (var i=0, il=files.length; i<il; i++) {
       jQuery('#progressbar').show();
+      jQuery("#statusdiv").hide('fade');
       jQuery('#progress').show();
       file = files[i];
       if (!file.type.match('image.*')) {
         alert("File number " + i + " does not look like an image");
         continue;
       }
+      var files = files;
 
-      var fileName = file.fileName;
       var binaryReader = new FileReader();
       binaryReader.onload = (function (theImg) {
         return function (evt) {
-
           var imageBinary = evt.target.result;
+          var fileName = files[readFiles].fileName;
           // looks like the image is ok
           // send it to the server
           var base64Value = jQuery.base64Encode(imageBinary);
@@ -67,6 +69,7 @@ jQuery(function() {
           var actionPath = jQuery('#article_form').attr('action').split('/');
           var article_id = actionPath[actionPath.length - 1] * 1;
           var postData = "article_id="+article_id+"&file_name="+fileNameEncoded+ "&binary_data="+encodedData;
+          readFiles = readFiles + 1;
 
           if (ongoingTransfer == true) {
             filesWaiting.push(postData);
