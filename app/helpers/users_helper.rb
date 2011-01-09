@@ -1,4 +1,9 @@
 module UsersHelper
+
+  def is_logged_in?
+    session[:user_id] and session[:user_id].to_s =~ /\d+/ 
+  end
+
   
   #
   # Use this to wrap view elements that the user can't access.

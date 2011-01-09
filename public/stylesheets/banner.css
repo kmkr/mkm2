@@ -56,3 +56,7 @@ div#tools {
   z-index: 200;
   position: absolute;
 }
+
+div#banner div#tools p {
+  float: left;
+}

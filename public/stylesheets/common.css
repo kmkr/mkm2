@@ -145,3 +145,17 @@ div.olLayerGoogleCopyright, div.olLayerGooglePoweredBy {
   display: none;
   visibility: hidden;
 }
+
+.tooltip {
+  border: 1px solid black;
+  font-size: 12px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 0 5px #402C31;
+  -webkit-box-shadow: 0 0 5px#402C31;
+  box-shadow: 0 0 5px #402C31;
+display:none;
+padding:5px;
+position: relative;
+z-index: 100;
+background-color: #fff7ed;
+}
