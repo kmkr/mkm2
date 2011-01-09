@@ -15,8 +15,8 @@ $.tools.tooltip.addEffect("bouncy",
 
   // closing animation
   function(done) {
-    this.getTip().animate({top: '+=10'}, 100, 'bouncy', function()  {
-      $(this).hide('explode');
+    this.getTip().animate({top: '-=10'}, 50, 'bouncy', function()  {
+      $(this).hide('fade');
       done.call();
     });
   }
