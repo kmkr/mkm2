@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     @countries = Country.all
-    4.times { @article.assets.build }
+    3.times { @article.assets.build }
   end
 
   def index
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @countries = Country.all
-    4.times { @article.assets.build }
+    3.times { @article.assets.build }
   end
 
   def update
