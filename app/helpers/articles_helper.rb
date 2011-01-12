@@ -7,11 +7,11 @@ module ArticlesHelper
     index = 1
     while text.length > current_location += distance_between_words do
       break if index == assets.size 
-      text_to_scan = text.splice(current_location, distance_between_words)
-      current_location -= 70 unless text.scan("<h2>").empty?
-      current_location -= 100 unless text.scan("<p>").empty?
+      text_to_scan = text.splice(current_location, distance_between_imgs)
+      current_location -= 70 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
+      current_location -= 100 unless text.scan("<p>").empty? # p use alot of whitespace, subtract
 
-      current_location = last_location + distance_between_imgs if current_location <= last_location + 50
+      current_location = last_location + distance_between_imgs if current_location <= last_location + 50 # with little text between headings and p's we might end up subtracting too much. this should be rare, however, and not happen for real articles
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
       last_location = current_location
