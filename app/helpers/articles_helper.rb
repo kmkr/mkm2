@@ -5,9 +5,10 @@ module ArticlesHelper
 
     index = 1
     while text.length > current_location += distance_between_imgs do
-      break if index == assets.size
+      break if index == assets.size or text.length > current_location + distance_between_imgs
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
+    distance_between_imgs = 1150
     end
 
     text
