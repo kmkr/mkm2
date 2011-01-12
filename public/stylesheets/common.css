@@ -156,6 +156,7 @@ div.olLayerGoogleCopyright, div.olLayerGooglePoweredBy {
 display:none;
 padding:5px;
 position: relative;
+top:10px;
 z-index: 100;
 background-color: #fff7ed;
 }
