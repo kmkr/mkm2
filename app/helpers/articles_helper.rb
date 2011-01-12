@@ -2,13 +2,20 @@ module ArticlesHelper
   def imagify(text, assets)
     distance_between_imgs = 900
     current_location = 0
+    last_location = 0
 
     index = 1
-    while text.length > current_location += distance_between_imgs do
-      break if index == assets.size or current_location + distance_between_imgs > text.length
+    while text.length > current_location += distance_between_words do
+      break if index == assets.size 
+      text_to_scan = text.splice(current_location, distance_between_words)
+      current_location -= 70 unless text.scan("<h2>").empty?
+      current_location -= 100 unless text.scan("<p>").empty?
+
+      current_location = last_location + distance_between_imgs if current_location <= last_location + 50
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
-    distance_between_imgs = 1150
+      last_location = current_location
+      distance_between_imgs = 1150
     end
 
     text
