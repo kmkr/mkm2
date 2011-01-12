@@ -7,7 +7,7 @@ module ArticlesHelper
     index = 1
     while text.length > current_location += distance_between_imgs do
       break if index == assets.size 
-      text_to_scan = text.splice(current_location, distance_between_imgs)
+      text_to_scan = text.slice(current_location, distance_between_imgs)
       current_location -= 70 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
       current_location -= 100 unless text.scan("<p>").empty? # p use alot of whitespace, subtract
 
