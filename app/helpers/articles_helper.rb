@@ -1,28 +1,15 @@
 module ArticlesHelper
   def imagify(text, assets)
-    regex = /<h2>([^<]+<\/h2>)/
-    regex_paragraphs = /<h2>.*<\/h2>[\n\s]+<p>.*<\/p>/
-    min_size = 370
-    text.sub!("<h2>", "<h2 class='visited'>")
+    distance_between_imgs = 900
+    current_location = 0
 
-    num_paragraphs = text.split(regex_paragraphs).size
-    num_images = assets.count
-
-    max_iterations = [ num_paragraphs, num_images-1].min
-    
-    currentIdx = 1
-    max_iterations.times do |i|
-      match = text.match(regex_paragraphs)
-      unless match and match[0].size > min_size
-        text.sub!("<h2>", "<h2 class='visited'>")
-        next
-      end
-      text.sub!(regex) {
-      "<span class='article_image'>#{image_tag assets[currentIdx].galleryitem.url(:medium), :class => 'text_image'}</span><h2 class='visited'>#{$1}"
-      }
-
-      currentIdx += 1
-      min_size +=80 if i == 0
+    index = 1
+    while b = text.slice(current_location..current_location + distance_between_imgs) do
+      break if index >= assets.size
+      distance_between_imgs = 700 if index == 2
+      current_location += distance_between_imgs 
+      text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
+      index += 1
     end
 
     text

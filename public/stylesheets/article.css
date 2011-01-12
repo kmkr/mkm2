@@ -28,8 +28,8 @@ span.article_image img.text_image {
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
   box-shadow: 0 0 2px #888;
-  float: right;
-  clear: right;
+  position: absolute;
+  right: 1.4em;
   margin-top: 30px;
 }
 
