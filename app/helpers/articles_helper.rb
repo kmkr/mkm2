@@ -15,7 +15,7 @@ module ArticlesHelper
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
       last_location = current_location
-      distance_between_imgs = 1150
+      distance_between_imgs = 1250
     end
 
     text
