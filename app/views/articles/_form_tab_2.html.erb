@@ -18,7 +18,7 @@
   </p>
   <!-- Fallback for ikke-html-lesere -->
   <div>
-    <% f.fields_for :assets do |asset| %>
+    <%= f.fields_for :assets do |asset| %>
       <% if asset.object.new_record? %>
         <p><%= asset.file_field :galleryitem %></p>
       <% end %>
@@ -30,7 +30,7 @@
 
 <div id="galleryitems">
   <ul id="sortable">
-    <% f.fields_for :assets do |asset| %>
+    <%= f.fields_for :assets do |asset| %>
       <%= render :partial => 'editable_galleryitem', :locals => { :asset => asset } %>
     <% end %>
   </ul>

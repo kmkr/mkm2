@@ -1,0 +1,2 @@
+$('#country_list').append("<%= escape_javascript(render :partial => 'country', :object => @country) %>");
+$("#<%= dom_id(@country) %>").effect('highlight', {}, 600);

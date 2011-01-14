@@ -21,7 +21,7 @@
     <div id="article_details">
    
       <p>This article is about <span class="bold">
-      <%= h @article.country.title %></span> and is dated 
+      <%= @article.country.title %></span> and is dated 
       <%= getArticleStartEndDate(@article) %>. The article has <span
       class="bold">
       <%= pluralize @article.assets.size, 'picture', 'pictures' %></span>

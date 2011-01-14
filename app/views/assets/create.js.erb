@@ -1,0 +1,3 @@
+$("#sortable").append("<%= escape_javascript(render :partial => 'editable_galleryitem_hardcoded_html', :locals => { :asset => @asset, :asset_number => @article.assets.size + 1 }) %>");
+$("#drop_area").effect('transfer', { to: "#<%= dom_id(@asset) %>", className: 'ui-effects-transfer' }, 1000);
+$("#<%= dom_id(@asset) %>").effect("highlight", {}, 1000);

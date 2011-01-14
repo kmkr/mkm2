@@ -1,4 +1,4 @@
 <li id="<%= dom_id(country) %>">
   <%= in_place_editor_field country, :title %> (<%= country.continent.title %>)
-  <%= link_to_remote "<span class='ui-state-default ui-corner-all ui-icon ui-icon-trash'></span>", {:url => country_path(country), :method => :delete, :title => 'Delete country', :confirm => 'Are you sure?'} %>
+  <%= link_to(content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-trash'), country_path(country), :remote => true, :method => :delete, :title => 'Delete country', :confirm => "#{country.title} will be completely gone! However, its #{pluralize(country.articles.size, 'article')} will not. Still want to nuke #{country.title}?") %>
 </li>

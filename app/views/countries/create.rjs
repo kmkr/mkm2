@@ -1,1 +1,0 @@
-page.insert_html :bottom, 'country_list', :partial => 'country', :object => @country

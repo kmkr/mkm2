@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag :all, :cache => true %>
+    <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js" %>
+    <%= javascript_include_tag 'jquery-ui-1.8.7.custom.min.js', 'rails', 'jrails', 'jquery.tools.min', 'tooltips_front', 'jquery.scrollTo-min.js', 'jquery.inplace.pack', 'OpenLayers', 'navigation',  :cache => true %>
+    <title><%= 'MKM :: ' %><%= @title %></title>
+  </head>
+  <body>
+  <div id="outermostWrap">
+      <%= image_tag 'logo.png', :id => 'logo' %>
+      <div id="banner">
+        <div id="tools">
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-home'), "/", :title => 'Home', :id => 'home_button' %>
+          </p>
+          <% if is_logged_in? %>
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-wrench'), edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
+          </p>
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-folder-open'), articles_path, :title => 'List all articles' %>
+          </p>
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-folder-open'), countries_path, :title => 'List, edit and create countries' %>
+          </p>
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-circle-plus'), new_article_path, :title => 'Create new article' %>
+          </p>
+          <p>
+            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-unlocked'), logout_path, :title => 'Log out' %>
+          </p>
+          <% else %>
+            <p>
+              <%= link_to_login_with_IP content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-locked'), :title => 'Log in' %>
+            </p>
+          <% end %>
+        </div>
+        <%= render :partial => 'page/map_banner' %>
+        <div id="navigation">
+          <%= render :partial => 'continent/continent_navigation', :locals => { :continents => @continents } %>
+          <div class="clearboth"></div>
+        </div>
+      </div>
+    <div id="mainwrap">
+      <div id="content">
+        <% if flash[:error] %>
+          <div id="flash_error">
+            <%= flash[:error] %>
+          </div>
+        <% elsif flash[:warning] %>
+          <div id="flash_warning">
+            <%= flash[:warning] %>
+          </div>
+        <% elsif flash[:notice] %>
+          <div id="flash_notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <%= yield :layout %>
+        <div class="clearboth"></div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

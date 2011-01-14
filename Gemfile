@@ -1,13 +1,11 @@
-source :gemcutter
-gem 'paperclip', '2.3.6'
-gem 'RedCloth', '4.2.3'
-gem 'i18n', '0.4.2'
-gem 'aws-s3', '0.6.2'
-gem 'activesupport', '2.3.8'
-gem 'activerecord', '2.3.8'
-gem 'rack', '1.1.0'
-gem 'actionpack', '2.3.8'
-gem 'actionmailer', '2.3.8'
-gem 'activeresource', '2.3.8'
-gem 'rails', '2.3.8'
+source 'http://rubygems.org'
 
+gem 'rails', '3.0.3'
+gem 'paperclip'
+gem 'RedCloth'
+gem 'aws-s3', :require => 'aws/s3'
+
+group :development, :test do 
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'ruby-debug'
+end

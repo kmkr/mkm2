@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  layout :choose_layout
+  #layout :choose_layout
   before_filter :check_authorization, :except => [ :show, :preview, :choose_layout ]
 
   def new
@@ -79,11 +79,10 @@ class ArticlesController < ApplicationController
   end
 
   def choose_layout
-  logger.debug action_name
     if 'preview'.include? action_name
       'preview_article'
     else
-      'main'
+      'application'
     end
   end
 

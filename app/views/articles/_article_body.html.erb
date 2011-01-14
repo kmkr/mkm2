@@ -4,6 +4,6 @@
 <% end %>
 </div>
 <div id="article_content">
-  <%= imagify RedCloth.new(body).to_html, article.assets %>
+  <%= raw imagify RedCloth.new(body).to_html, article.assets %>
 </div>
 <div class="clearboth"></div>

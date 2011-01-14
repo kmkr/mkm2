@@ -5,7 +5,7 @@
 </ul>
 </div>
 
-<% remote_form_for @country do |f| %>
+<%= form_for (@country, :remote => true) do |f| %>
 <p>
 <%= f.label :title %>
 <%= f.text_field :title %>

@@ -1,3 +1,0 @@
-page.insert_html(:top, 'comments', :partial => 'comment')
-page['new_comment'].reset();
-page[@comment].visual_effect 'highlightP'
