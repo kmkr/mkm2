@@ -11,6 +11,9 @@ Mkm2::Application.routes.draw do
   resources :articles do
     resources :assets
     resources :comments
+    member do
+      get :publish
+    end
   end
 
   resources :assets do

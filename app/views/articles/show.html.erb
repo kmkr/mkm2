@@ -22,7 +22,7 @@
    
       <p>This article is about <span class="bold">
       <%= @article.country.title %></span> and is dated 
-      <%= getArticleStartEndDate(@article) %>. The article has <span
+      <%= raw getArticleStartEndDate(@article) %>. The article has <span
       class="bold">
       <%= pluralize @article.assets.size, 'picture', 'pictures' %></span>
       in the gallery, and <span class="bold">

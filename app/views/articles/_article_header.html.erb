@@ -1,5 +1,5 @@
 <h1><%= @article.title %></h1>
 <p>
- Dated <%= getArticleStartEndDate @article %>.
-  <%= getArticlePublishedDetails @article %>
+ Dated <%= raw getArticleStartEndDate @article %>.
+  <%= raw getArticlePublishedDetails @article %>
 </p>
