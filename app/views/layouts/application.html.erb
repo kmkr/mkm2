@@ -3,9 +3,9 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <%= csrf_meta_tag %>
-    <%= stylesheet_link_tag :all, :cache => true %>
+    <%= stylesheet_link_tag :all, :cache => false %>
     <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js" %>
-    <%= javascript_include_tag 'jquery-ui-1.8.7.custom.min.js', 'rails', 'jrails', 'jquery.tools.min', 'tooltips_front', 'jquery.scrollTo-min.js', 'jquery.inplace.pack', 'OpenLayers', 'navigation',  :cache => true %>
+    <%= javascript_include_tag 'jquery-ui-1.8.7.custom.min.js', 'rails', 'jrails', 'jquery.tools.min', 'tooltips_front', 'jquery.scrollTo-min.js', 'jquery.inplace.pack', 'OpenLayers', 'navigation',  :cache => false %>
     <title><%= 'MKM :: ' %><%= @title %></title>
   </head>
   <body>
