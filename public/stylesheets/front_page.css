@@ -43,7 +43,6 @@ width: 320px;
 
 ul#random_articles_list li {
   font-size: 12px;
-  font-family: Arial;
 }
 
 ul#random_articles_list li img.smallimg {
@@ -97,6 +96,9 @@ height: 435px;
 position: relative;
   border: 1px solid #402C31;
   text-align: center;
+  background: #efefef;
+  background: -moz-linear-gradient(top,  #eee,  #fff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
 }
 
 ul#output img {
@@ -106,8 +108,8 @@ ul#output img {
 
 ul#output li {
 position: absolute;
-width: 588px;
-height: 440px;
+width: 655px;
+height: 435px;
 }
 
 
