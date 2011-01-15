@@ -14,6 +14,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id], :include => :assets)
+    unless @article.published_date
+      check_authorization
+    end
     @title = @article.title
     @comment = Comment.new
   end
