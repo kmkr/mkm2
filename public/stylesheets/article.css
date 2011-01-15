@@ -29,21 +29,22 @@ div#article_thumb_images {
   clear: right;
 }
 
-span.article_image img {
+div.article_image img {
   max-width: 320px;
   max-height: 320px;
   border: 1px solid #402C31;
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
   box-shadow: 0 0 2px #888;
-}
-
-span.article_image {
   margin-top: 20px;
-  margin-bottom: 50px;
 }
 
-div#article span.article_image p {
+div.article_image div {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+div#article div.article_image p {
   font-size: 12px;
   margin: 0;
   padding: 5px;
@@ -51,17 +52,12 @@ div#article span.article_image p {
   text-align: center;
   background-color: #ffffe7;
   display: none;
+  font-color: #888;
 }
 
 div#article_main_image {
   float: right;
   margin: 20px 0 20px 20px;
-}
-
-div#article_main_image p {
-  font-style: italic;
-  font-size: 0.8em;
-  font-color: #888;
 }
 
 div#article_main_image img {
