@@ -21,16 +21,22 @@ div#article h2 {
   clear: left;
 }
 
-span.article_image img.text_image {
+div#article_thumb_images {
+  width: 322px;
+  text-align: center;
+  float: right;
+  clear: right;
+}
+
+span.article_image img {
   max-width: 320px;
-  max-height: 245px;
+  max-height: 320px;
   border: 1px solid #402C31;
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
   box-shadow: 0 0 2px #888;
-  position: absolute;
-  right: 1.4em;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 div#article_main_image {
