@@ -54,6 +54,10 @@ div#article p.caption {
   font-style: italic;
 }
 
+div.article_image img p.caption {
+  width: 95%;
+}
+
 div#article div#article_thumb_images p.caption {
   background-color: #ffffe7;
   display: none;
