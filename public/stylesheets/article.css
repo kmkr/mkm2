@@ -23,7 +23,7 @@ div#article h2 {
 
 span.article_image img.text_image {
   max-width: 320px;
-  max-height: 320px;
+  max-height: 245px;
   border: 1px solid #402C31;
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
