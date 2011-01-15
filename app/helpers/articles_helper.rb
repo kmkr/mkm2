@@ -1,16 +1,14 @@
 module ArticlesHelper
   def imagify(text, assets)
-    current_location_in_text = 1000
+    iterations = [(text.length - 200)/1000, assets.size - 1].min
     index = 1
     image_html = ""
 
-    while text.length > current_location_in_text + 200
-      break if index >= assets.size 
+    while index < iterations
       image = image_tag(assets[index].galleryitem.url(:medium))
       text = content_tag(:p, assets[index].galleryitem_caption)
       image_html += content_tag(:span, image + text, :class => 'article_image')
       index += 1
-      current_location_in_text += 1000
     end
 
     image_html
