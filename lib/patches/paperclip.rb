@@ -6,6 +6,8 @@ module Paperclip
         require 'aws/s3'
         base.instance_eval do
           @s3_credentials = parse_credentials(@options[:s3_credentials])
+          @s3_credentials[:access_key_id] = ENV['S3_KEY']
+          @s3_credentials[:secret_access_key] = ENV['S3_SECRET']
           @bucket         = @options[:bucket]         || @s3_credentials[:bucket]
           @bucket         = @bucket.call(self) if @bucket.is_a?(Proc)
           @s3_options     = @options[:s3_options]     || {}
