@@ -1,0 +1,12 @@
+development:
+  access_key_id: 'AKIAIAW2WO6XDSMHBCWA'
+  secret_access_key: '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'
+  bucket: 'mkmdevelopment'
+  url: ':s3_alias_url'
+  s3_host_alias: 's3-eu-west-1.amazonaws.com/mkmdevelopment'
+
+production:
+  access_key_id: 'AKIAIAW2WO6XDSMHBCWA'
+  secret_access_key: '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'
+  bucket: "mkmproduction"
+  s3_host_alias: 's3-eu-west-1.amazonaws.com/mkmproduction' 
