@@ -6,7 +6,9 @@ module ArticlesHelper
 
     while text.length > current_location_in_text + 200
       break if index >= assets.size 
-      image_html += content_tag(:span, image_tag(assets[index].galleryitem.url(:medium)), :class => 'article_image')
+      image = image_tag(assets[index].galleryitem.url(:medium))
+      text = content_tag(:p, assets[index].galleryitem_caption)
+      image_html += content_tag(:span, image + text, :class => 'article_image')
       index += 1
       current_location_in_text += 1000
     end

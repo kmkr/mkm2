@@ -1,10 +1,12 @@
 $(function() {
-  var imgs = $('#article_thumb_images img');
-  imgs.fadeTo(0, .65);
-  imgs.hover(function() {
-      $(this).fadeTo("fast", 1);
+  var spans = $('#article_thumb_images span');
+  $("img", spans).fadeTo(0, .65);
+  spans.hover(function() {
+      $("img", this).fadeTo("fast", 1);
+      $("p", this).show('slide', {direction: 'up'}, 400);
     },
     function() {
-      $(this).fadeTo("fast", .65); 
+      $("img", this).fadeTo("fast", .65); 
+      $("p", this).hide('slide', {direction: 'up'}, 400);
     });
 });
