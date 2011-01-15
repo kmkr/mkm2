@@ -28,7 +28,6 @@ module AWS
               self << "\n"
             end
             self << (AWS::S3::Base.connection.subdomain ? "/#{AWS::S3::Base.connection.subdomain}#{path}" : path)
-            puts "Path er #{path}, self er #{self}"
           end
       end
     end
