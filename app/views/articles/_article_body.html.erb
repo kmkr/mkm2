@@ -1,7 +1,7 @@
 <div id="article_main_image">
 <% if article.main_asset %>
   <%= image_tag article.main_asset.galleryitem.url(:medium) %>
-  <p class="caption"><%= article.main_asset.galleryitem_caption %></p>
+  <p class="caption"><%= truncate(article.main_asset.galleryitem_caption, :length => 180, :omission => "...") %></p>
 <% end %>
 </div>
 <div id="article_thumb_images">

@@ -47,6 +47,7 @@ div.article_image div {
 
 div#article p.caption {
   font-size: 11px;
+  line-height: 96%;
   margin: 0;
   text-align: center;
   font-color: #888;

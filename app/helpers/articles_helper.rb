@@ -6,7 +6,7 @@ module ArticlesHelper
 
     while index <= iterations
       image = image_tag(assets[index].galleryitem.url(:medium))
-      text = content_tag(:p, assets[index].galleryitem_caption, :class => 'caption')
+      text = content_tag(:p, truncate(assets[index].galleryitem_caption, :length => 160, :omission => "..."), :class => 'caption')
       text_wrapper = content_tag(:div, text)
       image_html += content_tag(:div, image + text_wrapper, :class => 'article_image')
       index += 1
@@ -18,7 +18,7 @@ module ArticlesHelper
 
   def getArticleStartEndDate(article)
     # ignoring year
-    if article.end_date.month == article.start_date.month == 0 
+    if article.end_date.month == article.start_date.month 
       format_date(article.start_date)
     else
        "around #{format_date(article.start_date)} to #{format_date(article.end_date)}"
