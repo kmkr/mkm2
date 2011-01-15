@@ -9,7 +9,7 @@ module ArticlesHelper
       break if index >= assets.size 
 
       # verify there is a certain amount of text left
-      break if current_location + 400 > text.length
+      break if (current_location + 400) > text.length
 
       text_to_scan = text.slice(current_location, distance_between_imgs)
       current_location -= 120 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
@@ -26,7 +26,7 @@ module ArticlesHelper
       # if first end-tag starts before the first start tag, we're in trouble
       first_end_tag = text_to_scan.index("</")
       first_start_tag = text_to_scan.index(/<\w/)
-      if first_end_tag < first_start_tag
+      if first_end_tag and (first_end_tag < first_start_tag)
         current_location += first_end_tag + 6
       end
 
