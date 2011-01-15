@@ -1,6 +1,6 @@
 <div id="create_new_comment">
 <%= error_messages_for :comment %>
-<%= form_for ([@article, @comment], :remote => true) do |f| %>
+<%= form_for([@article, @comment], :remote => true) do |f| %>
   <p>
     <%= f.label :author, 'Name' %>
     <%= f.text_field :author %>
