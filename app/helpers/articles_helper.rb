@@ -19,7 +19,7 @@ module ArticlesHelper
     if article.end_date - article.start_date == 0 
       format_date(article.start_date)
     else
-       "from #{format_date(article.start_date)} to #{format_date(article.end_date)}"
+       "around #{format_date(article.start_date)} to #{format_date(article.end_date)}"
     end
   end
 
@@ -36,7 +36,7 @@ module ArticlesHelper
   private
 
   def format_date(date) 
-    date.strftime("%A %d#{suffix(date.day)} of %B %Y") 
+    date.strftime("%B %Y") 
   end
 
   def suffix(value)
