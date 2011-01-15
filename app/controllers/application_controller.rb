@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_app
 
   def initialize_app
-    @continents = Continent.all
-    @locations = User.all.collect {|user| { :longitude => user.current_longitude, :latitude => user.current_latitude } }
+    @continents = Continent.includes(:countries)
+    @locations = Rails.cache.fetch("users") { User.all.collect {|user| { :longitude => user.current_longitude, :latitude => user.current_latitude } } }
   end
 
   def check_authorization

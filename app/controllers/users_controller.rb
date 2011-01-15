@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   before_filter :check_authorization, :except => [ :new, :create ]
+  cache_sweeper :sweeper, :only => [:create, :update]
   
 
   # render new.rhtml

@@ -46,4 +46,7 @@ Mkm2::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  require 'active_support/cache/dalli_store23'
+  config.cache_store = :dalli_store
 end
