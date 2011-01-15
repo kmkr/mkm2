@@ -1,5 +1,6 @@
 div#article p {
   margin: 10px;
+  text-align: justify;
   margin-left: 0;
 }
 
