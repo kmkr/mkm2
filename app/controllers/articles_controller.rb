@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  #layout :choose_layout
+  layout :choose_layout
   before_filter :check_authorization, :except => [ :show, :preview, :choose_layout ]
 
   def new
