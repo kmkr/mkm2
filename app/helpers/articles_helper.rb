@@ -1,12 +1,16 @@
 module ArticlesHelper
   def imagify(text, assets)
-    distance_between_imgs = 950
+    distance_between_imgs = 1000
     current_location = 0
     last_location = 0
 
     index = 1
     while text.length > current_location += distance_between_imgs do
       break if index >= assets.size 
+
+      # verify there is a certain amount of text left
+      break if current_location + 400 > text.length
+
       text_to_scan = text.slice(current_location, distance_between_imgs)
       current_location -= 120 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
       current_location -= 50 unless text.scan("<p>").empty? # p use whitespace, subtract
@@ -29,7 +33,7 @@ module ArticlesHelper
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
       last_location = current_location
-      distance_between_imgs = 1200
+      distance_between_imgs = 1100
     end
 
     text
