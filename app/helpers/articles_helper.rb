@@ -17,7 +17,8 @@ module ArticlesHelper
 
 
   def getArticleStartEndDate(article)
-    if article.end_date - article.start_date == 0 
+    # ignoring year
+    if article.end_date.month == article.start_date.month == 0 
       format_date(article.start_date)
     else
        "around #{format_date(article.start_date)} to #{format_date(article.end_date)}"
