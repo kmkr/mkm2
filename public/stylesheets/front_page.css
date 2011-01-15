@@ -92,13 +92,14 @@ width: 200px;
 
 ul#output {
 right: 0;
-width: 660px;
-height: 440px;
+width: 655px;
+height: 435px;
 position: relative;
+  border: 1px solid #402C31;
+  text-align: center;
 }
 
 ul#output img {
-  border: 1px solid #402C31;
   max-width: 655px;
   max-height: 435px;
 }
