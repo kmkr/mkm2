@@ -12,10 +12,18 @@ module ArticlesHelper
       current_location -= 50 unless text.scan("<p>").empty? # p use whitespace, subtract
       current_location = last_location + distance_between_imgs if current_location <= last_location + 50 # with little text between headings and p's we might end up subtracting too much. this should be rare, however, and not happen for real articles
 
-      # check if text contains an odd number of a-tags
-      if text_to_scan.match(/\<\s?\w+/) and !text_to_scan.match(/\<\/\w+\>/)
+      # check if text contains an odd number of tags
+      if text_to_scan.match(/\<\w+/) and !text_to_scan.match(/\<\/\w+\>/)
         start_of_end_tag = text.index(/<\/\w+>/, current_location)
         text_to_scan = text.slice(current_location, start_of_end_tag + 15) # an end tag is not larger than 15
+      end
+
+      # check that we dont insert INTO another tag
+      # if first end-tag starts before the first start tag, we're in trouble
+      first_end_tag = text_to_scan.index("</")
+      first_start_tag = text_to_scan.index(/<\w/)
+      if first_end_tag < first_start_tag
+        current_location += first_end_tag + 6
       end
 
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
