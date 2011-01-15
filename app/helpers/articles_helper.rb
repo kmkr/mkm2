@@ -1,6 +1,6 @@
 module ArticlesHelper
   def imagify(text, assets)
-    distance_between_imgs = 900
+    distance_between_imgs = 950
     current_location = 0
     last_location = 0
 
@@ -8,14 +8,20 @@ module ArticlesHelper
     while text.length > current_location += distance_between_imgs do
       break if index >= assets.size 
       text_to_scan = text.slice(current_location, distance_between_imgs)
-      current_location -= 70 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
-      current_location -= 100 unless text.scan("<p>").empty? # p use alot of whitespace, subtract
-
+      current_location -= 120 unless text.scan(/<h\d>/).empty? # headings use whitespace, subtract a bit from the position
+      current_location -= 50 unless text.scan("<p>").empty? # p use whitespace, subtract
       current_location = last_location + distance_between_imgs if current_location <= last_location + 50 # with little text between headings and p's we might end up subtracting too much. this should be rare, however, and not happen for real articles
+
+      # check if text contains an odd number of a-tags
+      if text_to_scan.match(/\<\s?\w+/) and !text_to_scan.match(/\<\/\w+\>/)
+        start_of_end_tag = text.index(/<\/\w+>/, current_location)
+        text_to_scan = text.slice(current_location, start_of_end_tag + 15) # an end tag is not larger than 15
+      end
+
       text.insert(current_location, "<span class='article_image'>#{image_tag assets[index].galleryitem.url(:medium), :class => 'text_image'}</span>")
       index += 1
       last_location = current_location
-      distance_between_imgs = 1250
+      distance_between_imgs = 1200
     end
 
     text
