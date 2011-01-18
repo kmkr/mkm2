@@ -10,13 +10,15 @@ div#mainwrap {
 	border: 1px solid #402c31;
 }
 
-a:link, a:visited {
+div#mainwrap a:link, a:visited {
   color: #a21a21;
   font-style: none;
+  text-decoration: none;
 }
 
-a:hover {
+div#mainwrap a:hover {
   color: #ca202c;
+  text-decoration: underline;
 }
 
 div.dragenter {
