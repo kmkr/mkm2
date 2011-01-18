@@ -1,4 +1,6 @@
 jQuery(function() {
+console.log($('#user_map'));
+if ($('#user_map').length > 0) {
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(10,10);
   var icon = new OpenLayers.Icon('/images/ball_yellow.png', size, 0);
@@ -44,4 +46,5 @@ jQuery(function() {
     });
 
 
+}
 });

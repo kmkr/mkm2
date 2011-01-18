@@ -16,5 +16,6 @@ function loadGallery() {
         }
       }
     });
+    galleryLoaded = true;
   }
 }
