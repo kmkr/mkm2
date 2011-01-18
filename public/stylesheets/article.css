@@ -72,6 +72,7 @@ div#article div#article_thumb_images p.caption {
 }
 
 div#article_main_image {
+  display: inline-block;
   float: right;
   margin: 20px 0 20px 20px;
 }
