@@ -279,7 +279,7 @@
             thumb.load(
               function() {
                 //thumb_wrapper_width += this.parentNode.parentNode.offsetWidth;
-                thumb_wrapper_width += this.width + 20;
+                thumb_wrapper_width += this.width+10;
                 thumbs_loaded++;
               }
             );
