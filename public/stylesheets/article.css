@@ -76,8 +76,9 @@ div#article_main_image p {
 
 div#article_main_image img {
   border: #402C31 solid 1px;
-  max-width: 500px;
-  max-height: 500px;
+  text-align: right;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 div#article_main_image div.floatClearer {
