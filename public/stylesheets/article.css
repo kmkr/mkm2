@@ -45,7 +45,7 @@ div.article_image div {
 }
 
 div#article div#article_main_image p.caption {
-  max-width: 500;
+  max-width: 500px;
   clear: right;
   float: right;
   font-size: 12px;
