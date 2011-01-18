@@ -30,7 +30,7 @@ var galleries = jQuery('.ad-gallery').adGallery({
       // Or, just preload the first three
       this.preloadImage(0);
       //this.preloadImage(2);
-    }//,
+    },
     // This gets fired right after the new_image is fully visible
     //afterImageVisible: function() {
       // For example, preload the next image
@@ -43,7 +43,7 @@ var galleries = jQuery('.ad-gallery').adGallery({
 //        }
   //    );
 
-    },
+    //},
     // This gets fired right before old_image is about to go away, and new_image
     // is about to come in
     beforeImageVisible: function(new_image, old_image) {
