@@ -278,10 +278,7 @@
           if(!context.isImageLoaded(thumb[0])) {
             thumb.load(
               function() {
-              console.log("offset: %s, width: %s", this.parentNode.parentNode.offsetWidth, this.width);
-              console.log("wrapperwidth now: %s", thumb_wrapper_width);
-                //thumb_wrapper_width += this.parentNode.parentNode.offsetWidth;
-                thumb_wrapper_width += this.width;
+                thumb_wrapper_width += this.parentNode.parentNode.offsetWidth;
                 thumbs_loaded++;
               }
             );

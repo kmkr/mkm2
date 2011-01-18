@@ -1,2 +1,20 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+var galleryLoaded = false;
+function loadGallery() {
+  if (!galleryLoaded) {
+    jQuery('.ad-gallery').adGallery({
+      slideshow: {
+        enable: false
+      },
+
+      callbacks: {
+        init: function() {
+          this.preloadImage(0);
+          this.preloadImage(1);
+        },
+        beforeImageVisible: function(new_image, old_image) {
+          // impl hashchange
+        }
+      }
+    });
+  }
+}
