@@ -29,7 +29,7 @@ var galleries = jQuery('.ad-gallery').adGallery({
       //this.preloadAll();
       // Or, just preload the first three
       this.preloadImage(0);
-      //this.preloadImage(2);
+      this.preloadImage(1);
     },
     // This gets fired right after the new_image is fully visible
     //afterImageVisible: function() {
