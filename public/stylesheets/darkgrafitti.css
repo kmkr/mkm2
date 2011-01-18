@@ -10,13 +10,13 @@ div#mainwrap {
 	border: 1px solid #402c31;
 }
 
-div#mainwrap a:link, a:visited {
+a:link a:visited, div#mainwrap p a:link, a:visited {
   color: #a21a21;
   font-style: none;
   text-decoration: none;
 }
 
-div#mainwrap a:hover {
+a:hover, div#mainwrap p a:hover {
   color: #ca202c;
   text-decoration: underline;
 }
