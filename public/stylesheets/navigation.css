@@ -3,7 +3,7 @@ div#navigation {
   position: relative;
   width: 100%;
   z-index: 1000;
-  font-size: 1.1em;
+  font-size: 18px;
   margin-top: 45px;
 }
 
@@ -12,13 +12,24 @@ div#navigation ul {
 }
 
 div#navigation li {
-  padding: 3px;
   list-style-type: none;
   display: block;
   background-color: #fff;
   border: 1px solid #402C31;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+div#navigation li {
+  padding-top: 12px;
+}
+
+div#navigation li li {
+  padding: 4px 2px;
+}
+
+div#navigation li li li {
+  padding: 2px;
 }
 
 div#navigation li.continent {
@@ -30,7 +41,7 @@ div#navigation li.continent {
 }
 
 div#navigation li ul li.country {
-  font-size: 0.9em;
+  font-size: 16px;
   width: 120px;
   margin: 0 10px;
   height: 30px;
@@ -38,6 +49,7 @@ div#navigation li ul li.country {
 
 div#navigation li ul li ul li.article {
   min-height: 20px;
+  font-size: 15px;
   width: 170px;
 }
 
