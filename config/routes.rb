@@ -13,6 +13,7 @@ Mkm2::Application.routes.draw do
     resources :comments
     member do
       get :publish
+      post :preview
     end
   end
 
