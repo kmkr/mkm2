@@ -37,7 +37,7 @@ div#navigation li ul li.country {
 }
 
 div#navigation li ul li ul li.article {
-  height: 20px;
+  min-height: 20px;
   width: 170px;
 }
 
