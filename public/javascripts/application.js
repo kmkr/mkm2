@@ -2,7 +2,7 @@ var galleryLoaded = false;
 function loadGallery() {
   if (!galleryLoaded) {
     jQuery('.ad-gallery').adGallery({
-      loader: '/images/loader.gif',
+      loader_image: '/images/loader.gif',
       slideshow: {
         enable: false
       },
