@@ -26,23 +26,22 @@ var galleries = jQuery('.ad-gallery').adGallery({
     // you want to preload
     init: function() {
       // preloadAll uses recursion to preload each image right after one another
-      this.preloadAll();
+      //this.preloadAll();
       // Or, just preload the first three
       this.preloadImage(0);
-      this.preloadImage(1);
-      this.preloadImage(2);
-    },
+      //this.preloadImage(2);
+    }//,
     // This gets fired right after the new_image is fully visible
-    afterImageVisible: function() {
+    //afterImageVisible: function() {
       // For example, preload the next image
-      var context = this;
-      this.loading(true);
-      this.preloadImage(this.current_index + 1,
-        function() {
+      //var context = this;
+      //this.loading(true);
+//      this.preloadImage(this.current_index + 1,
+  //      function() {
           // This function gets executed after the image has been loaded
-          context.loading(false);
-        }
-      );
+    //      context.loading(false);
+//        }
+  //    );
 
     },
     // This gets fired right before old_image is about to go away, and new_image
