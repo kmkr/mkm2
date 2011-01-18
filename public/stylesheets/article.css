@@ -44,6 +44,9 @@ div.article_image div {
   margin-bottom: 10px;
 }
 
+div#article div#article_main_image p.caption {
+  max-width: 500;
+}
 
 div#article p.caption {
   font-size: 11px;
@@ -76,9 +79,9 @@ div#article_main_image p {
 
 div#article_main_image img {
   border: #402C31 solid 1px;
-  text-align: right;
-  max-width: 400px;
-  max-height: 400px;
+  float: right;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 div#article_main_image div.floatClearer {
