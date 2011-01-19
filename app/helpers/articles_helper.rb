@@ -1,7 +1,7 @@
 module ArticlesHelper
   def imagify(text, assets)
     iterations = [(text.length - 200)/1000, assets.size - 1].min
-    index = 1
+    index = 0
     image_html = ""
 
     while index <= iterations

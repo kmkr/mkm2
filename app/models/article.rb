@@ -10,13 +10,13 @@ class Article < ActiveRecord::Base
     assets.first if assets.first
   end
 
-  def column_imgs
-    imgs = []
-    assets.each do |item|
-      imgs << item if item.galleryitem_use_in_column?
+  def column_assets
+    column_assets = []
+    assets.each do |asset|
+      column_assets << asset if asset.galleryitem_use_in_column? and not asset == main_asset
     end
 
-    imgs
+    column_assets
   end
 
   def published?

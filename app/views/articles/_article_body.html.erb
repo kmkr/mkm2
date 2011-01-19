@@ -5,10 +5,9 @@
 <% end %>
 </div>
 <div id="article_thumb_images">
-  <%= raw imagify(body, article.column_imgs) %>
+  <%= raw imagify(body, article.column_assets) %>
 </div>
 <div id="article_content">
-  <%#= raw imagify RedCloth.new(body).to_html, article.assets %>
   <%= raw RedCloth.new(body).to_html %>
 </div>
 <div class="clearboth"></div>

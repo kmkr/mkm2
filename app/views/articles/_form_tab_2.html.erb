@@ -29,6 +29,7 @@
 <div class="clearboth"></div>
 
 <div id="galleryitems">
+  <p>First image in the box below is the main image for the article, and will always be included.</p>
   <ul id="sortable">
     <%= f.fields_for :assets do |asset| %>
       <%= render :partial => 'editable_galleryitem', :locals => { :asset => asset } %>
