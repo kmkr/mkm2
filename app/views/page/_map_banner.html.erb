@@ -1,10 +1,11 @@
 <div class="clearboth"></div>
 <div id="articles_countries" style="display: none;"></div>
 <% @locations.each do |loc| %>
-<div class="user_location">
-<div class="user_location_latitude"><%= loc[:latitude] %></div>
-<div class="user_location_longitude"><%= loc[:longitude] %></div>
-</div>
+  <div class="user_location">
+    <div class="user_location_latitude"><%= loc[:latitude] %></div>
+    <div class="user_location_longitude"><%= loc[:longitude] %></div>
+    <div class="user_location_longitude"><%= loc[:username] %></div>
+  </div>
 <% end %>
 
 <div id="bird"><%= image_tag 'bird.png' %></div>

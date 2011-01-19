@@ -15,30 +15,7 @@
       <%= image_tag 'logo.png', :id => 'logo' %>
       <div id="banner">
         <div id="tools">
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-home'), "/", :title => 'Home', :id => 'home_button' %>
-          </p>
-          <% if is_logged_in? %>
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-wrench'), edit_user_path(:id => session[:user_id]), :title => 'View and change user settings' %>
-          </p>
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-folder-open'), articles_path, :title => 'List all articles' %>
-          </p>
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-folder-open'), countries_path, :title => 'List, edit and create countries' %>
-          </p>
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-circle-plus'), new_article_path, :title => 'Create new article' %>
-          </p>
-          <p>
-            <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-unlocked'), logout_path, :title => 'Log out' %>
-          </p>
-          <% else %>
-            <p>
-              <%= link_to_login_with_IP content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-locked'), :title => 'Log in' %>
-            </p>
-          <% end %>
+          <%= render :partial => "page/tools" %>
         </div>
         <%= render :partial => 'page/map_banner' %>
         <div id="navigation">

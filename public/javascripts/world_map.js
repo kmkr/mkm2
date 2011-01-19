@@ -64,6 +64,7 @@ jQuery(function() {
   jQuery('.user_location').each(function(idx, elem) {
     var lat = jQuery(elem).find('.user_location_latitude').text();
     var lon = jQuery(elem).find('.user_location_longitude').text();
+    var username = jQuery(elem).find('.user_name').text();
     var marker = plotMarker({longitude: lon, latitude: lat}, icon_yellow.clone());
     marker.events.register("mouseover", marker, function(e) {
     });
