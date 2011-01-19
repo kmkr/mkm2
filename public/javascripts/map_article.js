@@ -3,7 +3,6 @@ jQuery(function() {
   var latitude = 0;
   var longitude = 0;
   var zoom_level = 0;
-  var articleMap, layer, position;
   var epsgProj = new OpenLayers.Projection("EPSG:4326");
   var size = new OpenLayers.Size(10,10);
   var icon = new OpenLayers.Icon('/images/ball_red.png', size, 0);
@@ -21,8 +20,8 @@ jQuery(function() {
   var longitude = $('#article_longitude').val();
   var zoom_level = $('#article_zoom_level').val();
 
-  articleMap = new OpenLayers.Map( 'country_map', options);
-  layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+  var articleMap = new OpenLayers.Map( 'show_article_country_map', options);
+  var layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   layer.setOpacity(.6);
   
   articleMap.addLayer(layer);
