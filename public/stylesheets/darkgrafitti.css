@@ -10,7 +10,7 @@ div#mainwrap {
 	border: 1px solid #402c31;
 }
 
-a:link a:visited, div#mainwrap p a:link, a:visited {
+a:link, a:visited, div#mainwrap p a:link, div#mainwrap p a:visited {
   color: #a21a21;
   font-style: none;
   text-decoration: none;
