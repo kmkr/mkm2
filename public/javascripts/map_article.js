@@ -21,6 +21,7 @@ jQuery(function() {
   var longitude = $('#article_longitude').val();
   var zoom_level = $('#article_zoom_level').val();
 
+/*
   articleMap = new OpenLayers.Map( 'country_map', options);
   layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
   layer.setOpacity(.6);
@@ -30,4 +31,5 @@ jQuery(function() {
   var position = new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject());
   articleMap.setCenter(position, zoom_level, false, true);
     markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(longitude, latitude).transform(epsgProj, articleMap.getProjectionObject()), icon.clone()));
+    */
 });
