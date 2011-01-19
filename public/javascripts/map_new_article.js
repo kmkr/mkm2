@@ -9,7 +9,7 @@ jQuery(function() {
   
   var options = { projection: 'EPSG:4326', controls: [
     new OpenLayers.Control.Navigation({zoomWheelEnabled: true}),
-    new OpenLayers.Control.ArgParser(),
+    new OpenLayers.Control.ArgParser()
   ],
   theme: null};
   var longitudeField = jQuery("#article_longitude");
