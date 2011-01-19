@@ -5,7 +5,7 @@
 <% end %>
 </div>
 <div id="article_thumb_images">
-  <%= raw imagify(body, article.assets) %>
+  <%= raw imagify(body, article.column_imgs) %>
 </div>
 <div id="article_content">
   <%#= raw imagify RedCloth.new(body).to_html, article.assets %>

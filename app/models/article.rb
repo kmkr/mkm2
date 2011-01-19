@@ -10,6 +10,15 @@ class Article < ActiveRecord::Base
     assets.first if assets.first
   end
 
+  def column_imgs
+    imgs = []
+    assets.each do |item|
+      imgs << item if item.use_in_column?
+    end
+
+    imgs
+  end
+
   def published?
     published_date != nil 
   end
