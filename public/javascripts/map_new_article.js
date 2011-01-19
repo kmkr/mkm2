@@ -8,8 +8,9 @@ jQuery(function() {
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
   var options = { projection: 'EPSG:4326', controls: [
-    new OpenLayers.Control.Navigation({zoomWheelEnabled: true}),
-    new OpenLayers.Control.ArgParser()
+    new OpenLayers.Control.ArgParser(),
+    new OpenLayers.Control.Navigation(),
+    new OpenLayers.Control.PanZoom()
   ],
   theme: null};
   var longitudeField = jQuery("#article_longitude");
