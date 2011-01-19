@@ -1,7 +1,7 @@
 <div id="article_wrapper">
   
   <div id="article">
-    <div class="overlay_wrapper">
+    <div class="above_image">
     <% if is_logged_in? %>
     <div id="article_admin_tools">
         <%= render :partial => "article_admin_tools", :locals => { :article => @article } %>

@@ -1,7 +1,7 @@
 <div id="new_article">
   <fieldset>
     <legend>Edit article</legend>
-    <p><%= link_to 'Back to article', article_path(@article) %></p>
+    <p class="above_image"><%= link_to 'Back to article', article_path(@article) %></p>
     <%= form_for @article, :html => {:id => 'article_form', :multipart => true } do |f| %>
       <%= render :partial => 'form', :locals => {:f => f} %>
     <% end %>

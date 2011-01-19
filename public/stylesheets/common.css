@@ -18,6 +18,11 @@ h1 {
   margin-bottom: 10px;
 }
 
+.above_image {
+  position: relative;
+  z-index: 2;
+}
+
 h2 {
   font-size: 17px;
 }
@@ -25,11 +30,6 @@ h2 {
 h2 {
   font-size: 16px;
   font-weight: bold;
-}
-
-div.overlay_wrapper {
-  position: relative;
-  z-index: 2;
 }
 
 div#outermostWrap {
