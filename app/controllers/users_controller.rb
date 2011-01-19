@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
   before_filter :check_authorization, :except => [ :new, :create ]
   cache_sweeper :user_sweeper, :only => [:create, :update]
-  
 
   # render new.rhtml
   def new

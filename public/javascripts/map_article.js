@@ -10,7 +10,11 @@ jQuery(function() {
   var markers = new OpenLayers.Layer.Markers("Markers");
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
-  var options = { projection: 'EPSG:4326', theme: null}
+  var options = { projection: 'EPSG:4326', controls: [
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: true}),
+    new OpenLayers.Control.ArgParser(),
+  ],
+  theme: null};
 
 
   var latitude = $('#article_latitude').val();

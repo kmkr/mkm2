@@ -3,11 +3,12 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <%= csrf_meta_tag %>
-    <%= stylesheet_link_tag :all, :cache => true %>
+    <%= stylesheet_link_tag 'article', 'banner', 'common', 'darkgrafitti', 'edit_countries', 'front_page', 'iframe_markitup', 'jquery.ad-gallery', 'jquery-ui-1.8.7.custom', 'markitup_styles', 'markitup_textile', 'navigation', 'openlayers', 'session', :cache => true %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin' %>
     <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js" %>
-    <%= javascript_include_tag 'application', 'jquery-ui-1.8.7.custom.min.js', 'rails', 'jrails', 'jquery.tools.min', 'tooltips_front', 'image_fade', 'jquery.scrollTo-min.js', 'jquery.inplace.pack', 'OpenLayers', 'navigation', 'user_map', 'world_map', 'jquery.featureList-1.0.0', 'random_image_boot', 'gallery/jquery.ad-gallery', 'article_switcher', :cache => true %>
+    <%= javascript_include_tag 'application', 'jquery-ui-1.8.7.custom.min.js', 'rails', 'jrails', 'jquery.tools.min', 'tooltips_front', 'image_fade', 'jquery.scrollTo-min.js', 'jquery.inplace.pack', 'navigation', 'user_map', 'world_map', 'jquery.featureList-1.0.0', 'random_image_boot', 'gallery/jquery.ad-gallery', 'article_switcher', :cache => true %>
     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAILQjfmVsfw9x3RLhhY5D3BSWkUfaFV-fnmhGjlDgURGcsyGFUBTDSr6thZLdph9oFHGb5SfAiwua2g"></script>
+    <%= javascript_include_tag 'http://openlayers.org/api/OpenLayers.js' %>
     <title><%= 'MKM :: ' %><%= @title %></title>
   </head>
   <body>

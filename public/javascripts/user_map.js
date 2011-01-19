@@ -7,7 +7,6 @@ if ($('#user_map').length > 0) {
   var options = { projection: 'EPSG:4326', controls: [
     new OpenLayers.Control.Navigation({zoomWheelEnabled: false}),
     new OpenLayers.Control.ArgParser(),
-    new OpenLayers.Control.Attribution()
   ],
   theme: null
   }

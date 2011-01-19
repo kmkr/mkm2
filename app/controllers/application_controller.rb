@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
 
   def initialize_app
     @continents = Continent.includes(:countries)
-    @locations = Rails.cache.fetch("users") { User.all.collect {|user| { :username => user.login, :longitude => user.current_longitude, :latitude => user.current_latitude } } }
+    Rails.cache.delete("users")
+    @locations = Rails.cache.fetch("users") { User.all.collect {|user| { :user_name => user.login, :longitude => user.current_longitude, :latitude => user.current_latitude } } }
+    puts @locations.inspect
   end
 
   def check_authorization

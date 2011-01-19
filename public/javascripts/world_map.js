@@ -25,11 +25,11 @@ jQuery(function() {
 
 
   var timeout;
-  jQuery('#articles_countries').mouseover(function() {
+  jQuery('#articles_countries_wrapper').mouseover(function() {
       clearTimeout(timeout);
   });
-  jQuery('#articles_countries').mouseout(function() {
-          timeout=setTimeout("jQuery('#articles_countries').hide('explode', 600)", 4000);
+  jQuery('#articles_countries_wrapper').mouseout(function() {
+          timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
   });
 
   var url = '/countries/info'
@@ -51,11 +51,11 @@ jQuery(function() {
           jQuery('#articles_countries').html(
           "<div><h1>" + country.countryName + "</h1></div><ul>" + articleLinks + "</ul>"
           );
-          jQuery('#articles_countries').fadeIn();
+          jQuery('#articles_countries_wrapper').fadeIn();
         });
 
         marker.events.register("mouseout", marker, function(e) {
-          timeout=setTimeout("jQuery('#articles_countries').hide('explode', 600)", 4000);
+          timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
         });
       });
     }
@@ -66,7 +66,11 @@ jQuery(function() {
     var lon = jQuery(elem).find('.user_location_longitude').text();
     var username = jQuery(elem).find('.user_name').text();
     var marker = plotMarker({longitude: lon, latitude: lat}, icon_yellow.clone());
-    marker.events.register("mouseover", marker, function(e) {
+    var imageDiv = $(marker.icon.imageDiv);
+    imageDiv.attr('title', username + "'s approximate location");
+    console.log(imageDiv);
+    imageDiv.tooltip({
+      effect: 'slide'
     });
   });
 

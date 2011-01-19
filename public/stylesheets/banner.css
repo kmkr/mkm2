@@ -7,25 +7,27 @@ div#banner {
 }
 
 
-div#articles_countries {
- margin-left: 20px;
+div#articles_countries_wrapper {
+ margin-left: 40px;
  float: right;
  width: 200px;
  background: url('/images/article_countries_bkg.png') no-repeat;
  height: 201px;
-  padding: 5px;
   font-size: 14px;
+  display: none;
+}
+
+div#articles_countries {
+  margin: 10px 15px 10px 15px;
 }
 
 div#articles_countries div, div#articles_countries ul {
-  padding: 10px;
   clear: both;
 }
 
 div#articles_countries h1 {
+  padding-top: 5px;
   text-align: center;
-  margin-left: -15px;
-  margin-bottom: 3px;
 }
 
 div#articles_countries ul {
