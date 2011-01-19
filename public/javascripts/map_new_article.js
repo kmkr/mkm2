@@ -34,7 +34,7 @@ jQuery(function() {
         articleMap.setCenter(p, zoom_level*1);
         markers.addMarker(new OpenLayers.Marker(position, icon.clone()));
       } catch (e) {
-        console.log("unable to set map center. Running FF? %o", e);
+        //log("unable to set map center. Running FF? %o", e);
       }
   }
 

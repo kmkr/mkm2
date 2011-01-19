@@ -68,7 +68,6 @@ jQuery(function() {
     var marker = plotMarker({longitude: lon, latitude: lat}, icon_yellow.clone());
     var imageDiv = $(marker.icon.imageDiv);
     imageDiv.attr('title', username + "'s location");
-    console.log(imageDiv);
     imageDiv.tooltip({
       effect: 'slide'
     });
