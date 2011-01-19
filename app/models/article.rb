@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
   def column_imgs
     imgs = []
     assets.each do |item|
-      imgs << item if item.use_in_column?
+      imgs << item if item.galleryitem_use_in_column?
     end
 
     imgs

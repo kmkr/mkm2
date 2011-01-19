@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20110119191938) do
     t.datetime "galleryitem_updated_at"
     t.text     "galleryitem_caption"
     t.integer  "galleryitem_position"
-    t.boolean  "use_in_column",            :default => true
+    t.boolean  "galleryitem_use_in_column", :default => true
   end
 
   create_table "comments", :force => true do |t|
