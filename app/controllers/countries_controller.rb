@@ -27,20 +27,12 @@ class CountriesController < ApplicationController
 
   def create
     @country = Country.create(params[:country])
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   def destroy
     @country = Country.find(params[:id])
     @id = @country.id
     @country.destroy
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   def set_country_title

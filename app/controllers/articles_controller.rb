@@ -70,10 +70,6 @@ class ArticlesController < ApplicationController
     end
 
     @data = params[:data]
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   private
