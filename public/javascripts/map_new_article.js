@@ -8,7 +8,6 @@ jQuery(function() {
   OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
   
   var options = { projection: 'EPSG:4326', controls: [
-    new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Navigation(),
     new OpenLayers.Control.PanZoom()
   ],
@@ -18,8 +17,9 @@ jQuery(function() {
   var zoomField = jQuery("#article_zoom_level");
 
   var articleMap = new OpenLayers.Map( 'country_map', options);
-  var layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-  layer.setOpacity(.6);
+  var layer = new OpenLayers.Layer.Google( "new article gphy", 
+  {type: G_PHYSICAL_MAP});
+  $('#country_map').fadeTo("fast", 0.6);
   
   articleMap.addLayer(layer);
   articleMap.addLayer(markers);

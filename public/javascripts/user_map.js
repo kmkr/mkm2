@@ -5,15 +5,15 @@ if ($('#user_map').length > 0) {
   var icon = new OpenLayers.Icon('/images/ball_yellow.png', size, 0);
   var userMapMarkers = new OpenLayers.Layer.Markers("Markers");
   var options = { projection: 'EPSG:4326', controls: [
-    new OpenLayers.Control.Navigation({zoomWheelEnabled: false}),
-    new OpenLayers.Control.ArgParser(),
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: false})
   ],
   theme: null
   }
   var userMap = new OpenLayers.Map( 'user_map', options);
-  var userMapLayer = new OpenLayers.Layer.OSM( "Simple OSM Map");
-  userMapLayer.setOpacity(.8);
+  var userMapLayer = new OpenLayers.Layer.Google( "user map", 
+  {type: G_PHYSICAL_MAP});
   userMap.addLayer(userMapLayer);
+  $('#user_map').fadeTo("fast", 0.8);
   
   userMap.addLayer(userMapMarkers);
   userMap.setCenter(new OpenLayers.LonLat(20,20), 1, false, true);

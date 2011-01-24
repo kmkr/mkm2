@@ -4,11 +4,6 @@ jQuery(function() {
   var icon_red = new OpenLayers.Icon('/images/ball_red.png', size, 0);
   var icon_yellow = new OpenLayers.Icon('/images/ball_yellow.png', size, 0);
   var worldMapMarkers = new OpenLayers.Layer.Markers("Markers");
-  var nav_ctrl = new OpenLayers.Control.Navigation({
-    zoomWheelEnabled: false,
-    zoomBoxEnabled: false
-  });
-  nav_ctrl.deafultDblClick = function() {};
   var options = { projection: 'EPSG:4326', controls: [
   ],
   theme: null
