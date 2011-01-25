@@ -26,6 +26,7 @@ jQuery(function() {
       var countryInfo = transport;
       jQuery.each(countryInfo, function(idx, country) {
         var marker = plotMarker(country, world_map);
+        console.log(marker);
         // mouse listener
         google.maps.event.addListener(marker, 'mouseover', function(e) {
           marker.setAnimation(google.maps.Animation.BOUNCE);

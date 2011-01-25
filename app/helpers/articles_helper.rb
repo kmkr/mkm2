@@ -30,7 +30,7 @@ module ArticlesHelper
     if article.published_date
       "Published #{time_ago_in_words(article.published_date)} ago"
     else
-      "The article is not yet published. #{link_to 'Click', publish_article_path(article)} to publish."
+      "The article is not yet published. #{link_to 'Click', publish_article_path(article)} to publish"
     end
   end
 
