@@ -1,0 +1,40 @@
+div#world_map, div#user_map {
+  z-index: 90;
+  margin: 0 auto;
+  width: 510px;
+  height: 250px;
+  border: 2px solid #fff;
+  background: #7e6c4b;
+}
+
+div#country_map {
+  float: right;
+  width: 310px;
+  height: 220px;
+  margin-left: 20px;
+}
+div#country_map, div#show_article_country_map {
+  border: 1px solid #402C31;
+  padding: 30px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+div#show_article_country_map {
+	width: 380px;
+	height: 300px;
+}
+
+div#world_map div a,
+div#world_map div div a div img,
+div#country_map div a,
+div#country_map div div div span,
+div#country_map div div a div img,
+div#user_map div a,
+div#user_map div div div span,
+div#user_map div div a div img,
+div#show_article_country_map div a,
+div#show_article_country_map div div div span,
+div#show_article_country_map div div a div img {
+  display: none;
+}

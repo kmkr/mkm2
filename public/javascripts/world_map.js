@@ -1,27 +1,13 @@
 jQuery(function() {
-  var epsgProj = new OpenLayers.Projection("EPSG:4326");
-  var size = new OpenLayers.Size(10,10);
-  var icon_red = new OpenLayers.Icon('/images/ball_red.png', size, 0);
-  var icon_yellow = new OpenLayers.Icon('/images/ball_yellow.png', size, 0);
-  var worldMapMarkers = new OpenLayers.Layer.Markers("Markers");
-  var options = { projection: 'EPSG:4326', controls: [
-  ],
-  theme: null
-  }
-  var worldMap = new OpenLayers.Map( 'world_map', options);
-  var worldMapLayer = new OpenLayers.Layer.Google(
-    "gphy",
-    {type: G_PHYSICAL_MAP}
-    );
+  var mapOptions = {
+    zoom: 1,
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    disableDefaultUI: true,
+    scrollwheel: false,
+    center: new google.maps.LatLng(25,0)
+  };
 
-  worldMap.addLayer(worldMapLayer);
-  
-  worldMap.addLayer(worldMapMarkers);
-  worldMapLayer.setOpacity(.8);
-
-  worldMap.zoomToMaxExtent();
-  worldMap.setCenter(new OpenLayers.LonLat(0, 0), 1);
-
+  var world_map = new google.maps.Map(document.getElementById("world_map"), mapOptions);
 
   var timeout;
   jQuery('#articles_countries_wrapper').mouseover(function() {
@@ -39,9 +25,10 @@ jQuery(function() {
     success: function(transport) {
       var countryInfo = transport;
       jQuery.each(countryInfo, function(idx, country) {
-        var marker = plotMarker(country, icon_red.clone());
+        var marker = plotMarker(country, world_map);
         // mouse listener
-        marker.events.register("mouseover", marker, function(e) {
+        google.maps.event.addListener(marker, 'mouseover', function(e) {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
           clearTimeout(timeout);
           var articleLinks = "";
           jQuery.each(country.articles, function(idx, article) {
@@ -53,7 +40,8 @@ jQuery(function() {
           jQuery('#articles_countries_wrapper').fadeIn();
         });
 
-        marker.events.register("mouseout", marker, function(e) {
+        google.maps.event.addListener(marker, "mouseout", function(e) {
+          marker.setAnimation(null);
           timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
         });
       });
@@ -64,19 +52,17 @@ jQuery(function() {
     var lat = jQuery(elem).find('.user_location_latitude').text();
     var lon = jQuery(elem).find('.user_location_longitude').text();
     var username = jQuery(elem).find('.user_name').text();
-    var marker = plotMarker({longitude: lon, latitude: lat}, icon_yellow.clone());
-    var imageDiv = $(marker.icon.imageDiv);
-    imageDiv.attr('title', username + "'s location");
-    imageDiv.tooltip({
-      effect: 'slide'
-    });
+    var marker = plotMarker({longitude: lon, latitude: lat}, world_map);
+    marker.setTitle(username + "'s location");
   });
 
-  function plotMarker(position, icon) {
-    var lonLat = new OpenLayers.LonLat(position.longitude, position.latitude);
-    var countryMarker = new OpenLayers.Marker(lonLat.transform(epsgProj, worldMap.getProjectionObject()), icon);
-    worldMapMarkers.addMarker(countryMarker);
-    return countryMarker;
+  function plotMarker(position, world_map) {
+    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
+    marker = new google.maps.Marker({
+      map:world_map,
+      draggable:false,
+      position:lonLat});
+    return marker;
   }
 
 });
