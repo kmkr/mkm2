@@ -21,7 +21,6 @@ jQuery(function() {
   var zoom_level = $('#article_zoom_level').val();
 
   var articleMap = new OpenLayers.Map( 'show_article_country_map', options);
-  console.log(articleMap);
   var layer = new OpenLayers.Layer.Google( "article gphy",
   {type: G_PHYSICAL_MAP});
   $('#show_article_country_map').fadeTo("fast", 0.6);
