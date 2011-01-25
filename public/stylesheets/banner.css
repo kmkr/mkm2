@@ -13,7 +13,7 @@ div#articles_countries_wrapper {
  width: 200px;
  background: url('/images/article_countries_bkg.png') no-repeat;
  height: 201px;
-  font-size: 14px;
+  font-size: 12px;
   display: none;
 }
 
@@ -23,6 +23,10 @@ div#articles_countries {
 
 div#articles_countries div, div#articles_countries ul {
   clear: both;
+}
+
+div#articles_countries ul li {
+  margin-top: 5px;
 }
 
 div#articles_countries h1 {
