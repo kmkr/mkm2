@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   layout :choose_layout
-  before_filter :check_authorization, :except => [ :show, :preview, :choose_layout ]
+  before_filter :check_authorization, :except => [ :index, :show, :preview, :choose_layout ]
 
   def new
     @article = Article.new
@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.where(:published_date not null)
   end
 
   def show
