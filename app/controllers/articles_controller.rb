@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.where(:published_date is not null)
+    @articles = Article.where(:published_date => not null)
   end
 
   def show
