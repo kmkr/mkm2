@@ -1,5 +1,6 @@
 <p>
   <%= link_to content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-home'), "/", :title => 'Home', :id => 'home_button' %>
+  <%= link_to 'RSS feed', articles_url(:rss) %>
 </p>
 <% if is_logged_in? %>
 <p>
