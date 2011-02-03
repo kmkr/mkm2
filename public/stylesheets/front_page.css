@@ -144,7 +144,7 @@ p.right {
   float: right;
 }
 
-span.rss_img {
+span#rss_img {
   float: left;
   position: relative;
   top: 0;
