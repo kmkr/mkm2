@@ -9,7 +9,11 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.where("published_date is not null")
+    if logged_in?
+    @articles = Article.all
+    else
+      Article.where("published_date is not null")
+    end
   end
 
   def show

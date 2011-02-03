@@ -9,16 +9,20 @@ class ApplicationController < ActionController::Base
   end
 
   def check_authorization
-    begin
-      user = User.find(session[:user_id])
-    rescue ActiveRecord::RecordNotFound
+    unless logged_in?
       reset_session
-    end 
-
-    unless user 
       session[:return_to] = request.request_uri
       flash[:notice] = "Please log in"
       redirect_to(login_path)
+    end 
+  end
+
+  def logged_in?
+    begin
+      User.find(session[:user_id])
+      true
+    rescue ActiveRecord::RecordNotFound
+      false
     end 
   end
 end
