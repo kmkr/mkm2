@@ -27,7 +27,6 @@ jQuery(function() {
       var countryInfo = transport;
       jQuery.each(countryInfo, function(idx, country) {
         var marker = plotMarker(country, world_map);
-        console.log(marker);
         // mouse listener
         google.maps.event.addListener(marker, 'mouseover', function(e) {
           marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -50,13 +49,26 @@ jQuery(function() {
     }
   });
 
+  function createTip() {
+  var text = "asd";
+    divs.each(function(i, div) {
+    console.log(div.title);
+      if (div.title.length == 0) {
+        div.attr('title') = text;
+        div.tooltip({effect: 'slide'});
+      }
+    });
+  
+  }
+
   jQuery('.user_location').each(function(idx, elem) {
     var lat = jQuery(elem).find('.user_location_latitude').text();
     var lon = jQuery(elem).find('.user_location_longitude').text();
     var username = jQuery(elem).find('.user_name').text();
     var marker = plotCustomMarker({longitude: lon, latitude: lat}, world_map);
     marker.setTitle(username + "'s location");
-  });
+    });
+
 
   function plotMarker(position, world_map) {
     var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
@@ -69,7 +81,7 @@ jQuery(function() {
 
   function plotCustomMarker(position, world_map) {
     var myIcon = new google.maps.MarkerImage("/images/green_marker.png",
-    new google.maps.Size(20, 30));
+    new google.maps.Size(20, 34));
 
     var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
     var marker = new google.maps.Marker({
@@ -81,5 +93,8 @@ jQuery(function() {
 
     return marker;
   }
+
+// omg denne henter titleinfo fra img-parent og setter på img. fjerner så title fra parent (for aa stoppe google aa bruke title)
+    setTimeout("$(\"#world_map div[title*='location'] img\").each(function(i, elm) { $(elm).attr('title', $(elm).parent().attr('title')); $(elm).parent().attr('title', ''); $(elm).tooltip({effect: 'slide'}) });", 800);
 
 });

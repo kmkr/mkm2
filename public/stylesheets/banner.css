@@ -8,9 +8,9 @@ div#banner {
 
 
 div#articles_countries_wrapper {
- margin-left: 40px;
- float: right;
+  position: absolute;
  width: 200px;
+ right: 100px;
  background: url('/images/article_countries_bkg.png') no-repeat;
  height: 201px;
   font-size: 12px;
