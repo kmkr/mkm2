@@ -4,6 +4,7 @@ div#welcome_box {
 }
 
 div#front_page h1 {
+  clear: left;
   margin-top: 35px;
 }
 
@@ -138,3 +139,17 @@ div#welcome_box p {
   width: 70%;
   float: right;
   }
+
+p.right {
+  float: right;
+}
+
+span.rss_img {
+  float: left;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  top: -80px;
+  left: -20px;
+}
+

@@ -150,11 +150,6 @@ div#flash_error, div#errorExplanation {
   font-weight: bold;
 }
 
-div.olLayerGoogleCopyright, div.olLayerGooglePoweredBy {
-  display: none;
-  visibility: hidden;
-}
-
 .tooltip {
   border: 1px solid black;
   font-size: 12px;
@@ -169,3 +164,4 @@ top:5px;
 z-index: 100;
 background-color: #fff7ed;
 }
+
