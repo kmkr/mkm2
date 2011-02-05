@@ -39,7 +39,7 @@ margin: 0;
 ul#random_articles_list {
 left: 0;
       z-index: 2;
-width: 320px;
+width: 290px;
 }
 
 ul#random_articles_list li {
@@ -63,7 +63,7 @@ ul#random_articles_list li img.overlayimg {
 }
 
 ul#random_articles_list li a {
-color: #222;
+color: #c7c7c7;
        text-decoration: none;  
 display: block;
 padding: 10px;
@@ -76,8 +76,8 @@ ul#random_articles_list li a:hover {
 }
 
 ul#random_articles_list li a.current {
-background:  url('/images/feature-tab-current.png');
-color: #FFF;
+border: 1px dashed #ccc;
+color: #222222;
 }
 
 ul#random_articles_list li a.current:hover {
@@ -95,11 +95,7 @@ right: 0;
 width: 655px;
 height: 435px;
 position: relative;
-  border: 1px solid #402C31;
   text-align: center;
-  background: #efefef;
-  background: -moz-linear-gradient(top,  #eee,  #fff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
 }
 
 ul#output img {
