@@ -56,14 +56,8 @@ function loadGallery() {
           // Set the state!
           state[ id ] = image_name;
           $.bbq.pushState( state );
-          var context = this;
-          this.loading(true);
-          this.preloadImage(this.current_index + 1,
-            function() {
-              // This function gets executed after the image has been loaded
-              context.loading(false);
-            }
-          );
+          this.preloadImage(this.current_index + 1);
+          this.preloadImage(this.current_index + 2);
         }
       }
     });
