@@ -9,6 +9,9 @@ function findStartAtIndex() {
     }
 
     var hash_image_name = hash.split("image=").pop();
+    hash_image_name = decodeURIComponent(hash_image_name);
+    hash_image_name = hash_image_name.replace(/\+/g, " ");
+    console.log(hash_image_name);
     var start_at_idx = 0;
     var found_image = false;
     $('.ad-thumb-list img').each(function(idx, image) {
