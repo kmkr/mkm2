@@ -5,7 +5,7 @@ atom_feed do |feed|
   for article in @articles
     feed.entry(article) do |entry|
       entry.title article.title
-      entry.content(RedCloth.new(truncate(article.body, :length => 500)).to_html)
+      entry.content(RedCloth.new(truncate(article.body, :length => 500)).to_html, :type => 'html')
     end
   end
 end
