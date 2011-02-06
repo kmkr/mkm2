@@ -35,8 +35,11 @@ h2 {
 div#outermostWrap {
   width: 1190px;
   margin: 10px auto;
- font-family: Ubuntu, georgia, verdana, sans-serif;
  font-size: 16px;
+}
+
+div#outermostWrap, .ui-widget {
+ font-family: Ubuntu, georgia, verdana, sans-serif;
 }
 
 
@@ -164,4 +167,3 @@ top:5px;
 z-index: 100;
 background-color: #fff7ed;
 }
-

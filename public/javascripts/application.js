@@ -75,11 +75,8 @@ $(function() {
   // assumes a hashchange indicates a gallery view
   // in case this is a fresh page load, fire the event to show correct image
   $(window).bind( 'hashchange', function(e) {
-    /*
     switchToTab(1);
     loadGallery();
-    */
-    scrollToAndSwitchToTab(1);
     var new_index = findStartAtIndex();
     if (article_gallery.current_index != new_index) {
       article_gallery.showImage(new_index);
