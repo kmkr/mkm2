@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title("MKM Travel Blog - Articles")
+  feed.title("MKM Travel Blog")
   feed.updated(@articles.first.updated_at)
 
   for article in @articles
