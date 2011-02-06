@@ -14,6 +14,16 @@ function loadGallery() {
         },
         beforeImageVisible: function(new_image, old_image) {
           // impl hashchange
+        },
+        afterImageVisible: function() {
+          var context = this;
+          this.loading(true);
+          this.preloadImage(this.current_index + 1,
+            function() {
+              // This function gets executed after the image has been loaded
+              context.loading(false);
+            }
+          );
         }
       }
     });
