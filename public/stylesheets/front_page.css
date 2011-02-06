@@ -63,12 +63,13 @@ ul#random_articles_list li img.overlayimg {
 }
 
 ul#random_articles_list li a {
-color: #c7c7c7;
+color: #a7a7a7;
        text-decoration: none;  
 display: block;
 padding: 10px;
 height: 60px;
 outline: none;
+border: 1px dashed #fff;
 }
 
 ul#random_articles_list li a:hover {
@@ -76,7 +77,7 @@ ul#random_articles_list li a:hover {
 }
 
 ul#random_articles_list li a.current {
-border: 1px dashed #ccc;
+border: #ccc;
 color: #222222;
 }
 

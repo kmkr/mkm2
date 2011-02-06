@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <%= csrf_meta_tag %>
+    <%= auto_discovery_link_tag(:rss, { :controller => :articles })  %>
     <%= stylesheet_link_tag 'article', 'banner', 'common', 'darkgrafitti', 'edit_countries', 'front_page', 'iframe_markitup', 'jquery.ad-gallery', 'jquery-ui-1.8.7.custom', 'markitup_styles', 'markitup_textile', 'navigation', 'maps', 'session', :cache => false %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin' %>
     <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js" %>
