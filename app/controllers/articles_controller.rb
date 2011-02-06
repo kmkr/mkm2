@@ -10,9 +10,9 @@ class ArticlesController < ApplicationController
 
   def index
     if logged_in?
-    @articles = Article.all
+      @articles = Article.order("updated_at DESC")
     else
-      Article.where("published_date is not null")
+      @articles = Article.where("published_date is not null").order("updated_at DESC")
     end
   end
 
