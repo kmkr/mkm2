@@ -19,7 +19,7 @@ function findStartAtIndex() {
         found_image = true;
       }
     });
-    if (!found_image)
+    if (!found_image) {
       $('#no_such_hash').dialog({modal: true, width: 440});
     }
 
