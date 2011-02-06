@@ -5,7 +5,7 @@ function findStartAtIndex() {
     //var hash_image_name = window.location.split("=").pop();
     var hash = window.location.hash;
     if (hash.indexOf("image=") == -1) {
-      return { start: 0, found_image: true };
+      return 0;
     }
 
     var hash_image_name = hash.split("image=").pop();
@@ -19,9 +19,12 @@ function findStartAtIndex() {
         found_image = true;
       }
     });
+    if (!found_image)
+      $('#no_such_hash').dialog({modal: true, width: 440});
+    }
 
 
-    return { start: start_at_idx, found_image: found_image }
+    return start_at_idx;
 }
 
 function loadGallery() {
@@ -34,7 +37,7 @@ function loadGallery() {
       slideshow: {
         enable: false
       },
-      start_at_index: startAtIndex.start,
+      start_at_index: startAtIndex,
 
       callbacks: {
         init: function() {
@@ -58,9 +61,6 @@ function loadGallery() {
               context.loading(false);
             }
           );
-          if (!startAtIndex.found_image) {
-            $('#no_such_hash').dialog({modal: true, width: 440});
-          }
         }
       }
     });
@@ -79,8 +79,8 @@ $(function() {
     switchToTab(1);
     loadGallery();
     var new_index = findStartAtIndex();
-    if (article_gallery.current_index != new_index.start) {
-      article_gallery.showImage(new_index.start);
+    if (article_gallery.current_index != new_index) {
+      article_gallery.showImage(new_index);
     }
   });
 });
