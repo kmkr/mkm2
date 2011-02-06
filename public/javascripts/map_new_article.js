@@ -32,7 +32,9 @@ jQuery(function() {
     zoom_field.val(article_map.getZoom());
     longitude_field.val(e.latLng.lng());
     latitude_field.val(e.latLng.lat());
-    marker.setMap(null); // remove the marker
+    if (marker != undefined) {
+      marker.setMap(null); // remove the marker
+    }
     marker = new google.maps.Marker({
       map:article_map,
       position:e.latLng});
