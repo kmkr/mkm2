@@ -28,14 +28,13 @@ function loadGallery() {
   if (!galleryLoaded) {
 
     var startAtIndex = findStartAtIndex();
-    console.log(startAtIndex);
 
     var galleries = jQuery('.ad-gallery').adGallery({
       loader_image: '/images/loader.gif',
       slideshow: {
         enable: false
       },
-      start_at_index: startAtIndex.start_at_idx,
+      start_at_index: startAtIndex.start,
 
       callbacks: {
         init: function() {
@@ -60,7 +59,7 @@ function loadGallery() {
             }
           );
           if (!startAtIndex.found_image) {
-            $('#no_such_hash').dialog({modal: true, width: 440, draggable: true});
+            $('#no_such_hash').dialog({modal: true, width: 440});
           }
         }
       }
@@ -80,8 +79,8 @@ $(function() {
     switchToTab(1);
     loadGallery();
     var new_index = findStartAtIndex();
-    if (article_gallery.current_index != new_index.start_at_index) {
-      article_gallery.showImage(new_index.start_at_index);
+    if (article_gallery.current_index != new_index.start) {
+      article_gallery.showImage(new_index.start);
     }
   });
 });
