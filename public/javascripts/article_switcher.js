@@ -7,7 +7,7 @@ jQuery(function() {
   scrollToAndSwitchToTab = function(idx) {
     switchToTab(idx);
     loadGallery();
-    $.scrollTo( '#article_tabs', 1400, {offset: -25, easing: 'easeOutElastic'} );
+    $.scrollTo( '#article', 1400, {offset: -25, easing: 'easeOutElastic'} );
   }
   switchToTab = function(idx) {
       articleTabs.tabs('select', idx);
