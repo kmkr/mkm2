@@ -22,8 +22,7 @@
    
       <p>This article is about <span class="bold">
       <%= @article.country.title %></span> and is dated 
-      <%= raw getArticleStartEndDate(@article) %>. The article has <span
-      class="bold">
+      <%= raw getArticleStartEndDate(@article) %>. The article has <span class="bold">
       <%= pluralize @article.assets.size, 'picture', 'pictures' %></span>
       in the gallery, and <span class="bold">
       <%= pluralize @article.comments.size, 'comment', 'comments' %></span>.  Please write
@@ -37,3 +36,12 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+$(function() {
+  // Since the event is only triggered when the hash changes, we need to trigger
+  // the event now, to handle the hash the page may have loaded with.
+  if (window.location.hash.charAt(0) == "#") { 
+    $(window).trigger( 'hashchange' );
+  }
+});
+</script>

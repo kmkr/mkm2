@@ -300,3 +300,8 @@ div#list_articles {
 div#list_articles h1 span {
   background: #fff;
 }
+
+div#no_such_hash {
+  display: none;
+  font-size: 14px;
+}
