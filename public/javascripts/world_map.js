@@ -52,7 +52,6 @@ jQuery(function() {
   function createTip() {
   var text = "asd";
     divs.each(function(i, div) {
-    console.log(div.title);
       if (div.title.length == 0) {
         div.attr('title') = text;
         div.tooltip({effect: 'slide'});
