@@ -23,7 +23,7 @@
       <p>This article is about <span class="bold">
       <%= @article.country.title %></span> and is dated 
       <%= raw getArticleStartEndDate(@article) %>. The article has <span class="bold">
-      <%= pluralize @article.assets.size, 'picture', 'pictures' %></span>
+      <%= pluralize @article.assets.size, 'image', 'images' %></span>
       in the gallery, and <span class="bold">
       <%= pluralize @article.comments.size, 'comment', 'comments' %></span>.  Please write
       us a comment below, that'll make us happy!</p>
