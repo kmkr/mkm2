@@ -25,7 +25,7 @@ function findStartAtIndex() {
     if (!found_image) {
       // timeout as we need the page to center on the image
       // todo: could be made better
-      setTimeout($('#no_such_hash').dialog({modal: true, width: 440}), 400);
+      setTimeout("$('#no_such_hash').dialog({modal: true, width: 440})", 400);
     }
 
 
