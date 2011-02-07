@@ -6,7 +6,7 @@
 <% else %>
 No pic
 <% end %>
-<h2><%= h(truncate(random_article.title, :length => 32, :omission => '...')) %></h2>
+<h2><%= h(truncate(random_article.title, :length => 29, :omission => '...')) %></h2>
 
 <p>Updated <%= time_ago_in_words(random_article.updated_at) %> ago, published <%= time_ago_in_words(random_article.published_date) %> ago</p></a>
 
