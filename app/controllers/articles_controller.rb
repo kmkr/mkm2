@@ -14,10 +14,6 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.where("published_date is not null").order("updated_at DESC")
     end
-
-    respond_to do |format|
-      format.atom
-    end
   end
 
   def show
