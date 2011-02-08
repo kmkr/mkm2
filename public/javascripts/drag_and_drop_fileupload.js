@@ -85,8 +85,15 @@ jQuery(function() {
   };
   var dataTransferAvailable = true;
   try {
-  var dt = DataTransfer;
-  if (!("files" in DataTransfer.prototype)) {
+  if (!!FileReader && isEventSupported('drag') && 
+      isEventSupported('dragstart') && 
+      isEventSupported('dragenter') &&
+      isEventSupported('dragover') &&
+      isEventSupported('dragleave') &&
+      isEventSupported('dragend') &&
+      isEventSupported('drop')) {
+    dataTransferAvailable = true;
+  } else {
     dataTransferAvailable = false;
   }
   } catch (e) {
@@ -113,9 +120,9 @@ jQuery(function() {
         });
 
     dropArea.bind("drop", function (evt) {
-        traverseFiles(evt.originalEvent.dataTransfer.files);
           evt.preventDefault();
           evt.stopPropagation();
+        traverseFiles(evt.originalEvent.dataTransfer.files);
         });
     }  else {
       jQuery('#drop_area').hide();
