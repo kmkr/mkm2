@@ -32,7 +32,7 @@ div#article_thumb_images {
 div.article_image img {
   max-width: 320px;
   max-height: 320px;
-  border: 1px solid #402C31;
+  border: 1px solid #7e5656;
   -moz-box-shadow: 0 0 2px #888;
   -webkit-box-shadow: 0 0 2px#888;
   box-shadow: 0 0 2px #888;
@@ -77,7 +77,7 @@ div#article_main_image {
 }
 
 div#article_main_image img {
-  border: #402C31 solid 1px;
+  border: #7e5656 solid 1px;
   float: right;
   max-width: 500px;
   max-height: 500px;
@@ -221,7 +221,7 @@ div#new_article ul#file_list img {
   max-width: 90px;
   max-height: 90px;
   padding: 5px;
-  border: 1px solid #402C31;
+  border: 1px solid #7e5656;
   margin: 10px;
 }
 
@@ -234,9 +234,9 @@ div#article_comments {
 div#comments div.comment_wrapper, div#new_comment_wrapper {
   -moz-border-radius: 4px;
   border-radius: 4px;
-  -moz-box-shadow: 0 0 3px #402C31;
-  -webkit-box-shadow: 0 0 3px#402C31;
-  box-shadow: 0 0 3px #402C31;
+  -moz-box-shadow: 0 0 3px #7e5656;
+  -webkit-box-shadow: 0 0 3px#7e5656;
+  box-shadow: 0 0 3px #7e5656;
   border: 1px solid #ddd; 
 }
 

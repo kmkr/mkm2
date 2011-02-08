@@ -15,7 +15,7 @@ div#navigation li {
   list-style-type: none;
   display: block;
   background-color: #fff;
-  border: 1px solid #402C31;
+  border: 1px solid #7e5656;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
@@ -25,19 +25,17 @@ div#navigation li {
 }
 
 div#navigation li li {
-  padding: 4px 2px;
+  padding: 8px 2px 2px 2px;
 }
 
 div#navigation li li li {
-  padding: 2px;
+  padding: 3px 3px 4px 3px;
 }
 
 div#navigation li.continent {
   display: inline-block;
   width: 140px;
   height: 40px;
-  background: -moz-linear-gradient(top,  #eee,  #fff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
 }
 
 div#navigation li ul li.country {
@@ -51,6 +49,10 @@ div#navigation li ul li ul li.article {
   min-height: 20px;
   font-size: 15px;
   width: 170px;
+}
+
+div#navigation li ul li ul li.article:hover {
+  background-color: #fff7ed;
 }
 
 div#navigation li ul.countries {
