@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.4'
 gem 'paperclip'
-gem 'RedCloth'
+gem 'RedCloth', '4.2.3'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'smurf'
 
