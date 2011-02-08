@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.4'
 gem 'paperclip'
 gem 'RedCloth'
 gem 'aws-s3', :require => 'aws/s3'
