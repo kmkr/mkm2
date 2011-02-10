@@ -1,10 +1,7 @@
 jQuery(function() {
   jQuery('.continent').each(function(index, el) {
     var element = jQuery(el);
-    element.css({
-      "background": "#fff7ed",
-      "background": "-moz-linear-gradient(top,  #fff7ed,  #fff)",
-      "background": "-webkit-gradient(linear, left top, left bottom, from(#fff7ed), to(#fff))"});
+    element.css("background", "#f9ecdc");
     var ulElem = element.children('.countries').first();
     var animationOn = false;
     element.mouseenter(function() {
@@ -13,10 +10,9 @@ jQuery(function() {
         ulElem.slideDown(250, 'swing', function() {
           animationOn = false;
         });
-        element.css("background", "");
         element.animate({ 
-          "background-color": "#fff7ed",
-        }, 600, 'easeOutQuart');
+          "background-color": "#f8dbb6"
+        }, 400, 'easeOutQuart');
       }
     });
 
@@ -25,10 +21,9 @@ jQuery(function() {
       ulElem.slideUp(200, 'swing', function() {
         animationOn = false;
       });
-      element.css({
-      "background": "#fff7ed",
-      "background": "-moz-linear-gradient(top,  #fff7ed,  #fff)",
-      "background": "-webkit-gradient(linear, left top, left bottom, from(#fff7ed), to(#fff))"});
+        element.animate({ 
+          "background-color": "#f9ecdc"
+        }, 600, 'easeOutQuart');
     });
   });
 
@@ -38,16 +33,10 @@ jQuery(function() {
     var ulElem = element.children('.articles').first();
     element.mouseenter(function() {
       ulElem.show();
-        element.css({ 
-          "background-color": "#fff7ed"
-        })
     });
 
     element.mouseleave(function() {
       ulElem.hide();
-        element.css({ 
-        "background-color": "#fff"
-        })
     });
   });
 });

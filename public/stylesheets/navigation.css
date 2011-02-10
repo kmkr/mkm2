@@ -51,8 +51,8 @@ div#navigation li ul li ul li.article {
   width: 170px;
 }
 
-div#navigation li ul li ul li.article:hover {
-  background-color: #fff7ed;
+div#navigation li ul li.country:hover, div#navigation li ul li ul li.article:hover {
+  background-color: #f8dbb6;
 }
 
 div#navigation li ul.countries {
