@@ -11,7 +11,7 @@ jQuery(function() {
           animationOn = false;
         });
         element.animate({ 
-          "background-color": "#f9ecdc"
+          "background-color": "#f8dbb6"
         }, 400, 'easeOutQuart');
       }
     });
