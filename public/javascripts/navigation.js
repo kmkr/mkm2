@@ -1,7 +1,7 @@
 jQuery(function() {
   jQuery('.continent').each(function(index, el) {
     var element = jQuery(el);
-    element.css("background", "#f9ecdc");
+    element.css("background", "#fff7ed");
     var ulElem = element.children('.countries').first();
     var animationOn = false;
     element.mouseenter(function() {
@@ -11,7 +11,7 @@ jQuery(function() {
           animationOn = false;
         });
         element.animate({ 
-          "background-color": "#f8dbb6"
+          "background-color": "#f9ecdc"
         }, 400, 'easeOutQuart');
       }
     });
@@ -22,7 +22,7 @@ jQuery(function() {
         animationOn = false;
       });
         element.animate({ 
-          "background-color": "#f9ecdc"
+          "background-color": "#fff7ed"
         }, 600, 'easeOutQuart');
     });
   });
