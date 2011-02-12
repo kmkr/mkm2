@@ -12,4 +12,8 @@ jQuery(function() {
   switchToTab = function(idx) {
       articleTabs.tabs('select', idx);
   }
+
+  // set the #article_main_image width according to the actual image size
+	var width = $('#article_main_image img').attr('width');
+	$('#article_main_image').css('width', width);
 });
