@@ -15,5 +15,7 @@ jQuery(function() {
 
   // set the #article_main_image width according to the actual image size
 	var width = $('#article_main_image img').attr('width');
-	$('#article_main_image').css('width', width);
+	if (width*1 > 0) {
+		$('#article_main_image').css('width', width);
+	}
 });
