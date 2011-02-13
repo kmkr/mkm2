@@ -14,8 +14,11 @@ jQuery(function() {
   }
 
   // set the #article_main_image width according to the actual image size
+	setTimeout("styleMainImg", 250);
+	function styleMainImg() {
 	var width = $('#article_main_image img').attr('width');
 	if (width*1 > 0) {
 		$('#article_main_image').css('width', width);
 	}
+}
 });
