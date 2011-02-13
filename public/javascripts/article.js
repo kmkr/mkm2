@@ -13,12 +13,16 @@ jQuery(function() {
       articleTabs.tabs('select', idx);
   }
 
-  // set the #article_main_image width according to the actual image size
-	var styleMainImg = function() {
-		var width = $('#article_main_image img').attr('width');
-		if (width*1 > 0) {
-			$('#article_main_image').css('width', width);
-		}
-	}
-	setTimeout(styleMainImg, 250);
+});
+
+// set the #article_main_image width according to the actual image size
+jQuery(function() {
+    var resizeImageIfCssIsWrong = function() {
+  		var imageWidth = $('#article_main_image img').width();
+      var cssWidth = $('#article_main_image').width();
+		  if (cssWidth > imageWidth) {
+  			$('#article_main_image').css('width', width);
+	  	}
+    }
+    setTimeout(resizeImageIfCssIsWrong, 600);
 });
