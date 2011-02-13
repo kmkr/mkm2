@@ -21,7 +21,7 @@ jQuery(function() {
   		var imageWidth = $('#article_main_image img').width();
       var cssWidth = $('#article_main_image').width();
 		  if (cssWidth > imageWidth) {
-  			$('#article_main_image').css('width', width);
+  			$('#article_main_image').css('width', imageWidth);
 	  	}
     }
     setTimeout(resizeImageIfCssIsWrong, 600);
