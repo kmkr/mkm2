@@ -6,7 +6,9 @@ atom_feed do |feed|
     feed.entry(article) do |entry|
       entry.title article.title
       entry.content(RedCloth.new(truncate(article.body, :length => 500)).to_html, :type => 'html')
-      entry.author 'm+km'
+      entry.author do |author|
+			author.name 'm+km'
+		end
     end
   end
 end
