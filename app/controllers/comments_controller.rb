@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    params.each_pair { |key,value| puts "#{key}: #{value}"}
     comment = Comment.find(params[:id])
     @id = comment.id
     comment.destroy

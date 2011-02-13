@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def check_authorization
     unless logged_in?
       reset_session
-      session[:return_to] = request.request_uri
+      session[:return_to] = request.fullpath
       flash[:notice] = "Please log in"
       redirect_to(login_path)
     end 
