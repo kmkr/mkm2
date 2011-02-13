@@ -49,6 +49,7 @@ function loadGallery() {
           this.preloadImage(1);
         },
         beforeImageVisible: function(new_image, old_image) {
+          $('p.ad-image-description').fadeTo(0, 0.75);
         },
         afterImageVisible: function() {
           var state = {},
@@ -66,6 +67,7 @@ function loadGallery() {
     article_gallery = galleries[0];
 
     galleryLoaded = true;
+
 
   }
 }
