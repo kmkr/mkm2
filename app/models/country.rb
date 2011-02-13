@@ -6,6 +6,7 @@ class Country < ActiveRecord::Base
     countryInfo = []
     countries = Country.all(:include => :articles)
     countries.each do |country|
+      next if country.articles.empty?
       last_updated_at = nil
       articles = []
       country.articles.each do |article|
