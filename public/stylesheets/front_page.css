@@ -11,6 +11,7 @@ div#front_page h1 {
 div#welcome_box p {
   text-align: justify;
   background-color: #fff;
+  margin-bottom: 3px;
   }
 
 div#random_articles h2 {
