@@ -49,7 +49,7 @@ function loadGallery() {
           this.preloadImage(1);
         },
         beforeImageVisible: function(new_image, old_image) {
-          $('p.ad-image-description').fadeTo(0, 0.75);
+          $('p.ad-image-description').fadeTo(0, 0.85);
         },
         afterImageVisible: function() {
           var state = {},
