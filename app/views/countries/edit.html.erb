@@ -1,0 +1,79 @@
+<%= @country.title %>
+<%= form_for @country do |f| %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+  <%= f.hidden_field :longitude %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :zoom_level %>
+<p>
+  <%= f.label 'country[continent_id]', 'Continent' %>
+  <%= select_tag "country[continent_id]", options_from_collection_for_select(@continents, :id, :title, @country.continent_id) %>
+</p>
+<p>
+  <%= f.submit 'Submit' %>
+</p>
+<% end %>
+
+
+<div id="edit_country_map"></div>
+
+<script type="text/javascript">
+$(function() {
+  var latitude_field = $('#country_latitude');
+  var longitude_field = $('#country_longitude');
+  var zoom_level_field = $('#country_zoom_level');
+  var latitude = 0;
+  var longitude = 0;
+  var zoom_level = 0;
+
+  var latitude = latitude_field.val()*1;
+  var longitude = longitude_field.val()*1;
+  var zoom_level = zoom_level_field.val()*1;
+
+  var mapOptions = {
+    zoom: zoom_level,
+    mapTypeControl: false,
+    streetViewControl: false,
+    scrollView: false,
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    center: new google.maps.LatLng(latitude,longitude)
+
+  };
+  	var map = new google.maps.Map(document.getElementById("edit_country_map"), mapOptions);
+    var lonLat = new google.maps.LatLng(latitude, longitude);
+    var marker = new google.maps.Marker({
+      map:map,
+      position:lonLat});
+
+  google.maps.event.addListener(map, 'click', function(e) {
+    zoom_level_field.val(map.getZoom());
+    longitude_field.val(e.latLng.lng());
+    latitude_field.val(e.latLng.lat());
+    if (marker != undefined) {
+      marker.setMap(null); // remove the marker
+    }
+    marker = new google.maps.Marker({
+      map:map,
+      position:e.latLng});
+	});
+
+  google.maps.event.addListener(map, 'zoom_changed', function(e) {
+    zoom_level_field.val(map.getZoom());
+	});
+
+	function updateVals(e) {
+	console.log("update");
+    zoom_level_field.val(map.getZoom());
+    longitude_field.val(e.latLng.lng());
+    latitude_field.val(e.latLng.lat());
+    if (marker != undefined) {
+      marker.setMap(null); // remove the marker
+    }
+    marker = new google.maps.Marker({
+      map:map,
+      position:e.latLng});
+	}
+});
+</script>

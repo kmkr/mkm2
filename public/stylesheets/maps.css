@@ -1,4 +1,4 @@
-div#world_map, div#user_map {
+div#world_map, div#user_map, div#edit_country_map {
   z-index: 90;
   margin: 0 auto;
   width: 510px;
@@ -13,7 +13,7 @@ div#country_map {
   height: 220px;
   margin-left: 20px;
 }
-div#country_map, div#show_article_country_map {
+div#country_map, div#show_article_country_map, div#edit_country_map {
   border: 1px solid #7e5656;
   padding: 30px;
   -moz-border-radius: 5px;
@@ -35,6 +35,9 @@ div#user_map div div div span,
 div#user_map div div a div img,
 div#show_article_country_map div a,
 div#show_article_country_map div div div span,
-div#show_article_country_map div div a div img {
+div#show_article_country_map div div a div img 
+div#edit_country_map div a,
+div#edit_country_map div div div span,
+div#edit_country_map div div a div img {
   display: none;
 }

@@ -1,4 +1,4 @@
-<li id="<%= dom_id(country) %>">
+<li id="<%= dom_id(country) %>"><%= link_to("Edit country", edit_country_path(country)) %>
   <%= in_place_editor_field country, :title %> (<%= country.continent.title %>)
   <%= link_to(content_tag(:span, "", :class => 'ui-state-default ui-corner-all ui-icon ui-icon-trash'), country_path(country), :remote => true, :method => :delete, :title => 'Delete country', :confirm => "#{country.title} will be completely gone! However, its #{pluralize(country.articles.size, 'article')} will not. Still want to nuke #{country.title}?") %>
 </li>

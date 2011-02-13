@@ -11,6 +11,12 @@ class CountriesController < ApplicationController
     end
   end
 
+	def edit
+    	@country = Country.find(params[:id])
+		@continents = Continent.all
+	end
+	
+
   def info 
     positions = Country.country_info
 
@@ -23,6 +29,18 @@ class CountriesController < ApplicationController
     @countries = Country.all
     @country = Country.new
     @continents = Continent.all
+  end
+
+	def update
+    @country = Country.find(params[:id])
+
+    if @country.update_attributes(params[:country])
+      flash[:notice] = "Country updated"
+      redirect_to countries_path
+    else
+      flash[:error] = "Unable to update article"
+      redirect_to root_url
+    end
   end
 
   def create
