@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @article.comments << @comment
 
+    CommentMailer.comment_mail(@comment)
+
     unless @comment.save
       render :template => 'comments/clear_comment.rjs'
     end
