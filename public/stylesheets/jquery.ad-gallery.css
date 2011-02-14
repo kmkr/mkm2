@@ -1,25 +1,25 @@
-.ad-gallery, .ad-gallery * {
+.uber-gallery, .uber-gallery * {
   margin: 0;
   padding: 0;
 }
-.ad-gallery {
+.uber-gallery {
   width: 900px;
   margin: 0 auto;
 }
-  .ad-gallery .ad-image-wrapper {
+  .uber-gallery .uber-image-wrapper {
     width: 100%;
     height: 650px;
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;
   }
-    .ad-gallery .ad-image-wrapper .ad-loader {
+    .uber-gallery .uber-image-wrapper .uber-loader {
       position: absolute;
       z-index: 10;
       top: 48%;
       left: 48%;
     }
-    .ad-gallery .ad-image-wrapper .ad-next {
+    .uber-gallery .uber-image-wrapper .uber-next {
       position: absolute;
       right: 0;
       top: 0;
@@ -29,7 +29,7 @@
       display: block;
       z-index: 100;
     }
-    .ad-gallery .ad-image-wrapper .ad-prev {
+    .uber-gallery .uber-image-wrapper .uber-prev {
       position: absolute;
       left: 0;
       top: 0;
@@ -39,12 +39,12 @@
       display: block;
       z-index: 100;
     }
-    .ad-gallery .ad-image-wrapper .ad-prev, .ad-gallery .ad-image-wrapper .ad-next {
+    .uber-gallery .uber-image-wrapper .uber-prev, .uber-gallery .uber-image-wrapper .uber-next {
       /* Or else IE will hide it */
       background: url(/images/non-existing.jpg)\9
     }
-      .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-        background: url(/images/ad_prev.png);
+      .uber-gallery .uber-image-wrapper .uber-prev .uber-prev-image, .uber-gallery .uber-image-wrapper .uber-next .uber-next-image {
+        background: url(/images/uber_prev.png);
         width: 30px;
         height: 30px;
         display: none;
@@ -53,24 +53,24 @@
         left: 0;
         z-index: 101;
       }
-      .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-        background: url(/images/ad_next.png);
+      .uber-gallery .uber-image-wrapper .uber-next .uber-next-image {
+        background: url(/images/uber_next.png);
         width: 30px;
         height: 30px;
         right: 0;
         left: auto;
       }
-    .ad-gallery .ad-image-wrapper .ad-image {
+    .uber-gallery .uber-image-wrapper .uber-image {
       position: absolute;
       overflow: hidden;
       top: 0;
       left: 0;
       z-index: 9;
     }
-      .ad-gallery .ad-image-wrapper .ad-image a img {
+      .uber-gallery .uber-image-wrapper .uber-image a img {
         border: 0;
       }
-      .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+      .uber-gallery .uber-image-wrapper .uber-image .uber-image-description {
         position: absolute;
         bottom: 0px;
         left: 0px;
@@ -82,86 +82,86 @@
         color: #000;
       }
 
-        .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title {
+        .uber-gallery .uber-image-wrapper .uber-image .uber-image-description .uber-description-title {
           display: block;
         }
-  .ad-gallery .ad-controls {
+  .uber-gallery .uber-controls {
     height: 20px;
   }
-    div#article .ad-gallery .ad-info {
+    div#article .uber-gallery .uber-info {
       font-size: 0.7em;
       text-align: center;
     }
-    .ad-gallery .ad-slideshow-controls {
+    .uber-gallery .uber-slideshow-controls {
       float: right;
     }
-      .ad-gallery .ad-slideshow-controls .ad-slideshow-start, .ad-gallery .ad-slideshow-controls .ad-slideshow-stop {
+      .uber-gallery .uber-slideshow-controls .uber-slideshow-start, .uber-gallery .uber-slideshow-controls .uber-slideshow-stop {
         padding-left: 5px;
         cursor: pointer;
       }
-      .ad-gallery .ad-slideshow-controls .ad-slideshow-countdown {
+      .uber-gallery .uber-slideshow-controls .uber-slideshow-countdown {
         padding-left: 5px;
         font-size: 0.9em;
       }
-    .ad-gallery .ad-slideshow-running .ad-slideshow-start {
+    .uber-gallery .uber-slideshow-running .uber-slideshow-start {
       cursor: default;
       font-style: italic;
     }
-  .ad-gallery .ad-nav {
+  .uber-gallery .uber-nav {
     width: 90%;
     position: relative;
   }
-    .ad-gallery .ad-forward, .ad-gallery .ad-back {
+    .uber-gallery .uber-forward, .uber-gallery .uber-back {
       position: absolute;
       top: 0;
       height: 100%;
       z-index: 10;
     }
     /* IE 6 doesn't like height: 100% */
-    * html .ad-gallery .ad-forward, .ad-gallery .ad-back {
+    * html .uber-gallery .uber-forward, .uber-gallery .uber-back {
       height: 100px;
     }
-    .ad-gallery .ad-back {
+    .uber-gallery .uber-back {
       cursor: pointer;
       left: -20px;
       width: 13px;
       display: block;
-      background: url(/images/ad_scroll_back.png) 0px 22px no-repeat;
+      background: url(/images/uber_scroll_back.png) 0px 22px no-repeat;
     }
-    .ad-gallery .ad-forward {
+    .uber-gallery .uber-forward {
       cursor: pointer;
       display: block;
       right: -20px;
       width: 13px;
-      background: url(/images/ad_scroll_forward.png) 0px 22px no-repeat;
+      background: url(/images/uber_scroll_forward.png) 0px 22px no-repeat;
     }
-    .ad-gallery .ad-nav .ad-thumbs {
+    .uber-gallery .uber-nav .uber-thumbs {
       overflow: hidden;
       width: 100%;
     }
-      .ad-gallery .ad-thumbs .ad-thumb-list {
+      .uber-gallery .uber-thumbs .uber-thumb-list {
         float: left;
         width: 9000px;
         list-style: none;
       }
-        .ad-gallery .ad-thumbs li {
+        .uber-gallery .uber-thumbs li {
           float: left;
           padding-right: 5px;
         }
-          .ad-gallery .ad-thumbs li a {
+          .uber-gallery .uber-thumbs li a {
             display: block;
           }
-            .ad-gallery .ad-thumbs li a img {
+            .uber-gallery .uber-thumbs li a img {
               border: 3px solid #CCC;
               max-width: 190px;
               max-height: 190px;
               display: block;
             }
-            .ad-gallery .ad-thumbs li a.ad-active img {
+            .uber-gallery .uber-thumbs li a.uber-active img {
               border: 3px solid #616161;
             }
 /* Can't do display none, since Opera won't load the images then */
-.ad-preloads {
+.uber-preloads {
   position: absolute;
   left: -9000px;
   top: -9000px;

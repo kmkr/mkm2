@@ -203,7 +203,7 @@
         this.initKeyEvents();
       };
       var start_at = parseInt(this.settings.start_at_index, 10);
-      if(window.location.hash && window.location.hash.indexOf('#ad-image') === 0) {
+      if(window.location.hash && window.location.hash.indexOf('#uber-image') === 0) {
         console.log("replace");
         start_at = window.location.hash.replace(/[^0-9]+/g, '');
         // Check if it's a number
@@ -235,15 +235,15 @@
       };
     },
     setupElements: function() {
-      this.controls = this.wrapper.find('.ad-controls');
-      this.gallery_info = $('<p class="ad-info"></p>');
+      this.controls = this.wrapper.find('.uber-controls');
+      this.gallery_info = $('<p class="uber-info"></p>');
       this.controls.append(this.gallery_info);
-      this.image_wrapper = this.wrapper.find('.ad-image-wrapper');
+      this.image_wrapper = this.wrapper.find('.uber-image-wrapper');
       this.image_wrapper.empty();
-      this.nav = this.wrapper.find('.ad-nav');
-      this.thumbs_wrapper = this.nav.find('.ad-thumbs');
-      this.preloads = $('<div class="ad-preloads"></div>');
-      this.loader = $('<img class="ad-loader" src="'+ this.settings.loader_image +'">');
+      this.nav = this.wrapper.find('.uber-nav');
+      this.thumbs_wrapper = this.nav.find('.uber-thumbs');
+      this.preloads = $('<div class="uber-preloads"></div>');
+      this.loader = $('<img class="uber-loader" src="'+ this.settings.loader_image +'">');
       this.image_wrapper.append(this.loader);
       this.loader.hide();
       $(document.body).append(this.preloads);
@@ -287,7 +287,7 @@
             thumb_wrapper_width += thumb[0].parentNode.parentNode.offsetWidth;
             thumbs_loaded++;
           };
-          link.addClass('ad-thumb'+ i);
+          link.addClass('uber-thumb'+ i);
           link.click(
             function() {
               context.showImage(i);
@@ -296,32 +296,32 @@
             }
           ).hover(
             function() {
-              if(!$(this).is('.ad-active') && context.settings.thumb_opacity < 1) {
+              if(!$(this).is('.uber-active') && context.settings.thumb_opacity < 1) {
                 $(this).find('img').fadeTo(300, 1);
               };
               context.preloadImage(i);
             },
             function() {
-              if(!$(this).is('.ad-active') && context.settings.thumb_opacity < 1) {
+              if(!$(this).is('.uber-active') && context.settings.thumb_opacity < 1) {
                 $(this).find('img').fadeTo(300, context.settings.thumb_opacity);
               };
             }
           );
           var link = false;
-          if(thumb.data('ad-link')) {
-            link = thumb.data('ad-link');
+          if(thumb.data('uber-link')) {
+            link = thumb.data('uber-link');
           } else if(thumb.attr('longdesc') && thumb.attr('longdesc').length) {
             link = thumb.attr('longdesc');
           };
           var desc = false;
-          if(thumb.data('ad-desc')) {
-            desc = thumb.data('ad-desc');
+          if(thumb.data('uber-desc')) {
+            desc = thumb.data('uber-desc');
           } else if(thumb.attr('alt') && thumb.attr('alt').length) {
             desc = thumb.attr('alt');
           };
           var title = false;
-          if(thumb.data('ad-title')) {
-            title = thumb.data('ad-title');
+          if(thumb.data('uber-title')) {
+            title = thumb.data('uber-title');
           } else if(thumb.attr('title') && thumb.attr('title').length) {
             title = thumb.attr('title');
           };
@@ -335,7 +335,7 @@
         function() {
           if(thumb_count == thumbs_loaded) {
             thumb_wrapper_width -= 100;
-            var list = context.nav.find('.ad-thumb-list');
+            var list = context.nav.find('.uber-thumb-list');
             list.css('width', thumb_wrapper_width +'px');
             var i = 1;
             var last_height = list.height();
@@ -370,8 +370,8 @@
       );
     },
     initNextAndPrev: function() {
-      this.next_link = $('<div class="ad-next"><div class="ad-next-image"></div></div>');
-      this.prev_link = $('<div class="ad-prev"><div class="ad-prev-image"></div></div>');
+      this.next_link = $('<div class="uber-next"><div class="uber-next-image"></div></div>');
+      this.prev_link = $('<div class="uber-prev"><div class="uber-prev-image"></div></div>');
       this.image_wrapper.append(this.next_link);
       this.image_wrapper.append(this.prev_link);
       var context = this;
@@ -387,7 +387,7 @@
         }
       ).click(
         function() {
-          if($(this).is('.ad-next')) {
+          if($(this).is('.uber-next')) {
             context.nextImage();
             context.slideshow.stop();
           } else {
@@ -399,8 +399,8 @@
     },
     initBackAndForward: function() {
       var context = this;
-      this.scroll_forward = $('<div class="ad-forward"></div>');
-      this.scroll_back = $('<div class="ad-back"></div>');
+      this.scroll_forward = $('<div class="uber-forward"></div>');
+      this.scroll_back = $('<div class="uber-back"></div>');
       this.nav.append(this.scroll_forward);
       this.nav.prepend(this.scroll_back);
       var has_scrolled = 0;
@@ -413,7 +413,7 @@
           if(context.settings.scroll_jump > 0) {
             var width = context.settings.scroll_jump;
           };
-          if($(this).is('.ad-forward')) {
+          if($(this).is('.uber-forward')) {
             var left = context.thumbs_wrapper.scrollLeft() + width;
           } else {
             var left = context.thumbs_wrapper.scrollLeft() - width;
@@ -427,7 +427,7 @@
       ).css('opacity', 0.6).hover(
         function() {
           var direction = 'left';
-          if($(this).is('.ad-forward')) {
+          if($(this).is('.uber-forward')) {
             direction = 'right';
           };
           thumbs_scroll_interval = setInterval(
@@ -507,14 +507,14 @@
       if(image.desc.length || image.title.length) {
         var title = '';
         if(image.title.length) {
-          title = '<strong class="ad-description-title">'+ image.title +'</strong>';
+          title = '<strong class="uber-description-title">'+ image.title +'</strong>';
         };
         var desc = '';
         if(image.desc.length) {
           desc = '<span>'+ image.desc +'</span>';
         };
-        //tar med filename: desc = $('<p class="ad-image-description">'+ title + desc +'</p>');
-        desc = $('<p class="ad-image-description">'+ title +'</p>');
+        //tar med filename: desc = $('<p class="uber-image-description">'+ title + desc +'</p>');
+        desc = $('<p class="uber-image-description">'+ title +'</p>');
       };
       return desc;
     },
@@ -546,7 +546,7 @@
       if(this.images[index]) {
         var context = this;
         var image = this.images[index];
-        var img_container = $(document.createElement('div')).addClass('ad-image');
+        var img_container = $(document.createElement('div')).addClass('uber-image');
         var img = $(new Image()).attr('src', image.image);
         if(image.link) {
           var link = $('<a href="'+ image.link +'" target="_blank"></a>');
@@ -571,7 +571,7 @@
             this.settings.description_wrapper.append(desc);
           }
         };
-        this.highLightThumb(this.nav.find('.ad-thumb'+ index));
+        this.highLightThumb(this.nav.find('.uber-thumb'+ index));
 
         var direction = 'right';
         if(this.current_index < index) {
@@ -707,10 +707,10 @@
       return true;
     },
     highLightThumb: function(thumb) {
-      this.thumbs_wrapper.find('.ad-active').removeClass('ad-active');
-      thumb.addClass('ad-active');
+      this.thumbs_wrapper.find('.uber-active').removeClass('uber-active');
+      thumb.addClass('uber-active');
       if(this.settings.thumb_opacity < 1) {
-        this.thumbs_wrapper.find('a:not(.ad-active) img').fadeTo(300, this.settings.thumb_opacity);
+        this.thumbs_wrapper.find('a:not(.uber-active) img').fadeTo(300, this.settings.thumb_opacity);
         thumb.find('img').fadeTo(300, 1);
       };
       var left = thumb[0].parentNode.offsetLeft;
@@ -744,10 +744,10 @@
       this.settings = settings;
     },
     create: function() {
-      this.start_link = $('<span class="ad-slideshow-start">'+ this.settings.start_label +'</span>');
-      this.stop_link = $('<span class="ad-slideshow-stop">'+ this.settings.stop_label +'</span>');
-      this.countdown = $('<span class="ad-slideshow-countdown"></span>');
-      this.controls = $('<div class="ad-slideshow-controls"></div>');
+      this.start_link = $('<span class="uber-slideshow-start">'+ this.settings.start_label +'</span>');
+      this.stop_link = $('<span class="uber-slideshow-stop">'+ this.settings.stop_label +'</span>');
+      this.countdown = $('<span class="uber-slideshow-countdown"></span>');
+      this.controls = $('<div class="uber-slideshow-controls"></div>');
       this.controls.append(this.start_link).append(this.stop_link).append(this.countdown);
       this.countdown.hide();
 
@@ -796,7 +796,7 @@
       if(this.running || !this.enabled) return false;
       var context = this;
       this.running = true;
-      this.controls.addClass('ad-slideshow-running');
+      this.controls.addClass('uber-slideshow-running');
       this._next();
       this.fireCallback(this.settings.onStart);
       return true;
@@ -805,7 +805,7 @@
       if(!this.running) return false;
       this.running = false;
       this.countdown.hide();
-      this.controls.removeClass('ad-slideshow-running');
+      this.controls.removeClass('uber-slideshow-running');
       clearInterval(this.countdown_interval);
       this.fireCallback(this.settings.onStop);
       return true;

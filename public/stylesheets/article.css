@@ -9,11 +9,11 @@ div#article h1 {
 }
 
 
-div#article p.ad-image-description {
+div#article p.uber-image-description {
   margin: 0;
 }
 
-div#article div#article_galleryitems div.ad-gallery div.ad-nav {
+div#article div#article_galleryitems div.uber-gallery div.uber-nav {
   margin: 0 auto;
 }
 

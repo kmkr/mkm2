@@ -13,7 +13,7 @@ function findStartAtIndex() {
     hash_image_name = hash_image_name.replace(/\+/g, " ");
     var start_at_idx = 0;
     var found_image = false;
-    $('.ad-thumb-list img').each(function(idx, image) {
+    $('.uber-thumb-list img').each(function(idx, image) {
       var img_name = $(image).attr('src').split("/").pop().split("?").shift();
 
       if (img_name == hash_image_name) {
@@ -36,7 +36,7 @@ function loadGallery() {
 
     var startAtIndex = findStartAtIndex();
 
-    var galleries = jQuery('.ad-gallery').adGallery({
+    var galleries = jQuery('.uber-gallery').adGallery({
       loader_image: '/images/loader.gif',
       slideshow: {
         enable: false
@@ -49,7 +49,7 @@ function loadGallery() {
           this.preloadImage(1);
         },
         beforeImageVisible: function(new_image, old_image) {
-          $('p.ad-image-description').fadeTo(0, 0.85);
+          $('p.uber-image-description').fadeTo(0, 0.85);
         },
         afterImageVisible: function() {
           var state = {},
