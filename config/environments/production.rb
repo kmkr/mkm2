@@ -50,4 +50,13 @@ Mkm2::Application.configure do
 
   require 'active_support/cache/dalli_store23'
   config.cache_store = :dalli_store
+
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.sendgrid.net",
+    :port => '25',
+    :domain => "mkm.tc",
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD']
+  }
 end
