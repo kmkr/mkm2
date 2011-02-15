@@ -261,6 +261,7 @@ div#comments div.comment {
 }
 
 div#new_comment_wrapper {
+  font-size: 14px;
   padding: 5px;
   float: right;
   width: 400px;
@@ -271,7 +272,15 @@ div#new_comment_wrapper label {
   float: left;
 }
 
-div#new_comment_wrapper input {
+div#new_comment_wrapper p {
+  clear: both;
+}
+
+div#new_comment_wrapper p#email_address_info {
+  display: none;
+}
+
+div#new_comment_wrapper input, div#new_comment_wrapper textarea {
   float: right;
 }
 
@@ -284,7 +293,7 @@ div#new_article div#progress_wrapper {
   height: 70px;
 }
 
-div#article input {
+div#new_comment_wrapper input, div#new_comment_wrapper textarea {
   width: 250px;
 }
 

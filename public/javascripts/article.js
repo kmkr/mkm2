@@ -26,3 +26,13 @@ jQuery(function() {
     }
     setTimeout(resizeImageIfCssIsWrong, 600);
 });
+
+jQuery(function() {
+  $('#email_address_field').tooltip({ position: "center right"});
+  $('#email_updates').click(function() {
+    $(this).hide('slide', function() {
+      $('#email_address_info').show('slide');
+    });
+    return false;
+  });
+});

@@ -166,4 +166,5 @@ position: relative;
 top:5px;
 z-index: 100;
 background-color: #fff7ed;
+max-width: 200px;
 }

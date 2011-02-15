@@ -4,19 +4,18 @@ class CommentMailer < ActionMailer::Base
   def comment_mail(comment)
     @comment = comment
     emails = []
-    #article.comments.each do |comment|
-    #  emails << comment.email unless comment.email.blank?
-    #end
+    article.comments.each do |comment|
+      emails << comment.email unless comment.email.blank?
+    end
 
-    #User.all.each do |user|
-    #  emails << user.email
-    #end
-    emails << "krismikael@gmail.com"
+    User.all.each do |user|
+      emails << user.email
+    end
 
     emails.uniq!
     
     emails.each do |email|
-      mail(:to => email, :subject => "#{comment.author} posted a comment to #{comment.article.title}!").deliver
+      mail(:to => email, :subject => "#{comment.author} posted a comment to '#{comment.article.title}'").deliver
     end
   end
 end
