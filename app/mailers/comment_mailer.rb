@@ -15,8 +15,8 @@ class CommentMailer < ActionMailer::Base
 
     emails.uniq!
     
-    mail(:from => 'noreply@mkm.tc', :to => "krismikael@gmail.com", :subject => "#{comment.author} posted a comment to #{comment.article.title}!")
-   # emails.each do |email|
-   # end
+    emails.each do |email|
+      mail(:to => email, :subject => "#{comment.author} posted a comment to #{comment.article.title}!").deliver
+    end
   end
 end
