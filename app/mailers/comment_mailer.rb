@@ -4,7 +4,7 @@ class CommentMailer < ActionMailer::Base
   def comment_mail(comment)
     @comment = comment
     emails = []
-    article.comments.each do |comment|
+    comment.article.comments.each do |comment|
       emails << comment.email unless comment.email.blank?
     end
 
