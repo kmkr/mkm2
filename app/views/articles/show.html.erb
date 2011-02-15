@@ -25,7 +25,7 @@
       <%= raw getArticleStartEndDate(@article) %>. The article has <span class="bold">
       <%= pluralize @article.assets.size, 'image', 'images' %></span>
       in the gallery, and <span class="bold">
-      <%= pluralize @article.comments.size, 'comment', 'comments' %></span>.  Please write
+      <span id="article_number_of_comments"><%= pluralize @article.comments.size, 'comment' %></span></span>.  Please write
       us a comment below, that'll make us happy!</p>
     
     </div>

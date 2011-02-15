@@ -1,3 +1,11 @@
 $('#comments').prepend("<%= escape_javascript(render :partial => 'comment', :locals => { :comment => @comment }) %>");
 $('#new_comment')[0].reset();
+var comments_span_content = $('#article_number_of_comments');
+var new_comment_count = comments_span_content.first().html().split(' ')[0]*1 + 1;
+var pluralized_form = ' comments';
+if (new_comment_count == 1) {
+  pluralized_form = ' comment';
+}
+$('#article_number_of_comments').html(new_comment_count + pluralized_form);
+$("#article_number_of_comments").effect('highlight', {}, 1000);
 $("#<%= dom_id(@comment) %>").effect('highlight', {}, 1000);
