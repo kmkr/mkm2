@@ -30,8 +30,8 @@ jQuery(function() {
 jQuery(function() {
   $('#email_address_field').tooltip({ position: "center right"});
   $('#email_updates').click(function() {
-    $(this).hide('slide', function() {
-      $('#email_address_info').show('slide');
+    $(this).hide('puff', function() {
+      $('#email_address_info').show('fade');
     });
     return false;
   });
