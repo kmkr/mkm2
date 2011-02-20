@@ -28,7 +28,7 @@ jQuery(function() {
 });
 
 jQuery(function() {
-  $('#email_address_field').tooltip({ position: "center right"});
+  $('#comment_email').tooltip({ position: "center right"});
   $('#email_updates').click(function() {
     $(this).hide('puff', function() {
       $('#email_address_info').show('fade');
