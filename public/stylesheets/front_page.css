@@ -14,6 +14,7 @@ div#welcome_box p {
   margin-bottom: 5px;
   }
 
+
 div#random_articles h2 {
 margin: 0;  
 padding: 0;
@@ -48,14 +49,17 @@ ul#random_articles_list li {
 }
 
 ul#random_articles_list li img.smallimg {
-padding: 5px;
-border: none;
-float: left;
-margin: 10px 10px 0 0;
   border: dashed 1px #7e6d4b;
-  padding: 1px 0 2px 1px;
   max-width: 50px;
   max-height: 50px;
+  margin: 5px 5px 0 0;
+  padding: 1px 0 2px 1px;
+}
+
+span.imageColumn {
+  width: 50px;
+  float: left;
+  margin-right: 12px;
 }
 
 ul#random_articles_list li img.overlayimg {
