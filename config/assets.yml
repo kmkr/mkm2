@@ -1,4 +1,5 @@
-package_assets off
+package_assets: on
+embed_assets: on
 
 javascripts:
   common:
