@@ -314,3 +314,7 @@ div#no_such_hash {
   display: none;
   font-size: 14px;
 }
+
+span.fblike {
+float: right;
+}
