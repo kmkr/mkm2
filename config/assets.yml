@@ -1,0 +1,41 @@
+embed_assets: on
+
+javascripts:
+  common:
+    - public/javascripts/jquery-1.5.min.js
+    - public/javascripts/application.js
+    - public/javascripts/jquery-ui-1.8.7.custom.min.js
+    - public/javascripts/rails.js
+    - public/javascripts/jrails.js
+    - public/javascripts/jquery.tools.min.js
+    - public/javascripts/tooltips_front.js
+    - public/javascripts/image_fade.js
+    - public/javascripts/jquery.scrollTo-min.js
+    - public/javascripts/jquery.inplace.pack.js
+    - public/javascripts/navigation.js
+    - public/javascripts/user_map.js
+    - public/javascripts/world_map.js
+    - public/javascripts/jquery.featureList-1.0.0.js
+    - public/javascripts/random_image_boot.js
+    - public/javascripts/gallery/jquery.ad-gallery.js
+    - public/javascripts/article.js
+    - public/javascripts/jquery.ba-bbq.js
+    - public/javascripts/is_event_supported.js
+
+stylesheets:
+  common:
+    - public/stylesheets/article.css
+    - public/stylesheets/banner.css
+    - public/stylesheets/common.css
+    - public/stylesheets/darkgrafitti.css
+    - public/stylesheets/edit_countries.css
+    - public/stylesheets/front_page.css
+    - public/stylesheets/iframe_markitup.css
+    - public/stylesheets/jquery.ad-gallery.css
+    - public/stylesheets/jquery-ui-1.8.7.custom.css
+    - public/stylesheets/markitup_styles.css
+    - public/stylesheets/markitup_textile.css
+    - public/stylesheets/navigation.css
+    - public/stylesheets/maps.css
+    - public/stylesheets/session.css
+

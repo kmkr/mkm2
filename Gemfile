@@ -5,6 +5,7 @@ gem 'paperclip'
 gem 'RedCloth', '4.2.3'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'smurf'
+gem 'jammit'
 
 group :development, :test do 
   gem 'sqlite3-ruby', :require => 'sqlite3'
