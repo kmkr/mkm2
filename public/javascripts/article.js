@@ -24,7 +24,7 @@ jQuery(function() {
   			$('#article_main_image').css('width', imageWidth);
 	  	}
     }
-    setTimeout(resizeImageIfCssIsWrong, 600);
+    setTimeout(resizeImageIfCssIsWrong, 1000);
 });
 
 jQuery(function() {
