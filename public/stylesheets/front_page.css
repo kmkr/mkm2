@@ -64,6 +64,7 @@ span.imageColumn {
 
 ul#random_articles_list li img.overlayimg {
   position: absolute;
+  margin-top: -3px;
   left: 0;
 }
 
