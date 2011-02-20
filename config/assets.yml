@@ -1,3 +1,5 @@
+package_assets off
+
 javascripts:
   common:
     - public/javascripts/jquery-1.5.min.js
