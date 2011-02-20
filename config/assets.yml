@@ -1,5 +1,4 @@
 package_assets: on
-embed_assets: on
 
 javascripts:
   common:
