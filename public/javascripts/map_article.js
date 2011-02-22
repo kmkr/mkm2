@@ -1,11 +1,18 @@
 jQuery(function() {
-  var latitude = 0;
-  var longitude = 0;
-  var zoom_level = 0;
+  var latitude = parseFloat($('#article_latitude').val());
+  var longitude = parseFloat($('#article_longitude').val());
+  var zoom_level = parseInt($('#article_zoom_level').val(), 10);
+  if(!zoom_level) {
+    zoom_level = 1;
+  }
 
-  var latitude = $('#article_latitude').val()*1;
-  var longitude = $('#article_longitude').val()*1;
-  var zoom_level = $('#article_zoom_level').val()*1;
+  if(!latitude) {
+    latitude = 1;
+  }
+
+  if(!longitude) {
+    longitude = 1;
+  }
 
   var mapOptions = {
     zoom: zoom_level,

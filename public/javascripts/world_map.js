@@ -18,7 +18,31 @@ jQuery(function() {
           timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
   });
 
-  var url = '/countries/info'
+  function plotMarker(position, world_map) {
+    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
+    marker = new google.maps.Marker({
+      map:world_map,
+      draggable:false,
+      position:lonLat});
+    return marker;
+  }
+
+  function plotCustomMarker(position, world_map) {
+    var myIcon = new google.maps.MarkerImage("/images/green_marker.png",
+    new google.maps.Size(20, 34));
+
+    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
+    var marker = new google.maps.Marker({
+      map:world_map,
+      draggable:false,
+      position:lonLat,
+      icon: myIcon
+      });
+
+    return marker;
+  }
+
+  var url = '/countries/info';
   jQuery.ajax({
     url: url,
     dataType: 'json',
@@ -49,17 +73,6 @@ jQuery(function() {
     }
   });
 
-  function createTip() {
-  var text = "asd";
-    divs.each(function(i, div) {
-      if (div.title.length == 0) {
-        div.attr('title') = text;
-        div.tooltip({effect: 'slide'});
-      }
-    });
-  
-  }
-
   jQuery('.user_location').each(function(idx, elem) {
     var lat = jQuery(elem).find('.user_location_latitude').text();
     var lon = jQuery(elem).find('.user_location_longitude').text();
@@ -69,31 +82,15 @@ jQuery(function() {
     });
 
 
-  function plotMarker(position, world_map) {
-    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
-    marker = new google.maps.Marker({
-      map:world_map,
-      draggable:false,
-      position:lonLat});
-    return marker;
-  }
 
-  function plotCustomMarker(position, world_map) {
-    var myIcon = new google.maps.MarkerImage("/images/green_marker.png",
-    new google.maps.Size(20, 34));
 
-    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
-    var marker = new google.maps.Marker({
-      map:world_map,
-      draggable:false,
-      position:lonLat,
-      icon: myIcon
-      });
-
-    return marker;
-  }
-
-// omg denne henter titleinfo fra img-parent og setter på img. fjerner så title fra parent (for aa stoppe google aa bruke title)
-    setTimeout("$(\"#world_map div[title*='location'] img\").each(function(i, elm) { $(elm).attr('title', $(elm).parent().attr('title')); $(elm).parent().attr('title', ''); $(elm).tooltip({effect: 'slide'}) });", 800);
+  var removeGoogleTitleAndSetOwn = function() {
+    $("#world_map div[title*='location'] img").each(function(i, elm) {
+      $(elm).attr('title', $(elm).parent().attr('title'));
+      $(elm).parent().attr('title', '');
+      $(elm).tooltip({effect: 'slide'});
+    });
+  };
+    setTimeout(removeGoogleTitleAndSetOwn, 800);
 
 });

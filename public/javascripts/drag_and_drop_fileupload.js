@@ -1,4 +1,4 @@
-jQuery(function() {
+$(function() {
   var dropArea = $("#drop_area");
   var filesWaiting = [];
   var ongoingTransfer = false;
@@ -29,7 +29,7 @@ jQuery(function() {
     var newValue = (completedTransfers/totalNumFiles)*100;
     jQuery( "#progressbar" ).progressbar( "option", "value", newValue);
 
-    if (newValue == 100) { //completed
+    if (newValue === 100) { //completed
       jQuery("#progress").hide(); 
       jQuery("#progressbar").hide('fade', 500);
       jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
@@ -40,12 +40,13 @@ jQuery(function() {
   }
 
   function traverseFiles (files) {
-    var li, img, file, fileInfo; 
+    var img, file;
     var readFiles = 0;
+    var i = 0;
     totalNumFiles += files.length;
     updateCompletion(0); // Fire change 
 
-    for (var i=0, il=files.length; i<il; i++) {
+    for (i=0, il=files.length; i<il; i++) {
       jQuery('#progressbar').show();
       jQuery("#statusdiv").hide('fade');
       jQuery('#progress').show();
@@ -54,7 +55,6 @@ jQuery(function() {
         alert("File number " + i + " does not look like an image");
         continue;
       }
-      var files = files;
 
       var binaryReader = new FileReader();
       binaryReader.onload = (function (theImg) {
@@ -67,11 +67,11 @@ jQuery(function() {
           var fileNameEncoded = encodeURIComponent(fileName);
           var encodedData = encodeURIComponent(base64Value);
           var actionPath = jQuery('#article_form').attr('action').split('/');
-          var article_id = actionPath[actionPath.length - 1] * 1;
+          var article_id = parseInt(actionPath[actionPath.length - 1], 10);
           var postData = "article_id="+article_id+"&file_name="+fileNameEncoded+ "&binary_data="+encodedData;
           readFiles = readFiles + 1;
 
-          if (ongoingTransfer == true) {
+          if (ongoingTransfer) {
             filesWaiting.push(postData);
           } else {
             ongoingTransfer = true;
@@ -82,7 +82,8 @@ jQuery(function() {
       binaryReader.readAsBinaryString(file);
 
     }
-  };
+  }
+
   var dataTransferAvailable = true;
   try {
   if (!!FileReader && isEventSupported('drag') && 

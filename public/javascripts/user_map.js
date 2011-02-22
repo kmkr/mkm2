@@ -15,7 +15,7 @@ if ($('#user_map').length > 0) {
   $('#user_map').fadeTo("fast", 0.8);
   
 
-  if (user_longitude != undefined && user_latitude != undefined) {
+  if (user_longitude !== undefined && user_latitude !== undefined) {
     var lonLat = new google.maps.LatLng(user_latitude, user_longitude);
     marker = new google.maps.Marker({
       map:user_map,

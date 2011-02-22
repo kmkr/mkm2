@@ -2,12 +2,25 @@ jQuery(function() {
   var mapOpen = false;
 
   var longitude_field = $('#article_longitude');
-  var longitude = longitude_field.val()*1;
+  var longitude = parseFloat(longitude_field.val());
   var latitude_field = $('#article_latitude');
-  var latitude = latitude_field.val()*1;
+  var latitude = parseFloat(latitude_field.val());
   var zoom_field = $("#article_zoom_level");
-  var zoom_level = zoom_field.val()*1;
+  var zoom_level = parseInt(zoom_field.val(), 10);
   var marker;
+
+  if(!zoom_level) {
+    zoom_level = 1;
+  }
+
+  if(!latitude) {
+    latitude = 1;
+  }
+
+  if(!longitude) {
+    longitude = 1;
+  }
+
 
   var mapOptions = {
     zoom: zoom_level,
@@ -20,7 +33,8 @@ jQuery(function() {
   var article_map = new google.maps.Map(document.getElementById("country_map"), mapOptions);
   $('#country_map').fadeTo("fast", 0.6);
   
-  if (longitude > 0) {
+  if (longitude) {
+    console.log("longitude!");
     jQuery('#country_map').show();
     var lonLat = new google.maps.LatLng(latitude, longitude);
     marker = new google.maps.Marker({
@@ -32,7 +46,7 @@ jQuery(function() {
     zoom_field.val(article_map.getZoom());
     longitude_field.val(e.latLng.lng());
     latitude_field.val(e.latLng.lat());
-    if (marker != undefined) {
+    if (marker !== undefined) {
       marker.setMap(null); // remove the marker
     }
     marker = new google.maps.Marker({
@@ -44,10 +58,10 @@ jQuery(function() {
   jQuery("#article_country_id").change(function(event) {
     var countryId = jQuery(this).val();
 
-    var url = '/countries/' + countryId
+    var url = '/countries/' + countryId;
     jQuery.ajax({ 
       url: url,
-
+      dataType: 'json',
       success: function(transport) {
         var result = transport.country;
         var latitude = result.latitude;
@@ -57,7 +71,8 @@ jQuery(function() {
         article_map.setZoom(zoom_level);
       }
     });
-    if (mapOpen == false) {
+    if (!mapOpen) {
+      console.log("åpner map");
       jQuery('#country_map').show('fade');
       mapOpen = true;
     }

@@ -36,17 +36,7 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-$(function() {
-  // Since the event is only triggered when the hash changes, we need to trigger
-  // the event now, to handle the hash the page may have loaded with.
-  if (window.location.hash.charAt(0) == "#") { 
-    $(window).trigger( 'hashchange' );
-    scrollToAndSwitchToTab(1);
-  }
-});
-</script>
-
+<%= javascript_include_tag 'hashchange_article' %>
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
