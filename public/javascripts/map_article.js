@@ -1,4 +1,6 @@
+var reloadArticleMap;
 jQuery(function() {
+reloadArticleMap = function() {
   var latitude = parseFloat($('#article_latitude').val());
   var longitude = parseFloat($('#article_longitude').val());
   var zoom_level = parseInt($('#article_zoom_level').val(), 10);
@@ -31,4 +33,6 @@ jQuery(function() {
     marker = new google.maps.Marker({
       map:article_map,
       position:lonLat});
+};
+reloadArticleMap();
 });

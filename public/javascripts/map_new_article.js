@@ -34,7 +34,6 @@ jQuery(function() {
   $('#country_map').fadeTo("fast", 0.6);
   
   if (longitude) {
-    console.log("longitude!");
     jQuery('#country_map').show();
     var lonLat = new google.maps.LatLng(latitude, longitude);
     marker = new google.maps.Marker({
@@ -72,7 +71,6 @@ jQuery(function() {
       }
     });
     if (!mapOpen) {
-      console.log("åpner map");
       jQuery('#country_map').show('fade');
       mapOpen = true;
     }

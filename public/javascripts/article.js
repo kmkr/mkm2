@@ -100,7 +100,10 @@ var loadGallery = function() {
   });
 
   // load gallery for clicks on tab1
-  $('#article_tabs').bind('tabsshow', function(evt, ui) { if (ui.index === 1) { loadGallery(); } } );
+  $('#article_tabs').bind('tabsshow', function(evt, ui) {
+    if (ui.index === 0) { reloadArticleMap(); }
+    if (ui.index === 1) { loadGallery(); }
+    } );
 
 });
 
