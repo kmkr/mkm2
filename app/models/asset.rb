@@ -5,7 +5,7 @@ class Asset < ActiveRecord::Base
   has_attached_file :galleryitem, 
     :styles => {
       :thumb => '250x250>',
-      :medium => '700x700>',
+      :medium => '410x410>',
       :large => '1480x1480>'
     },
     :convert_options => { :all => '-auto-orient' },
