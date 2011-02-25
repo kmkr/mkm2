@@ -46,7 +46,6 @@ div.article_image div {
 
 div#article div#article_main_image p.caption {
   max-width: 500px;
-  min-width: 375px;
   clear: right;
   font-size: 12px;
 }
@@ -73,6 +72,7 @@ div#article div#article_thumb_images p.caption {
 
 div#article_main_image {
   max-width: 500px;
+  min-width: 375px;
   float: right;
   margin: 20px 0 20px 20px;
 }
