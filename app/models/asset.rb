@@ -6,7 +6,7 @@ class Asset < ActiveRecord::Base
     :styles => {
       :thumb => '250x250>',
       :medium => '410x410>',
-      :large => '1480x1480>'
+      :large => '1000x1000>'
     },
     :convert_options => { :all => '-auto-orient' },
     :s3_credentials => "#{Rails.root}/config/s3.yml",
