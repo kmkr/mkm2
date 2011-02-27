@@ -18,6 +18,8 @@ class Asset < ActiveRecord::Base
   def dataupload=(uploadedObj)
     base64EncodedFile = uploadedObj.binaryData
     fileName = uploadedObj.fileName
+	 # Make sure file name is unique
+	 fileName = Time.now.to_f + "_" + fileName
     fileName.gsub!(/[^a-z0-9A-Z\.-]/, "_")
     binary = Base64.decode64 base64EncodedFile
     tmpFileName = "#{Rails.root}/tmp/#{fileName}"
