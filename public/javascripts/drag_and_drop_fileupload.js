@@ -121,7 +121,9 @@ $(function() {
         });
 
     dropArea.bind("drop", function (evt) {
+          this.className = "";
           evt.preventDefault();
+         evt.preventDefault();
           evt.stopPropagation();
         traverseFiles(evt.originalEvent.dataTransfer.files);
         });
