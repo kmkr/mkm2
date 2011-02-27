@@ -55,10 +55,9 @@ $(function () {
 
         callbacks: {
           init: function () {
-            this.preloadImage(startAtIndex + 0);
-            this.preloadImage(startAtIndex + 1);
-            this.preloadImage(startAtIndex + 2);
-            this.preloadImage(startAtIndex + 3);
+            this.preloadImage(this.current_index + 1);
+            this.preloadImage(this.current_index + 2);
+            this.preloadImage(this.current_index + 3);
           },
           beforeImageVisible: function (new_image, old_image) {
             $('p.uber-image-description').fadeTo(0, 0.85);
@@ -70,7 +69,6 @@ $(function () {
             // Set the state!
             state[id] = image_name;
             $.bbq.pushState(state);
-            this.preloadImage(this.current_index + 0);
             this.preloadImage(this.current_index + 1);
             this.preloadImage(this.current_index + 2);
             this.preloadImage(this.current_index + 3);

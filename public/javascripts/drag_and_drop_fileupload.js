@@ -25,15 +25,23 @@ $(function() {
   }
 
   function updateCompletion(num) {
+    if (num == 0) {
+      $('#uploading_in_progress').show('fade');
+      $('#uploading_in_progress p').effect('pulsate', { times: 100 }, 900);
+      $('#drop_wrapper').hide('fade');
+    }
     completedTransfers += num;
     var newValue = (completedTransfers/totalNumFiles)*100;
     jQuery( "#progressbar" ).progressbar( "option", "value", newValue);
 
     if (newValue === 100) { //completed
-      jQuery("#progress").hide(); 
-      jQuery("#progressbar").hide('fade', 500);
-      jQuery("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
-      jQuery("#statusdiv").show('highlight');
+      $("#progress").hide('fade'); 
+      $("#progressbar").hide('fade');
+      $('#uploading_in_progress').hide('fade');
+
+      $('#drop_wrapper').show('fade');
+      $("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
+      $("#statusdiv").show('highlight');
       totalNumFiles = 0;
       completedTransfers = 0;
     }
@@ -45,6 +53,7 @@ $(function() {
     var i = 0;
     totalNumFiles += files.length;
     updateCompletion(0); // Fire change 
+
 
     for (i=0, il=files.length; i<il; i++) {
       jQuery('#progressbar').show();

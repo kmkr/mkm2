@@ -146,6 +146,10 @@ div#drop_area {
   text-align: center;
 }
 
+div#uploading_in_progress {
+  display: none;
+}
+
 div#drop_area.dragenter {
   border: 1px solid #888;
 }
