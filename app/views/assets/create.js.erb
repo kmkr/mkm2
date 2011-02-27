@@ -1,5 +1,4 @@
 var inputs = $('li.galleryitem input');
-console.log(inputs);
 var lastAssetNum = 3;
 if (inputs.length > 0) {
 	lastAssetNum = parseInt($(inputs).last().attr('name').match(/\d+/)[0], 10);
