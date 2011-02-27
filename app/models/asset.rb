@@ -19,7 +19,7 @@ class Asset < ActiveRecord::Base
     base64EncodedFile = uploadedObj.binaryData
     fileName = uploadedObj.fileName
 	 # Make sure file name is unique
-	 fileName = Time.now.to_f + "_" + fileName
+	 fileName = DateTime.now.strftime("%s%L") + "_" + fileName
     fileName.gsub!(/[^a-z0-9A-Z\.-]/, "_")
     binary = Base64.decode64 base64EncodedFile
     tmpFileName = "#{Rails.root}/tmp/#{fileName}"
