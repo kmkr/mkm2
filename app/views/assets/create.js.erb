@@ -1,3 +1,13 @@
-$("#sortable").append("<%= escape_javascript(render :partial => 'editable_galleryitem_hardcoded_html', :locals => { :asset => @asset, :asset_number => @article.assets.size + 1 }) %>");
+var inputs = $('li.galleryitem input');
+console.log(inputs);
+var lastAssetNum = 3;
+if (inputs.length > 0) {
+	lastAssetNum = parseInt($(inputs).last().attr('name').match(/\d+/)[0], 10);
+}
+
+var assetPosition = lastAssetNum + 1;
+var content = "<%= escape_javascript(render :partial => 'editable_galleryitem_hardcoded_html', :locals => { :asset => @asset, :asset_number => 'REPLACE_ME_WITH_CORRECT_NUMBER', :asset_position => @article.assets.size }) %>";
+content = content.replace(/REPLACE_ME_WITH_CORRECT_NUMBER/g, assetPosition);
+$("#sortable").append(content);
 $("#drop_area").effect('transfer', { to: "#<%= dom_id(@asset) %>", className: 'ui-effects-transfer' }, 1000);
 $("#<%= dom_id(@asset) %>").effect("highlight", {}, 1000);

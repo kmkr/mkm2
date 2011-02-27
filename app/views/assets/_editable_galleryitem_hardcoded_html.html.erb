@@ -1,6 +1,6 @@
 <div class="clearboth"></div>
 <li class="galleryitem" id="<%= dom_id(@asset) %>">
-  <input id="article_assets_attributes_<%= asset_number %>_galleryitem_position" name="article[assets_attributes][<%= asset_number %>][galleryitem_position]" type="hidden" value="0" />
+  <input id="article_assets_attributes_<%= asset_number %>_galleryitem_position" name="article[assets_attributes][<%= asset_number %>][galleryitem_position]" type="hidden" value="<%= asset_position %>" />
   <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
   <span class="left"><img alt="<%= @asset.galleryitem_caption %>" src="<%= @asset.galleryitem.url(:thumb) %>"></span>
   
@@ -17,7 +17,8 @@
 
   <p>
     <label for="article_assets_attributes_<%= asset_number %>_galleryitem_use_in_column">Show in text?</label>
-    <input id="article_assets_attributes_<%= asset_number %>_galleryitem_use_in_column" name="article[assets_attributes][<%= asset_number %>][galleryitem_use_in_column]" type="checkbox" checked="yes">
+	 <input name="article[assets_attributes][<%= asset_number %>][galleryitem_use_in_column]" type="hidden" value="0">
+    <input id="article_assets_attributes_<%= asset_number %>_galleryitem_use_in_column" name="article[assets_attributes][<%= asset_number %>][galleryitem_use_in_column]" type="checkbox" checked="checked" value="1">
   </p>
 
 </li>
