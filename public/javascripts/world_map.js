@@ -53,7 +53,6 @@ window.onload = function() {
         var marker = plotMarker(country, world_map);
         // mouse listener
         google.maps.event.addListener(marker, 'mouseover', function(e) {
-        console.log("over %o", marker);
           //marker.setAnimation(google.maps.Animation.BOUNCE);
           clearTimeout(timeout);
           var articleLinks = "";
@@ -68,7 +67,6 @@ window.onload = function() {
 
 
         google.maps.event.addListener(marker, "mouseout", function(e) {
-        console.log("out %o", marker);
           //marker.setAnimation(null);
           timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
         });
