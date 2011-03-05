@@ -53,7 +53,8 @@ window.onload = function() {
         var marker = plotMarker(country, world_map);
         // mouse listener
         google.maps.event.addListener(marker, 'mouseover', function(e) {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
+        console.log("over %o", marker);
+          //marker.setAnimation(google.maps.Animation.BOUNCE);
           clearTimeout(timeout);
           var articleLinks = "";
           jQuery.each(country.articles, function(idx, article) {
@@ -65,8 +66,10 @@ window.onload = function() {
           jQuery('#articles_countries_wrapper').fadeIn();
         });
 
+
         google.maps.event.addListener(marker, "mouseout", function(e) {
-          marker.setAnimation(null);
+        console.log("out %o", marker);
+          //marker.setAnimation(null);
           timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
         });
       });
