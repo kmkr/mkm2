@@ -1,4 +1,4 @@
-jQuery(function() {
+window.onload = function() {
   var mapOptions = {
     zoom: 1,
     mapTypeId: google.maps.MapTypeId.TERRAIN,
@@ -82,8 +82,6 @@ jQuery(function() {
     });
 
 
-
-
   var removeGoogleTitleAndSetOwn = function() {
     $("#world_map div[title*='location'] img").each(function(i, elm) {
       $(elm).attr('title', $(elm).parent().attr('title'));
@@ -91,6 +89,6 @@ jQuery(function() {
       $(elm).tooltip({effect: 'slide'});
     });
   };
-    setTimeout(removeGoogleTitleAndSetOwn, 800);
+  setTimeout(removeGoogleTitleAndSetOwn, 800);
 
-});
+};
