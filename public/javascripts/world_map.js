@@ -1,4 +1,4 @@
-window.onload = function() {
+$(function() {
   var mapOptions = {
     zoom: 1,
     mapTypeId: google.maps.MapTypeId.TERRAIN,
@@ -52,7 +52,7 @@ window.onload = function() {
       jQuery.each(countryInfo, function(idx, country) {
         var marker = plotMarker(country, world_map);
         // mouse listener
-        google.maps.event.addListener(marker, 'mouseover', function(e) {
+        google.maps.event.addListener(marker, 'mouseover', function() {
           //marker.setAnimation(google.maps.Animation.BOUNCE);
           clearTimeout(timeout);
           var articleLinks = "";
@@ -84,6 +84,7 @@ window.onload = function() {
 
 
   var removeGoogleTitleAndSetOwn = function() {
+
     $("#world_map div[title*='location'] img").each(function(i, elm) {
       $(elm).attr('title', $(elm).parent().attr('title'));
       $(elm).parent().attr('title', '');
@@ -92,4 +93,4 @@ window.onload = function() {
   };
   setTimeout(removeGoogleTitleAndSetOwn, 800);
 
-};
+});
