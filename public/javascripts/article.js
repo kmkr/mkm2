@@ -102,14 +102,6 @@ $(function () {
     }
   });
 
-  // set the #article_main_image width according to the actual image size
-  var resizeImageIfCssIsWrong = function () {
-    var imageWidth = $('#article_main_image img').width();
-    var cssWidth = $('#article_main_image').width();
-    if (cssWidth > imageWidth) {
-      $('#article_main_image').css('width', imageWidth);
-    }
-  };
 
   // load gallery for clicks on tab1
   $('#article_tabs').bind('tabsshow', function (evt, ui) {
@@ -122,7 +114,6 @@ $(function () {
     }
   });
 
-  setTimeout(resizeImageIfCssIsWrong, 1000);
 });
 
 
@@ -137,3 +128,12 @@ $(function () {
     return false;
   });
 });
+
+// set the #article_main_image width according to the actual image size
+window.onload = function () {
+  var imageWidth = $('#article_main_image img').width();
+  var cssWidth = $('#article_main_image').width();
+  if (cssWidth > imageWidth) {
+    $('#article_main_image').css('width', imageWidth);
+  }
+};
