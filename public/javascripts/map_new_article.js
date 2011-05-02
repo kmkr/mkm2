@@ -52,6 +52,10 @@ jQuery(function() {
       map:article_map,
       position:e.latLng});
   });
+
+  google.maps.event.addListener(article_map, 'zoom_changed', function(e) {
+    zoom_field.val(article_map.getZoom());
+  });
   
 
   jQuery("#article_country_id").change(function(event) {
