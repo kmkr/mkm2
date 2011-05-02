@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
   def initialize_app
     @continents = Continent.includes(:countries)
-    @locations = User.all.collect {|user| { :user_name => user.login, :longitude => user.current_longitude, :latitude => user.current_latitude } } 
   end
 
   def check_authorization
