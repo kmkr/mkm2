@@ -13,7 +13,6 @@ javascripts:
     - public/javascripts/jquery.scrollTo-min.js
     - public/javascripts/jquery.inplace.pack.js
     - public/javascripts/navigation.js
-    - public/javascripts/user_map.js
     - public/javascripts/world_map.js
     - public/javascripts/jquery.featureList-1.0.0.js
     - public/javascripts/random_image_boot.js

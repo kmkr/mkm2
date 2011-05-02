@@ -27,21 +27,6 @@ $(function() {
     return marker;
   }
 
-  function plotCustomMarker(position, world_map) {
-    var myIcon = new google.maps.MarkerImage("/images/green_marker.png",
-    new google.maps.Size(20, 34));
-
-    var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
-    var marker = new google.maps.Marker({
-      map:world_map,
-      draggable:false,
-      position:lonLat,
-      icon: myIcon
-      });
-
-    return marker;
-  }
-
   var url = '/countries/info';
   jQuery.ajax({
     url: url,
@@ -73,14 +58,6 @@ $(function() {
       });
     }
   });
-
-  jQuery('.user_location').each(function(idx, elem) {
-    var lat = jQuery(elem).find('.user_location_latitude').text();
-    var lon = jQuery(elem).find('.user_location_longitude').text();
-    var username = jQuery(elem).find('.user_name').text();
-    var marker = plotCustomMarker({longitude: lon, latitude: lat}, world_map);
-    marker.setTitle(username + "'s location");
-    });
 
 
   var removeGoogleTitleAndSetOwn = function() {

@@ -27,18 +27,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    user = User.find(params[:id])
-    new_latitude = params[:latitude]
-    new_longitude = params[:longitude]
-    user.current_latitude = new_latitude
-    user.current_longitude = new_longitude
-    if user.save
-      render :nothing => true
-    end
-  end
 end
