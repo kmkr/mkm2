@@ -22,7 +22,7 @@ $(function() {
     var lonLat = new google.maps.LatLng(position.latitude, position.longitude);
     marker = new google.maps.Marker({
       map:world_map,
-      draggable:false,
+      optimized:false,
       position:lonLat});
     return marker;
   }
@@ -38,7 +38,7 @@ $(function() {
         var marker = plotMarker(country, world_map);
         // mouse listener
         google.maps.event.addListener(marker, 'mouseover', function() {
-          //marker.setAnimation(google.maps.Animation.BOUNCE);
+          marker.setAnimation(google.maps.Animation.BOUNCE);
           clearTimeout(timeout);
           var articleLinks = "";
           jQuery.each(country.articles, function(idx, article) {
@@ -52,22 +52,12 @@ $(function() {
 
 
         google.maps.event.addListener(marker, "mouseout", function(e) {
-          //marker.setAnimation(null);
+          marker.setAnimation(null);
           timeout=setTimeout("jQuery('#articles_countries_wrapper').hide('explode', 600)", 4000);
         });
       });
     }
   });
 
-
-  var removeGoogleTitleAndSetOwn = function() {
-
-    $("#world_map div[title*='location'] img").each(function(i, elm) {
-      $(elm).attr('title', $(elm).parent().attr('title'));
-      $(elm).parent().attr('title', '');
-      $(elm).tooltip({effect: 'slide'});
-    });
-  };
-  setTimeout(removeGoogleTitleAndSetOwn, 800);
 
 });
