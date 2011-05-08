@@ -35,7 +35,7 @@ $(function() {
        success: function(msg){
           updateCompletion(1);
          if (filesWaiting.length > 0) {
-				setTimeout(transferNextFile, 2000);
+				setTimeout(transferNextFile, 6000);
          } else {
             ongoingTransfer = false;
          }
