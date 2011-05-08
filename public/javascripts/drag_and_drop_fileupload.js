@@ -16,6 +16,7 @@ $(function() {
       $("#statusdiv").show('highlight');
       totalNumFiles = 0;
       completedTransfers = 0;
+		filesWaiting = [];
   };
 
   var dropArea = $("#drop_area");
