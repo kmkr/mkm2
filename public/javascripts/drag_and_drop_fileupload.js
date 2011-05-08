@@ -12,7 +12,7 @@ $(function() {
       $('#uploading_in_progress').hide('fade');
 
       $('#drop_wrapper').show('fade');
-      $("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
+      $("#statusupdate").html('Uploaded ' + completedTransfers + " file(s)");
       $("#statusdiv").show('highlight');
       totalNumFiles = 0;
       completedTransfers = 0;
@@ -22,6 +22,11 @@ $(function() {
   var dropArea = $("#drop_area");
   jQuery("#progressbar").hide();
 
+	function transferNextFile() {
+   	var file = filesWaiting.shift();
+      transferFile(file);
+	}
+
   function transferFile(postData) {
      jQuery.ajax({
        type: "POST",
@@ -30,8 +35,7 @@ $(function() {
        success: function(msg){
           updateCompletion(1);
          if (filesWaiting.length > 0) {
-            var file = filesWaiting.shift();
-            transferFile(file);
+				setTimeout(transferNextFile, 2000);
          } else {
             ongoingTransfer = false;
          }
