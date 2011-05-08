@@ -1,10 +1,24 @@
 $(function() {
-  var dropArea = $("#drop_area");
+  jQuery( "#progressbar" ).progressbar({ value: 0 });
+
   var filesWaiting = [];
   var ongoingTransfer = false;
   var completedTransfers = 0;
   var totalNumFiles = 0;
-  jQuery( "#progressbar" ).progressbar({ value: 0 });
+
+  var resetTransfer = function() {
+      $("#progress").hide('fade'); 
+      $("#progressbar").hide('fade');
+      $('#uploading_in_progress').hide('fade');
+
+      $('#drop_wrapper').show('fade');
+      $("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
+      $("#statusdiv").show('highlight');
+      totalNumFiles = 0;
+      completedTransfers = 0;
+  };
+
+  var dropArea = $("#drop_area");
   jQuery("#progressbar").hide();
 
   function transferFile(postData) {
@@ -20,7 +34,11 @@ $(function() {
          } else {
             ongoingTransfer = false;
          }
-       }
+       },
+		 error: function(jqXhr, textStatus, error) {
+			resetTransfer();
+			alert("Ops, error while uploading pictures '" + textStatus + "' '" + error +"'");
+		 }
     });
   }
 
@@ -35,15 +53,7 @@ $(function() {
     jQuery( "#progressbar" ).progressbar( "option", "value", newValue);
 
     if (newValue === 100) { //completed
-      $("#progress").hide('fade'); 
-      $("#progressbar").hide('fade');
-      $('#uploading_in_progress').hide('fade');
-
-      $('#drop_wrapper').show('fade');
-      $("#statusupdate").html('Uploaded ' + totalNumFiles + " file(s)");
-      $("#statusdiv").show('highlight');
-      totalNumFiles = 0;
-      completedTransfers = 0;
+		resetTransfer();
     }
   }
 
