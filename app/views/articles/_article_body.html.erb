@@ -8,6 +8,8 @@
   <%= raw imagify(body, article.column_assets) %>
 </div>
 <div id="article_content">
+<article>
   <%= raw RedCloth.new(body).to_html %>
+</article>
 </div>
 <div class="clearboth"></div>
