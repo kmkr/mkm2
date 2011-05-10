@@ -107,7 +107,6 @@ $(function () {
   $('#article_tabs').bind('tabsshow', function (evt, ui) {
     if (ui.index === 0) {
       reloadArticleMap();
-      resizeImageIfCssIsWrong();
     }
     if (ui.index === 1) {
       loadGallery();
