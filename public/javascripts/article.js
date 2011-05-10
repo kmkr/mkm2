@@ -106,6 +106,7 @@ $(function () {
   // load gallery for clicks on tab1
   $('#article_tabs').bind('tabsshow', function (evt, ui) {
     if (ui.index === 0) {
+      resizeImageIfCssIsWrong();
       reloadArticleMap();
     }
     if (ui.index === 1) {
@@ -129,10 +130,11 @@ $(function () {
 });
 
 // set the #article_main_image width according to the actual image size
-window.onload = function () {
+resizeImageIfCssIsWrong = function () {
   var imageWidth = $('#article_main_image img').width();
   var cssWidth = $('#article_main_image').width();
   if (cssWidth > imageWidth) {
     $('#article_main_image').css('width', imageWidth);
   }
-};
+}
+window.onload = resizeImageIfCssIsWrong;
