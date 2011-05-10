@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
     unless @article.published_date
       check_authorization
     end
+    @meta_image = @article.main_asset
+    @meta_description = @article.header
     @title = @article.title
     @comment = Comment.new
   end

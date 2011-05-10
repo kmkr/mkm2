@@ -19,6 +19,10 @@ class Article < ActiveRecord::Base
     column_assets
   end
 
+  def header
+    body.split("\n").first
+  end
+
   def published?
     published_date != nil 
   end

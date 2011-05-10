@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <% if @meta_description %>
+      <meta name="description" content="<%= @meta_description %>" />
+    <% end %>
+    <% if @meta_image %>
+      <link rel="image_src" type="<%= @meta_image.galleryitem_content_type %>" href="<%= @meta_image.galleryitem.url(:thumb) %>" />
+    <% end %>
     <%= csrf_meta_tag %>
     <%= auto_discovery_link_tag(:atom, '/articles.atom') %>
     <%= include_stylesheets :common %>
