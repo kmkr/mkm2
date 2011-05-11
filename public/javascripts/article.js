@@ -41,6 +41,10 @@ $(function () {
     return start_at_idx;
   };
 
+  var popImageName = function(image_name) {
+    return image_name.split("/").pop().split("?").shift();
+  };
+
   var loadGallery = function () {
     if (!galleryLoaded) {
 
@@ -65,7 +69,7 @@ $(function () {
           afterImageVisible: function () {
             var state = {},
                 id = 'image';
-            var image_name = this.images[this.current_index].image.split("/").pop().split("?").shift();
+            var image_name = popImageName(this.images[this.current_index].image);
             // Set the state!
             state[id] = image_name;
             $.bbq.pushState(state);
@@ -83,13 +87,17 @@ $(function () {
     }
   };
 
-  scrollToAndSwitchToTab = function (idx) {
-    switchToTab(idx);
-    loadGallery();
+  scrollTo = function() {
     $.scrollTo('#article', 1400, {
       offset: -25,
       easing: 'easeOutElastic'
     });
+  }
+
+  scrollToAndSwitchToTab = function (idx) {
+    switchToTab(idx);
+    loadGallery();
+    scrollTo();
   }
   // assumes a hashchange indicates a gallery view
   // in case this is a fresh page load, fire the event to show correct image
@@ -126,6 +134,23 @@ $(function () {
       $('#email_address_info').show('fade');
     });
     return false;
+  });
+});
+
+$(function() {
+  var images = $(".article_image img, #article_main_image img");
+  var spans = $(".article_image img[title], #article_main_image img[title]");
+  $(spans).tooltip({effect: 'slide', position: "top center"});
+
+  $(images).each(function(i, img) {
+    $(img).click(function() {
+      var image_name = img.src.split("/").pop().split("?").shift();
+      var state = {},
+      id = 'image';
+      state[id] = image_name;
+      $.bbq.pushState(state);
+      scrollTo();
+    });
   });
 });
 

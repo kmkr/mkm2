@@ -1,6 +1,6 @@
 <div id="article_main_image">
 <% if article.main_asset %>
-  <%= image_tag article.main_asset.galleryitem.url(:large) %>
+  <%= image_tag(article.main_asset.galleryitem.url(:large), { :title => 'Click to see the image in the gallery' }) %>
   <p class="caption"><%= truncate(article.main_asset.galleryitem_caption, :length => 180, :omission => "...") %></p>
 <% end %>
 </div>

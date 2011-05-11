@@ -5,7 +5,7 @@ module ArticlesHelper
     image_html = ""
 
     while index < iterations
-      image = image_tag(assets[index].galleryitem.url(:medium))
+      image = image_tag(assets[index].galleryitem.url(:medium), { :title => 'Click to see the image in the gallery' })
       text = content_tag(:p, truncate(assets[index].galleryitem_caption, :length => 160, :omission => "..."), :class => 'caption')
       text_wrapper = content_tag(:div, text)
       image_html += content_tag(:div, image + text_wrapper, :class => 'article_image')
