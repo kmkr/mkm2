@@ -140,7 +140,7 @@ $(function () {
 $(function() {
   var images = $(".article_image img, #article_main_image img");
   var spans = $(".article_image img[title], #article_main_image img[title]");
-  $(spans).tooltip({effect: 'slide', position: "top center"});
+  $(spans).tooltip({effect: 'slide', position: "top center", predelay: 900});
 
   $(images).each(function(i, img) {
     $(img).click(function() {
