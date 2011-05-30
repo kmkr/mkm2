@@ -18,15 +18,15 @@ jQuery(function() {
 });
 
 $(function() {
-	var origMaxHeight;
-   $('li.galleryitem img').mouseenter(function(e) {
-		  origMaxHeight = $(this).css('maxHeight');
-		  $(this).css('zIndex', '300');
+  var items = $('li.galleryitem img');
+	var origMaxHeight = items.first().css('maxHeight');
+   items.mouseenter(function(e) {
+		    $(this).css('zIndex', '300');
         $(this).animate({ maxHeight: '400px' }, 100);
     }).mouseleave(function(e) {
         $(this).animate({ maxHeight: origMaxHeight }, 100);
-        $('li.galleryitem img').css({zIndex: '1', maxHeight: origMaxHeight});
+        $(items).css({zIndex: '1', maxHeight: origMaxHeight});
     }).click(function(e) {
-      $(this).css("border", "1px solid #ccc"); 
+        $(this).css("border", "2px solid #ccc"); 
     });
 });
