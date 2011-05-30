@@ -27,7 +27,7 @@ $(function() {
     }).mouseleave(function(e) {
         $(this).animate({ maxHeight: origMaxHeight }, 100);
         $(items).css({zIndex: '1', maxHeight: origMaxHeight, border: origBorder});
-    }).click(function(e) {
+    }).mousedown(function(e) {
         $(this).css("border", "2px solid #ccc"); 
     });
 });
