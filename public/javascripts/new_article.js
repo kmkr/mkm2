@@ -21,14 +21,12 @@ $(function() {
 	var origMaxHeight;
    $('li.galleryitem img').mouseenter(function(e) {
 		  origMaxHeight = $(this).css('maxHeight');
-		  origHeight = $(this).css('height');
-		  origWidth = $(this).css('width');
-		  origLeft = $(this).css('left');
-		  origTop = $(this).css('top');
 		  $(this).css('zIndex', '300');
         $(this).animate({ maxHeight: '400px' }, 100);
     }).mouseleave(function(e) {
         $(this).animate({ maxHeight: origMaxHeight }, 100);
-		  $(this).css('zIndex', '1');
+        $('li.galleryitem img').css({zIndex: '1', maxHeight: origMaxHeight});
+    }).click(function(e) {
+      $(this).css("border", "1px solid #ccc"); 
     });
 });
