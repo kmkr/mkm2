@@ -89,7 +89,7 @@ $(function () {
     }
   };
 
-  scrollTo = function() {
+  var myScrollTo = function() {
     $.scrollTo('#article', 1400, {
       offset: -25,
       easing: 'easeOutElastic'
@@ -99,7 +99,7 @@ $(function () {
   scrollToAndSwitchToTab = function (idx) {
     switchToTab(idx);
     loadGallery();
-    scrollTo();
+    myScrollTo();
   }
   // assumes a hashchange indicates a gallery view
   // in case this is a fresh page load, fire the event to show correct image
