@@ -32,12 +32,10 @@ $(function () {
     var hash_image_name = hash.split("image=").pop();
     hash_image_name = decodeURIComponent(hash_image_name);
     hash_image_name = hash_image_name.replace(/\+/g, " ");
-    console.log("hash: %s", hash_image_name);
     var start_at_idx = 0;
     var found_image = false;
     $('.uber-thumb-list img').each(function (idx, image) {
       var img_name = $(image).attr('src').split("/").pop().split("?").shift();
-      console.log("fant: %s", img_name);
 
       if (img_name === hash_image_name) {
         start_at_idx = idx;
