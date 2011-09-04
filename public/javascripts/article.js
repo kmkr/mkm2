@@ -1,8 +1,17 @@
 var galleryLoaded = false;
 var article_gallery;
 
+// set the #article_main_image width according to the actual image size
+var resizeImageIfCssIsWrong = function () {
+  var imageWidth = $('#article_main_image img').width();
+  var cssWidth = $('#article_main_image').width();
+  if (cssWidth > imageWidth) {
+    $('#article_main_image').css('width', imageWidth);
+  }
+};
+
 $(function () {
-  var popUpDialog = function () {
+  var popUpDialog = function() {
     $('#no_such_hash').dialog({
       modal: true,
       width: 440
@@ -94,13 +103,13 @@ $(function () {
       offset: -25,
       easing: 'easeOutElastic'
     });
-  }
+  };
 
-  scrollToAndSwitchToTab = function (idx) {
+  var scrollToAndSwitchToTab = function (idx) {
     switchToTab(idx);
     loadGallery();
     myScrollTo();
-  }
+  };
   // assumes a hashchange indicates a gallery view
   // in case this is a fresh page load, fire the event to show correct image
   $(window).bind('hashchange', function (e) {
@@ -157,12 +166,4 @@ $(function() {
   });
 });
 
-// set the #article_main_image width according to the actual image size
-resizeImageIfCssIsWrong = function () {
-  var imageWidth = $('#article_main_image img').width();
-  var cssWidth = $('#article_main_image').width();
-  if (cssWidth > imageWidth) {
-    $('#article_main_image').css('width', imageWidth);
-  }
-}
 window.onload = resizeImageIfCssIsWrong;
