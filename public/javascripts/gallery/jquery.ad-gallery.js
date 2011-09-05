@@ -204,7 +204,6 @@
       };
       var start_at = parseInt(this.settings.start_at_index, 10);
       if(window.location.hash && window.location.hash.indexOf('#uber-image') === 0) {
-        console.log("replace");
         start_at = window.location.hash.replace(/[^0-9]+/g, '');
         // Check if it's a number
         if((start_at * 1) != start_at) {
