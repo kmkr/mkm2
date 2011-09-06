@@ -1,5 +1,6 @@
 var galleryLoaded = false;
 var article_gallery;
+var scrollToAndSwitchToTab;
 
 // set the #article_main_image width according to the actual image size
 var resizeImageIfCssIsWrong = function () {
@@ -103,7 +104,7 @@ $(function () {
     });
   };
 
-  var scrollToAndSwitchToTab = function (idx) {
+  scrollToAndSwitchToTab = function(idx) {
     switchToTab(idx);
     loadGallery();
     myScrollTo();
