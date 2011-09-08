@@ -121,8 +121,9 @@ $(function () {
   });
 
 
-  // load gallery for clicks on tab1
+  // load gallery for clicks
   $('#article_tabs').bind('tabsshow', function (evt, ui) {
+
     if (ui.index === 0) {
       resizeImageIfCssIsWrong();
       reloadArticleMap();
