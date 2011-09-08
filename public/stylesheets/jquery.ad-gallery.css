@@ -1,3 +1,7 @@
+/* IE z-index fix */
+.uber-prev-image {
+  z-index: 50;
+}
 .uber-gallery, .uber-gallery * {
   margin: 0;
   padding: 0;
